@@ -162,6 +162,14 @@ section{padding:82px 0;border-bottom:1px solid var(--line)}
 .pf .t{font-size:13px;color:var(--navdim);margin-top:10px}
 .proof .fine{font-size:13px;color:#8FA0B4;font-style:italic;margin-top:28px;max-width:82ch}
 @media(max-width:920px){.proofgrid{grid-template-columns:1fr 1fr}}
+/* case studies */
+.case{margin-top:52px}
+.case:first-of-type{margin-top:40px}
+.case-kicker{font-family:var(--hf);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mint)}
+.case h3{font-size:26px;font-weight:700;margin:8px 0 14px;max-width:32ch;color:#fff}
+.case-desc{font-size:16px;color:#A9B6C7;max-width:78ch;margin-bottom:0}
+.case .proofgrid{margin-top:28px}
+.proof-closer{font-size:15px;color:#EAF0F7;line-height:1.65;margin-top:48px;max-width:84ch}
 /* why */
 .whygrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
 .wc{border:1px solid var(--line);border-radius:16px;padding:24px 20px}
@@ -310,17 +318,37 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
   </div>
 </div></section>
 <!-- PROOF -->
-<section class="proof"><div class="wrap reveal">
+<section class="proof" id="proof"><div class="wrap reveal">
   <div class="sec-k">Proof</div>
-  <h2 class="sec-h">From barely cited to The Answer, in 18 days.</h2>
-  <p class="sec-sub" style="color:#A9B6C7">A national women's health and public-health advocacy brand. We ran the measurement, engineered two data-driven releases through national wire, and tracked the citation signal across all five engines, before and after.</p>
-  <div class="proofgrid">
-    <div class="pf"><div class="n mint">250M+</div><div class="t">combined earned reach across two releases</div></div>
-    <div class="pf"><div class="n" style="color:var(--pink)">+572%</div><div class="t">cumulative AI citation signal in 18 days</div></div>
-    <div class="pf"><div class="n" style="color:var(--sky)">7 → 47</div><div class="t">AI citation score (of 60) across five engines</div></div>
-    <div class="pf"><div class="n" style="color:var(--gold)">2 of 5</div><div class="t">engines reached a perfect citation score</div></div>
-  </div>
-  <p class="fine">Measured the way people actually use AI, with search enabled, the brand reached two-thirds of all citation slots within one week of the first release. One engine regressed while three surged, caught and corrected because we re-score every quarter. We report per engine, never blended. A blended average would have hidden it.</p>
+  <h2 class="sec-h">Two industries. Two problems. One instrument.</h2>
+
+  <article class="case">
+    <p class="case-kicker">Case 01 · Women's health</p>
+    <h3>The signal that compounds.</h3>
+    <p class="case-desc">A national women's health brand was barely in the answer when buyers asked AI about its category. We engineered a five-part national data series through national wire, giving journalists a reason to cite and the engines a primary source to retrieve.</p>
+    <div class="proofgrid">
+      <div class="pf"><div class="n mint">+600%</div><div class="t">cumulative AI citation signal in 32 days</div></div>
+      <div class="pf"><div class="n" style="color:var(--pink)">49 / 60</div><div class="t">citation score across five engines · 82% of maximum</div></div>
+      <div class="pf"><div class="n" style="color:var(--sky)">347</div><div class="t">placements from one release · 85.4M monthly reach, anchored by Yahoo Finance and AP News</div></div>
+      <div class="pf"><div class="n" style="color:var(--gold)">3 of 5</div><div class="t">engines at 10+ of 12 · one holding a perfect score</div></div>
+    </div>
+    <p class="fine">Between waves, two engines softened while two recovered. A blended average would have hidden it. We score per engine, every time, so the dips were caught, diagnosed to specific buyer questions, and targeted in the next wave. Measurement is not a report card. It is the steering wheel.</p>
+  </article>
+
+  <article class="case">
+    <p class="case-kicker">Case 02 · Consumer health devices</p>
+    <h3>The machines were citing the science. And crediting the wrong brand.</h3>
+    <p class="case-desc">A global consumer health device brand had peer-reviewed clinical proof, and the engines were quoting it. But one engine credited a rival device with the brand's own results, every single time. We repaired the citation chain: a scientific release through national wire put the study on record as a brand-attributed primary source, and MedicalStudy and FAQPage schema connected the science to its owner.</p>
+    <div class="proofgrid">
+      <div class="pf"><div class="n mint">20 / 60</div><div class="t">baseline citation score, from zero, within 24 hours of first wire</div></div>
+      <div class="pf"><div class="n" style="color:var(--pink)">1 → 7</div><div class="t">fastest engine lift (of 12) after structured data shipped</div></div>
+      <div class="pf"><div class="n" style="color:var(--sky)">90.5M</div><div class="t">unique monthly syndication reach for the science release · 323 postings</div></div>
+      <div class="pf"><div class="n" style="color:var(--gold)">Per engine</div><div class="t">one engine still credits the rival · which is why we re-score, never audit once</div></div>
+    </div>
+    <p class="fine">Owned content alone could not fix this. The engines needed a trusted third-party record connecting the science to the brand. Wire-distributed primary source, schema markup, per-engine tracking to confirm the repair holds. That is the citation chain.</p>
+  </article>
+
+  <p class="proof-closer">One brand needed volume: presence in the sources engines trust. The other needed precision: the right name attached to signals already flowing. The Maturity Method™ diagnosed both, sequenced the work by weakest dimension, and reported per engine, never blended. That is the difference between monitoring your AI visibility and moving it.</p>
 </div></section>
 <!-- WHY + CTA -->
 <section id="why"><div class="wrap reveal">
