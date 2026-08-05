@@ -1,0 +1,34 @@
+# SignlLabs
+
+> SignlLabs is the AI Signaling practice that gets your brand recommended by AI. Using the Maturity Method, SignlLabs measures how recommendable a brand is across ChatGPT, Claude, Perplexity, Gemini, and Copilot, then engineers the lift through owned, earned, and paid media. SignlLabs is agency-led methodology plus earned-media execution, not a software-only monitoring dashboard. It is the sister practice to GCW for PR.
+
+SignlLabs (legal name SignlLabs LLC) was founded in 2026 and operates at https://signllabs.ai. The practice was created by Erika Hanafin Austria, creator of the Maturity Method and the AI Signaling framework.
+
+## What SignlLabs does
+
+- Measures how recommendable a brand is to AI across five engines: ChatGPT, Claude, Perplexity, Gemini and Google AI Overviews, and Copilot.
+- Scores brands on the Maturity Method, a zero-to-one-hundred methodology.
+- Engineers the lift through owned, earned, and paid media. Earned media drives roughly 82 to 84 percent of AI citations, while brand-owned pages account for only 5 to 10 percent, so SignlLabs leads with earned-media execution.
+
+## The Maturity Method
+
+The Maturity Method is the SignlLabs methodology for AI visibility. It produces a single score from 0 to 100 (the Maturity Method Score, or MMS) built from six dimensions: Foundation, Endorsement, Alignment, Presence, Warmth, and Constancy. Brands sit on a five-band maturity ladder: Unseen, Surfacing, Standing, Trusted, and The Answer. The Intent Category Framework maps ten intent categories across the buyer journey so gaps are exact, by engine.
+
+## Key pages
+
+- [Home](https://signllabs.ai/): What AI Signaling is and how the Maturity Method works.
+- [AI Visibility Platforms, Compared](https://signllabs.ai/compare): SignlLabs versus software-only monitoring tools, with answer blocks for common queries.
+- [How Answer Engines Respond: The 2026 Field Guide to AEO and GEO](https://signllabs.ai/field-guide): The SignlLabs whitepaper by Erika Hanafin Austria.
+
+## Founder
+
+Erika Hanafin Austria is the creator of the Maturity Method and the AI Signaling framework, President and Founder of SignlLabs, Co-Founder of NEON ID, and former CEO of HeyMama (acquired by Luminary in Q1 2025). She is a two-time Top 50 Women Leaders of Virginia honoree (2023, 2024), with press in Fortune, Adweek, Inc., and Advertising Week. More at https://erikahanafin.com.
+
+## Contact
+
+- Email: hello@signllabs.ai
+
+## Notes
+
+- Trademarks: Maturity Method, SignlLabs, and the Intent Category Framework are trademarks of SignlLabs LLC.
+- Engine-behavior figures are current as of July 2026.
