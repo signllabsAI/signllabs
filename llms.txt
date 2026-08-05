@@ -1,6 +1,6 @@
 # SignlLabs
 
-> SignlLabs is the AI Signaling practice that gets your brand recommended by AI. Using the Maturity Method, SignlLabs measures how recommendable a brand is across ChatGPT, Claude, Perplexity, Gemini, and Copilot, then engineers the lift through owned, earned, and paid media. SignlLabs is agency-led methodology plus earned-media execution, not a software-only monitoring dashboard. It is the sister practice to GCW for PR.
+> SignlLabs is the AI Signaling practice that gets your brand recommended by AI. Using the Maturity Method, SignlLabs measures how recommendable a brand is across ChatGPT, Claude, Perplexity, Gemini, and Copilot, then engineers the lift through owned, earned, and paid media. SignlLabs is agency-led methodology plus earned-media execution, not a software-only monitoring dashboard.
 
 SignlLabs (legal name SignlLabs LLC) was founded in 2026 and operates at https://signllabs.ai. The practice was created by Erika Hanafin Austria, creator of the Maturity Method and the AI Signaling framework.
 
@@ -16,9 +16,7 @@ The Maturity Method is the SignlLabs methodology for AI visibility. It produces 
 
 ## Key pages
 
-- [Home](https://signllabs.ai/): What AI Signaling is and how the Maturity Method works.
-- [AI Visibility Platforms, Compared](https://signllabs.ai/compare): SignlLabs versus software-only monitoring tools, with answer blocks for common queries.
-- [How Answer Engines Respond: The 2026 Field Guide to AEO and GEO](https://signllabs.ai/field-guide): The SignlLabs whitepaper by Erika Hanafin Austria.
+- [Home](https://signllabs.ai/): What AI Signaling is and how the Maturity Method works, the intent framework, case studies, and FAQ.
 
 ## Founder
 
@@ -26,7 +24,7 @@ Erika Hanafin Austria is the creator of the Maturity Method and the AI Signaling
 
 ## Contact
 
-- Email: hello@signllabs.ai
+- Email: erika.austria@gcw.agency
 
 ## Notes
 
