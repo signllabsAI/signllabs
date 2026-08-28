@@ -289,6 +289,30 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
   .gcwband{grid-template-columns:1fr;gap:20px;padding:26px 22px}
 }
 @media(max-width:560px){.case .proofgrid{grid-template-columns:1fr}}
+/* what is AI signaling */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:40px}
+.two p{font-size:17px;color:var(--dim);margin-bottom:18px}
+.two p b{color:var(--ink);font-weight:600}
+.notcards{display:flex;flex-direction:column;gap:14px}
+.notcard{border:1px solid var(--line);border-left:4px solid var(--pink);border-radius:12px;padding:18px 20px}
+.notcard:nth-child(2){border-left-color:var(--mint)}
+.notcard:nth-child(3){border-left-color:var(--purple)}
+.notcard h4{font-family:var(--hf);font-size:16px;margin-bottom:5px}
+.notcard p{font-size:14px;color:var(--dim);margin:0}
+/* SEO vs AEO vs AI Signaling */
+.sa3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.sa3 .c{border:1px solid var(--line);border-radius:16px;padding:28px 22px 24px;position:relative;overflow:hidden}
+.sa3 .c .top{position:absolute;top:0;left:0;height:5px;width:100%}
+.sa3 .c .k{font-family:var(--bf);font-size:11.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint)}
+.sa3 .c h4{font-family:var(--hf);font-size:22px;font-weight:700;margin:8px 0;color:var(--ink);line-height:1.2}
+.sa3 .c .win{font-family:var(--hf);font-size:15px;font-weight:600;margin-bottom:8px}
+.sa3 .c p{font-size:14px;color:var(--dim)}
+.sa3 .c.win-card{border-color:var(--mint);box-shadow:0 10px 30px rgba(15,217,160,.12)}
+.fanout{margin-top:26px;border-left:4px solid var(--mint);background:var(--soft);border-radius:10px;padding:18px 22px;font-size:15px;color:var(--ink);line-height:1.6}
+@media(max-width:920px){
+  .two{grid-template-columns:1fr;gap:32px}
+  .sa3{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -298,6 +322,7 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
     <div class="navgroup">
       <button class="navtop" type="button" aria-expanded="false" aria-haspopup="true">The instrument<i class="caret"></i></button>
       <div class="navmenu">
+        <a href="#what">What is AI signaling<span>Not SEO, not PR &mdash; a new discipline</span></a>
         <a href="#instrument">Six dimensions<span>One score, calibrated to your industry</span></a>
         <a href="#ladder">The ladder<span>Where your brand sits, and how it climbs</span></a>
         <a href="#intent">Intent framework<span>The ten questions every buyer asks AI</span></a>
@@ -309,6 +334,7 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
       <div class="navmenu">
         <a href="#proof">Case studies<span>Two industries, two problems, one instrument</span></a>
         <a href="#why">Why SignlLabs<span>The instrument, plus the team that moves the number</span></a>
+        <a href="#difference">SEO vs AEO vs AI Signaling<span>Three disciplines, one recommendation</span></a>
       </div>
     </div>
     <div class="navgroup">
@@ -326,6 +352,7 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
 </div>
 <div class="mobilenav" id="mobilenav"><div class="wrap">
   <div class="mnav-group"><div class="mnav-label">The instrument</div>
+    <a href="#what">What is AI signaling</a>
     <a href="#instrument">Six dimensions</a>
     <a href="#ladder">The ladder</a>
     <a href="#intent">Intent framework</a>
@@ -334,6 +361,7 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
   <div class="mnav-group"><div class="mnav-label">Proof</div>
     <a href="#proof">Case studies</a>
     <a href="#why">Why SignlLabs</a>
+    <a href="#difference">SEO vs AEO vs AI Signaling</a>
   </div>
   <div class="mnav-group"><div class="mnav-label">Resources</div>
     <a href="#field-notes">Field notes</a>
@@ -351,7 +379,7 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
   <div>
     <span class="tag">The AI Signaling instrument</span>
     <h1>Measure how AI recommends you. Then move it.</h1>
-    <p>SignlLabs scores how recommendable your brand is across ChatGPT, Claude, Perplexity, Gemini, and Copilot, then engineers the lift. One number. Six dimensions. Ten buyer questions.</p>
+    <p>When buyers stop searching and start asking, SignlLabs&trade; makes sure the machines name you first. We measure how recommendable your brand is to AI, then we engineer the lift.</p>
     <div class="row">
       <a class="btn btn-p" href="mailto:erika@signllabs.ai">Contact us</a>
       <a class="btn btn-d" href="#instrument">See the score</a>
@@ -382,11 +410,28 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
     <div class="sb"><div class="n" style="color:var(--purple)">89%</div><div class="t">of AI citations from outside the top 100</div><div class="s">BrightEdge, 2026</div></div>
   </div>
 </div></section>
+<!-- WHAT IS AI SIGNALING -->
+<section id="what"><div class="wrap reveal">
+  <div class="sec-k">What is AI signaling</div>
+  <h2 class="sec-h">Not SEO. Not PR. A new discipline.</h2>
+  <div class="two">
+    <div>
+      <p><b>AI signaling is the practice of engineering how AI understands, trusts, and recommends your brand.</b> The engines do not rank pages. They synthesize an answer and name a few brands. Whether you are one of them is decided by signals most teams are not managing.</p>
+      <p>Top Google links and AI-cited sources now overlap less than twenty percent of the time. Different inputs, a different game. The brands that get named are not the loudest. They are the best signaled.</p>
+      <p>SignlLabs is the agency-led practice that pairs the methodology with the execution. <b>Dashboards tell you the score. We tell you the move, then we make it.</b></p>
+    </div>
+    <div class="notcards">
+      <div class="notcard"><h4>Not SEO</h4><p>Keywords and backlinks optimize for a results page. The machines read source credibility and factual consensus instead.</p></div>
+      <div class="notcard"><h4>Not PR</h4><p>Old PR chased impressions and column inches. The engines reward being the trusted, cited source, not the loudest voice.</p></div>
+      <div class="notcard"><h4>Engineered authority</h4><p>Built deliberately in the sources the models read, then measured, then moved, quarter over quarter.</p></div>
+    </div>
+  </div>
+</div></section>
 <!-- THE INSTRUMENT -->
 <section id="instrument"><div class="wrap reveal">
   <div class="sec-k">The Maturity Method™</div>
   <h2 class="sec-h">Six dimensions. One score, calibrated to your industry.</h2>
-  <p class="sec-sub">The methodology by Erika Hanafin Austria that scores how recommendable a brand is to AI. The dimensions and weights are published. Which ones matter most in your category is the proprietary calibration, and it stays backstage.</p>
+  <p class="sec-sub">The methodology that scores how recommendable a brand is to AI. The dimensions and weights are published. Which ones matter most in your category is the proprietary calibration, and it stays backstage.</p>
   <div class="specgrid">
     <div class="spec"><div class="chip" style="background:var(--pink)">24%</div><div><h4>Foundation <span class="w mint" style="color:var(--pink)">24%</span></h4><p>Structured identity signals across owned and earned media. Can the machines tell exactly who you are?</p></div></div>
     <div class="spec"><div class="chip" style="background:var(--mint)">20%</div><div><h4>Endorsement <span class="w" style="color:var(--mint)">20%</span></h4><p>Third-party authority citations: reviews, references, credentialed mentions in the sources that count.</p></div></div>
@@ -515,19 +560,31 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
     <a class="btn btn-d" href="mailto:erika@signllabs.ai">Contact us</a>
   </div>
 </div></section>
+<!-- SEO vs AEO vs AI SIGNALING -->
+<section id="difference"><div class="wrap reveal">
+  <div class="sec-k">SEO vs AEO vs AI Signaling</div>
+  <h2 class="sec-h">Three disciplines. Only one wins the recommendation.</h2>
+  <p class="sec-sub">They sound similar and they are not. Each targets a different moment, and AI Signaling is the only one built for how the machine actually decides.</p>
+  <div class="sa3">
+    <div class="c"><div class="top" style="background:var(--dim)"></div><div class="k">SEO</div><h4>Search Engine Optimization</h4><div class="win" style="color:var(--dim)">Earns a ranking on a page of links.</div><p>Optimizes keywords and backlinks so a human clicks your result. Built for the ten blue links, a page most buyers now skip.</p></div>
+    <div class="c"><div class="top" style="background:var(--purple)"></div><div class="k">AEO</div><h4>Answer Engine Optimization</h4><div class="win" style="color:var(--purple)">Earns the snippet an AI reads back.</div><p>Structures your content into clean, liftable answers so a model can quote you. Necessary hygiene, but it only makes you eligible.</p></div>
+    <div class="c win-card"><div class="top" style="background:var(--mint)"></div><div class="k">The SignlLabs discipline</div><h4>AI Signaling</h4><div class="win mint">Earns the recommendation itself.</div><p>Engineers the earned, third-party authority the engines trust, so when someone asks AI who is best, you are named. This is where the decision is actually made.</p></div>
+  </div>
+  <p class="fanout"><strong>Why keywords cannot win it:</strong> an AI does not answer the question it is asked. It quietly splits one prompt into roughly five hidden research queries, then names the brands it trusts across all of them. You cannot keyword your way into that answer. You earn it, across every source the engine reads.</p>
+</div></section>
 <!-- FIELD NOTES / AUTHORITY -->
 <section id="field-notes"><div class="wrap reveal">
   <div class="sec-k">Field notes</div>
   <h2 class="sec-h">The field guide to being named by AI.</h2>
   <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;margin-top:36px">
     <div>
-      <p style="font-size:17px;color:var(--dim);margin-bottom:18px">Our whitepaper, <b style="color:var(--ink)">How Answer Engines Respond: The 2026 Field Guide to AEO and GEO</b>, by Erika Hanafin Austria, breaks down how ChatGPT, Claude, Perplexity, Gemini, and Copilot decide which brands to name, and why earned media drives roughly 82 to 84 percent of AI citations while owned pages account for only 5 to 10 percent.</p>
+      <p style="font-size:17px;color:var(--dim);margin-bottom:18px">Our whitepaper, <b style="color:var(--ink)">How Answer Engines Respond: The 2026 Field Guide to AEO and GEO</b> breaks down how ChatGPT, Claude, Perplexity, Gemini, and Copilot decide which brands to name, and why earned media drives roughly 82 to 84 percent of AI citations while owned pages account for only 5 to 10 percent.</p>
       <a class="btn btn-p" href="mailto:erika@signllabs.ai">Ask about the field guide</a>
     </div>
     <div style="border:1px solid var(--line);border-left:4px solid var(--mint);border-radius:14px;padding:26px;background:var(--soft)">
       <div style="font-family:var(--hf);font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mint)">Whitepaper</div>
       <div style="font-family:var(--hf);font-size:21px;font-weight:700;margin:10px 0 8px;line-height:1.2">How Answer Engines Respond</div>
-      <p style="font-size:14px;color:var(--dim)">The 2026 Field Guide to AEO and GEO, by Erika Hanafin Austria, creator of the Maturity Method™.</p>
+      <p style="font-size:14px;color:var(--dim)">The 2026 Field Guide to AEO and GEO.</p>
     </div>
   </div>
 </div></section>
@@ -538,7 +595,7 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
   <div class="kitgrid">
     <div>
       <h3>About SignlLabs</h3>
-      <p>SignlLabs is the AI Signaling practice that makes sure the machines name your brand first. Using the Maturity Method, a scored framework by Erika Hanafin Austria, SignlLabs measures how recommendable a brand is across ChatGPT, Claude, Perplexity, Gemini, and Copilot, then engineers the lift.</p>
+      <p>SignlLabs is the AI Signaling practice that makes sure the machines name your brand first. Using the Maturity Method, a scored framework, SignlLabs measures how recommendable a brand is across ChatGPT, Claude, Perplexity, Gemini, and Copilot, then engineers the lift.</p>
     </div>
     <div>
       <div class="lockup">
@@ -573,7 +630,7 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
     <div class="faq-item"><h3>What is AI signaling?</h3><p>AI signaling is the practice of engineering how AI understands, trusts, and recommends your brand. The engines do not rank pages, they synthesize an answer and name a few brands. AI signaling is the work of becoming one of the names.</p></div>
     <div class="faq-item"><h3>How is AI signaling different from SEO?</h3><p>SEO optimizes for a page of blue links. AI signaling optimizes for the answer itself. The overlap is under twenty percent, because engines weight source credibility and third-party consensus, not keywords and backlinks.</p></div>
     <div class="faq-item"><h3>Can a brand control what AI says about it?</h3><p>Not directly. You cannot inform the model from your own website alone. Brand-owned content is only five to ten percent of what AI cites. The dominant lever is earned and paid media in the sources engines already trust.</p></div>
-    <div class="faq-item"><h3>What is the Maturity Method?</h3><p>The Maturity Method is a zero to one hundred methodology by Erika Hanafin Austria that scores how recommendable a brand is to AI across six dimensions and ten intent categories, measured on all five major engines.</p></div>
+    <div class="faq-item"><h3>What is the Maturity Method?</h3><p>The Maturity Method is a zero to one hundred methodology that scores how recommendable a brand is to AI across six dimensions and ten intent categories, measured on all five major engines.</p></div>
     <div class="faq-item"><h3>Which AI engines does SignlLabs measure?</h3><p>SignlLabs scores your brand across ChatGPT, Claude, Perplexity, Gemini, and Copilot, in both base and search modes, and reports each engine separately rather than blending them.</p></div>
     <div class="faq-item"><h3>How do you get recommended by ChatGPT and other AI?</h3><p>Fix the owned foundation with schema and clear answer blocks, then earn citations in the third-party sources AI retrieves from: review platforms, communities, and trusted press. SignlLabs measures the gap and engineers the lift every quarter.</p></div>
   </div>
@@ -581,7 +638,7 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
 <footer>
   <div class="logo">Signl<span class="spark">Labs.</span></div>
   <div>SignlLabs LLC · Founded 2026 · signllabs.ai</div>
-  <div style="margin-top:8px">Powered by the Maturity Method™, a methodology by Erika Hanafin Austria</div>
+  <div style="margin-top:8px">Powered by the Maturity Method™</div>
   <div style="margin-top:8px">© 2026 SignlLabs LLC. Maturity Method™ and the Intent Category Framework™ are trademarks of SignlLabs LLC.</div>
 </footer>
 <script>
