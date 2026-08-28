@@ -264,6 +264,31 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
 .faq-item{border-bottom:1px solid var(--line);padding:22px 0}
 .faq-item h3{font-family:var(--hf);font-size:19px;margin-bottom:8px}
 .faq-item p{font-size:15px;color:var(--dim);max-width:82ch}
+/* proof: the two cases sit side by side, each its own card */
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px}
+.case{margin-top:0;background:#0E1622;border:1px solid var(--navline);border-radius:20px;padding:32px 28px 28px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.case:first-of-type{margin-top:0}
+.case::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--mint)}
+.cases .case:nth-child(2)::before{background:var(--pink)}
+.cases .case:nth-child(2) .case-kicker{color:var(--pink)}
+.case h3{font-size:23px;line-height:1.2;max-width:26ch}
+.case-desc{font-size:15px;max-width:none}
+.case .proofgrid{grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.case .pf{padding:20px 18px;border-radius:14px;background:rgba(255,255,255,.02)}
+.case .pf .n{font-size:32px}
+.case .pf .t{font-size:12px;margin-top:8px}
+.proof .case .fine{margin-top:auto;padding-top:24px;max-width:none}
+/* GCW: the agency behind the practice */
+.gcwband{margin-top:38px;border:1px solid var(--line);border-radius:20px;background:var(--soft);padding:32px 30px;display:grid;grid-template-columns:1.35fr 1fr;gap:30px;align-items:center}
+.gcwband .sec-k{margin-bottom:8px}
+.gcwband h3{font-family:var(--hf);font-size:22px;font-weight:700;line-height:1.25;margin-bottom:10px}
+.gcwband p{font-size:15px;color:var(--dim);max-width:62ch}
+@media(max-width:920px){
+  .cases{grid-template-columns:1fr;gap:18px}
+  .case{padding:28px 22px 24px}
+  .gcwband{grid-template-columns:1fr;gap:20px;padding:26px 22px}
+}
+@media(max-width:560px){.case .proofgrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -433,15 +458,16 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
   <div class="sec-k">Proof</div>
   <h2 class="sec-h">Two industries. Two problems. One instrument.</h2>
 
-  <article class="case">
+  <div class="cases">
+<article class="case">
     <p class="case-kicker">Case 01 · Women's health</p>
     <h3>The signal that compounds.</h3>
     <p class="case-desc">A national women's health brand was barely in the answer when buyers asked AI about its category. We engineered a five-part national data series through national wire, giving journalists a reason to cite and the engines a primary source to retrieve.</p>
     <div class="proofgrid">
-      <div class="pf"><div class="n mint">+600%</div><div class="t">cumulative AI citation signal in 32 days</div></div>
-      <div class="pf"><div class="n" style="color:var(--pink)">49 / 60</div><div class="t">citation score across five engines · 82% of maximum</div></div>
-      <div class="pf"><div class="n" style="color:var(--sky)">347</div><div class="t">placements from one release · 85.4M monthly reach, anchored by Yahoo Finance and AP News</div></div>
-      <div class="pf"><div class="n" style="color:var(--gold)">3 of 5</div><div class="t">engines at 10+ of 12 · one holding a perfect score</div></div>
+      <div class="pf"><div class="n mint">+700%</div><div class="t">cumulative AI citation signal in 63 days</div></div>
+      <div class="pf"><div class="n" style="color:var(--pink)">56 / 60</div><div class="t">citation score across five engines · 93% of maximum</div></div>
+      <div class="pf"><div class="n" style="color:var(--sky)">1,824</div><div class="t">placements across the five-part series · 480.7M cumulative monthly reach, anchored by Yahoo Finance and AP News</div></div>
+      <div class="pf"><div class="n" style="color:var(--gold)">3 of 5</div><div class="t">engines at a perfect 12 of 12 · the other two at 10</div></div>
     </div>
     <p class="fine">Between waves, two engines softened while two recovered. A blended average would have hidden it. We score per engine, every time, so the dips were caught, diagnosed to specific buyer questions, and targeted in the next wave. Measurement is not a report card. It is the steering wheel.</p>
   </article>
@@ -450,14 +476,14 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
     <h3>The machines were citing the science. And crediting the wrong brand.</h3>
     <p class="case-desc">A global consumer health device brand had peer-reviewed clinical proof, and the engines were quoting it. But one engine credited a rival device with the brand's own results, every single time. We repaired the citation chain: a scientific release through national wire put the study on record as a brand-attributed primary source, and MedicalStudy and FAQPage schema connected the science to its owner.</p>
     <div class="proofgrid">
-      <div class="pf"><div class="n mint">20 / 60</div><div class="t">baseline citation score, from zero, within 24 hours of first wire</div></div>
+      <div class="pf"><div class="n mint">24 / 60</div><div class="t">AI signal after the second audit, from a zero pre-launch baseline in ten days</div></div>
       <div class="pf"><div class="n" style="color:var(--pink)">1 → 7</div><div class="t">fastest engine lift (of 12) after structured data shipped</div></div>
-      <div class="pf"><div class="n" style="color:var(--sky)">90.5M</div><div class="t">unique monthly syndication reach for the science release · 323 postings</div></div>
+      <div class="pf"><div class="n" style="color:var(--sky)">176M+</div><div class="t">combined syndication reach across the launch and scientific releases</div></div>
       <div class="pf"><div class="n" style="color:var(--gold)">Per engine</div><div class="t">one engine still credits the rival · which is why we re-score, never audit once</div></div>
     </div>
     <p class="fine">Owned content alone could not fix this. The engines needed a trusted third-party record connecting the science to the brand. Wire-distributed primary source, schema markup, per-engine tracking to confirm the repair holds. That is the citation chain.</p>
   </article>
-
+  </div>
   <p class="proof-closer">One brand needed volume: presence in the sources engines trust. The other needed precision: the right name attached to signals already flowing. The Maturity Method™ diagnosed both, sequenced the work by weakest dimension, and reported per engine, never blended. That is the difference between monitoring your AI visibility and moving it.</p>
 </div></section>
 <!-- WHY + CTA -->
@@ -470,10 +496,19 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
     <div class="wc"><div class="num">03</div><h4>Industry-calibrated</h4><p>Scored against the right benchmark for your category, not an average.</p></div>
     <div class="wc"><div class="num">04</div><h4>Full-service</h4><p>We earn the media, build the schema, seed the sources. No SaaS tool can.</p></div>
   </div>
-  <div class="row" style="margin-top:34px">
-        <a class="btn btn-p" href="https://www.gcw.agency/" target="_blank" rel="noopener">Visit gcw.agency</a>
-        <a class="btn btn-d" href="https://www.gcw.agency/our-work" target="_blank" rel="noopener">See the earned work</a>
-      </div>
+  <div class="gcwband">
+    <div>
+      <div class="sec-k">The agency behind it</div>
+      <h3>SignlLabs is the AI Signaling practice of GCW Agency.</h3>
+      <p>Every score is backed by a working earned-media agency &mdash; the same team that places
+      the stories, builds the schema and seeds the sources the engines retrieve from. The
+      measurement is one half of the job. Moving the number is the other.</p>
+    </div>
+    <div class="row">
+      <a class="btn btn-p" href="https://www.gcw.agency/" target="_blank" rel="noopener">Visit gcw.agency</a>
+      <a class="btn btn-d" href="https://www.gcw.agency/our-work" target="_blank" rel="noopener">See the earned work</a>
+    </div>
+  </div>
       <div class="cta" id="cta">
     <h2>Let's make sure the machines name you first.</h2>
     <p>Get in touch and we'll walk you through a baseline audit across all five engines.</p>
