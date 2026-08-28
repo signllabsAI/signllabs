@@ -22,7 +22,7 @@
   "@context":"https://schema.org",
   "@graph":[
     {"@type":"Organization","@id":"https://signllabs.ai/#org","name":"SignlLabs","legalName":"SignlLabs LLC","url":"https://signllabs.ai/","foundingDate":"2026","description":"SignlLabs is the AI Signaling practice that gets your brand recommended by AI. We measure how ChatGPT, Claude, Perplexity, Gemini, and Copilot see your brand with the Maturity Method, then engineer the lift through earned and paid media.",
-      "slogan":"AI Signaling, for the brands that intend to be named.","email":"erika.austria@gcw.agency",
+      "slogan":"AI Signaling, for the brands that intend to be named.","email":"erika@signllabs.ai",
       "knowsAbout":["answer engine optimization","generative engine optimization","AI visibility","AI signaling","earned media"],
       "founder":{"@id":"https://signllabs.ai/#erika"},
       "sameAs":["https://erikahanafin.com","https://www.linkedin.com/in/erikahanafinaustria"]},
@@ -58,9 +58,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#16202E; --dim:#53627A; --faint:#8A93A3; --line:#E3E7EE; --soft:#F4F6FA; --paper:#FFFFFF;
-  --nav:#0D0F1A; --nav2:#161A2B; --navline:#2A3048; --navtext:#F4F6FB; --navdim:#A6ADC2;
-  --mint:#15C8A0; --pink:#FF3D6E; --purple:#7C5CFF; --gold:#F0C53D; --coral:#FF7A4D; --sky:#4DA3FF;
+  --ink:#17161A; --dim:#57606E; --faint:#9AA2B0; --line:#E4E8EF; --soft:#F5F7FA; --paper:#FFFFFF;
+  --nav:#0E1622; --nav2:#131B29; --navline:#2C3B55; --navtext:#EDF1F7; --navdim:#A7B3C6;
+  --mint:#0FD9A0; --pink:#FF3D6E; --purple:#7C5CFF; --gold:#F5B72E; --coral:#FF7A45; --sky:#3D7BFF;
   --hf:'Space Grotesk',sans-serif; --bf:'Inter',sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -79,6 +79,50 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .pillnav a{font-size:13px;font-weight:600;color:var(--dim);padding:8px 15px;border-radius:22px}
 .pillnav a:hover{background:#fff;color:var(--ink)}
 .navcta{background:var(--ink);color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:22px;font-family:var(--hf)}
+/* intent framework: five stages, categories only */
+.stages{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:44px}
+.stcol{border:1px solid var(--line);border-radius:16px;padding:0 0 18px;overflow:hidden}
+.stcol .top{height:6px}
+.stcol .name{font-family:var(--bf);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:16px 16px 4px}
+.stcol ul{list-style:none;padding:6px 16px 0}
+.stcol li{font-family:var(--hf);font-weight:600;font-size:14px;padding:9px 0;border-top:1px solid var(--line);display:flex;gap:8px;align-items:flex-start}
+.stcol li:first-child{border-top:none}
+.stcol li .d{width:8px;height:8px;border-radius:50%;margin-top:6px;flex-shrink:0}
+@media(max-width:920px){.stages{grid-template-columns:1fr 1fr;gap:12px}}
+@media(max-width:560px){.stages{grid-template-columns:1fr}}
+/* nav dropdowns */
+.navgroup{position:relative}
+.navtop{display:inline-flex;align-items:center;gap:7px;font-family:var(--bf);font-size:13px;font-weight:600;color:var(--dim);background:none;border:0;cursor:pointer;padding:8px 15px;border-radius:22px;line-height:1.4;white-space:nowrap}
+.navtop:hover,.navgroup.is-open>.navtop{background:#fff;color:var(--ink)}
+.navtop .caret{width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid currentColor;opacity:.75;transition:transform .18s ease}
+.navgroup.is-open .caret{transform:rotate(180deg)}
+.navgroup::after{content:"";position:absolute;left:0;right:0;top:100%;height:12px;display:none}
+.navgroup.is-open::after{display:block}
+.pillnav .navmenu{position:absolute;top:calc(100% + 10px);left:0;min-width:302px;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 44px rgba(14,22,34,.13);padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .16s ease,transform .16s ease,visibility .16s ease;z-index:60}
+.navgroup.is-open .navmenu{opacity:1;visibility:visible;transform:none}
+.pillnav .navmenu a{display:block;padding:10px 12px;border-radius:9px;font-size:13.5px;font-weight:600;color:var(--ink)}
+.pillnav .navmenu a span{display:block;font-weight:400;font-size:12px;color:var(--faint);margin-top:2px;line-height:1.45}
+.pillnav .navmenu a:hover{background:var(--soft);color:var(--ink)}
+.pillnav .navmenu a:hover span{color:var(--dim)}
+.navtop:focus-visible,.pillnav .navmenu a:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
+/* mobile menu */
+.navburger{display:none;flex-direction:column;gap:4px;background:none;border:0;padding:10px 8px;cursor:pointer;margin-left:auto;margin-right:6px}
+.navburger span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+.navburger.is-open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.navburger.is-open span:nth-child(2){opacity:0}
+.navburger.is-open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobilenav{display:none}
+@media(max-width:920px){
+  .navburger{display:flex}
+  .mobilenav{display:block;max-height:0;overflow:hidden;background:var(--paper);border-top:1px solid transparent;transition:max-height .28s ease}
+  .mobilenav.is-open{max-height:78vh;overflow-y:auto;border-top-color:var(--line)}
+  .mobilenav .wrap{display:block;height:auto;padding:6px 32px 22px}
+  .mnav-group{border-bottom:1px solid var(--line);padding:14px 0}
+  .mnav-group:last-child{border-bottom:0}
+  .mnav-label{font-family:var(--hf);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+  .mobilenav a{display:block;padding:9px 0;font-size:15px;font-weight:600;color:var(--ink)}
+  .mobilenav a:hover{color:var(--mint)}
+}
 @media(max-width:920px){.pillnav{display:none}}
 /* hero split */
 .hero{padding:70px 0 64px;border-bottom:1px solid var(--line)}
@@ -89,7 +133,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .hero .row{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
 .btn{display:inline-block;font-family:var(--hf);font-weight:700;font-size:15px;padding:14px 28px;border-radius:30px;cursor:pointer;transition:transform .15s}
 .btn:hover{transform:translateY(-2px)}
-.btn-p{background:var(--mint);color:#08130F}
+.btn-p{background:var(--mint);color:#0B1220}
 .btn-d{background:var(--ink);color:#fff}
 @media(max-width:920px){.hero .grid{grid-template-columns:1fr;gap:36px}.hero h1{font-size:40px}}
 /* product panel (the instrument, dark card) */
@@ -170,22 +214,22 @@ section{padding:82px 0;border-bottom:1px solid var(--line)}
 .tstep p{font-size:13px;color:var(--dim)}
 @media(max-width:920px){.tl{grid-template-columns:1fr 1fr;gap:28px 16px}}
 /* proof color block */
-.proof{background:var(--ink);border:none;color:#EAF0F7}
+.proof{background:#131B29;border:none;color:#EDF1F7}
 .proof .sec-h,.proof h3{color:#fff}
 .proofgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:38px}
 .pf{border:1px solid var(--navline);border-radius:16px;padding:24px 20px}
 .pf .n{font-family:var(--hf);font-size:44px;font-weight:700;line-height:1}
 .pf .t{font-size:13px;color:var(--navdim);margin-top:10px}
-.proof .fine{font-size:13px;color:#8FA0B4;font-style:italic;margin-top:28px;max-width:82ch}
+.proof .fine{font-size:13px;color:#8B98AE;font-style:italic;margin-top:28px;max-width:82ch}
 @media(max-width:920px){.proofgrid{grid-template-columns:1fr 1fr}}
 /* case studies */
 .case{margin-top:52px}
 .case:first-of-type{margin-top:40px}
 .case-kicker{font-family:var(--hf);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mint)}
 .case h3{font-size:26px;font-weight:700;margin:8px 0 14px;max-width:32ch;color:#fff}
-.case-desc{font-size:16px;color:#A9B6C7;max-width:78ch;margin-bottom:0}
+.case-desc{font-size:16px;color:#A7B3C6;max-width:78ch;margin-bottom:0}
 .case .proofgrid{margin-top:28px}
-.proof-closer{font-size:15px;color:#EAF0F7;line-height:1.65;margin-top:48px;max-width:84ch}
+.proof-closer{font-size:15px;color:#EDF1F7;line-height:1.65;margin-top:48px;max-width:84ch}
 /* why */
 .whygrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
 .wc{border:1px solid var(--line);border-radius:16px;padding:24px 20px}
@@ -194,10 +238,10 @@ section{padding:82px 0;border-bottom:1px solid var(--line)}
 .wc p{font-size:13px;color:var(--dim)}
 @media(max-width:920px){.whygrid{grid-template-columns:1fr 1fr}}
 /* cta */
-.cta{text-align:center;background:linear-gradient(120deg,#15C8A0,#4DA3FF);border-radius:24px;padding:60px 32px;margin-top:56px;color:#06121f}
+.cta{text-align:center;background:linear-gradient(120deg,#0FD9A0,#3D7BFF);border-radius:24px;padding:60px 32px;margin-top:56px;color:#06121f}
 .cta h2{font-size:36px;font-weight:700;letter-spacing:-.5px}
 .cta p{font-size:17px;margin:14px auto 26px;max-width:52ch;color:#083a33}
-.cta .btn-d{background:#0D0F1A;color:#fff}
+.cta .btn-d{background:#0E1622;color:#fff}
 /* media kit */
 .kitgrid{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;margin-top:40px}
 .kitgrid h3{font-family:var(--hf);font-size:15px;margin:20px 0 7px}
@@ -220,22 +264,88 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
 .faq-item{border-bottom:1px solid var(--line);padding:22px 0}
 .faq-item h3{font-family:var(--hf);font-size:19px;margin-bottom:8px}
 .faq-item p{font-size:15px;color:var(--dim);max-width:82ch}
+/* proof: the two cases sit side by side, each its own card */
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px}
+.case{margin-top:0;background:#0E1622;border:1px solid var(--navline);border-radius:20px;padding:32px 28px 28px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.case:first-of-type{margin-top:0}
+.case::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--mint)}
+.cases .case:nth-child(2)::before{background:var(--pink)}
+.cases .case:nth-child(2) .case-kicker{color:var(--pink)}
+.case h3{font-size:23px;line-height:1.2;max-width:26ch}
+.case-desc{font-size:15px;max-width:none}
+.case .proofgrid{grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.case .pf{padding:20px 18px;border-radius:14px;background:rgba(255,255,255,.02)}
+.case .pf .n{font-size:32px}
+.case .pf .t{font-size:12px;margin-top:8px}
+.proof .case .fine{margin-top:auto;padding-top:24px;max-width:none}
+/* GCW: the agency behind the practice */
+.gcwband{margin-top:38px;border:1px solid var(--line);border-radius:20px;background:var(--soft);padding:32px 30px;display:grid;grid-template-columns:1.35fr 1fr;gap:30px;align-items:center}
+.gcwband .sec-k{margin-bottom:8px}
+.gcwband h3{font-family:var(--hf);font-size:22px;font-weight:700;line-height:1.25;margin-bottom:10px}
+.gcwband p{font-size:15px;color:var(--dim);max-width:62ch}
+@media(max-width:920px){
+  .cases{grid-template-columns:1fr;gap:18px}
+  .case{padding:28px 22px 24px}
+  .gcwband{grid-template-columns:1fr;gap:20px;padding:26px 22px}
+}
+@media(max-width:560px){.case .proofgrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <nav><div class="wrap">
   <div class="logo">Signl<span class="spark">Labs.</span></div>
   <div class="pillnav">
-    <a href="#instrument">The instrument</a>
-    <a href="#ladder">Ladder</a>
-    <a href="#intent">Intent</a>
-    <a href="#work">Cadence</a>
-    <a href="#field-notes">Field notes</a>
-    <a href="#faq">FAQ</a>
-    <a href="#kit">Media kit</a>
+    <div class="navgroup">
+      <button class="navtop" type="button" aria-expanded="false" aria-haspopup="true">The instrument<i class="caret"></i></button>
+      <div class="navmenu">
+        <a href="#instrument">Six dimensions<span>One score, calibrated to your industry</span></a>
+        <a href="#ladder">The ladder<span>Where your brand sits, and how it climbs</span></a>
+        <a href="#intent">Intent framework<span>The ten questions every buyer asks AI</span></a>
+        <a href="#work">The cadence<span>Re-scored and re-worked every quarter</span></a>
+      </div>
+    </div>
+    <div class="navgroup">
+      <button class="navtop" type="button" aria-expanded="false" aria-haspopup="true">Proof<i class="caret"></i></button>
+      <div class="navmenu">
+        <a href="#proof">Case studies<span>Two industries, two problems, one instrument</span></a>
+        <a href="#why">Why SignlLabs<span>The instrument, plus the team that moves the number</span></a>
+      </div>
+    </div>
+    <div class="navgroup">
+      <button class="navtop" type="button" aria-expanded="false" aria-haspopup="true">Resources<i class="caret"></i></button>
+      <div class="navmenu">
+        <a href="#field-notes">Field notes<span>The field guide to being named by AI</span></a>
+        <a href="#kit">Media kit<span>Everything a journalist or partner needs</span></a>
+        <a href="#faq">FAQ<span>AI signaling, answered</span></a>
+      </div>
+    </div>
+    <a class="navtop navtop--out" href="https://www.gcw.agency/" target="_blank" rel="noopener">GCW Agency &#8599;</a>
   </div>
-  <a class="navcta" href="mailto:erika.austria@gcw.agency">Contact us</a>
-</div></nav>
+  <button class="navburger" type="button" aria-expanded="false" aria-controls="mobilenav" aria-label="Menu"><span></span><span></span><span></span></button>
+  <a class="navcta" href="mailto:erika@signllabs.ai">Contact us</a>
+</div>
+<div class="mobilenav" id="mobilenav"><div class="wrap">
+  <div class="mnav-group"><div class="mnav-label">The instrument</div>
+    <a href="#instrument">Six dimensions</a>
+    <a href="#ladder">The ladder</a>
+    <a href="#intent">Intent framework</a>
+    <a href="#work">The cadence</a>
+  </div>
+  <div class="mnav-group"><div class="mnav-label">Proof</div>
+    <a href="#proof">Case studies</a>
+    <a href="#why">Why SignlLabs</a>
+  </div>
+  <div class="mnav-group"><div class="mnav-label">Resources</div>
+    <a href="#field-notes">Field notes</a>
+    <a href="#kit">Media kit</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div class="mnav-group"><div class="mnav-label">More</div>
+    <a href="https://www.gcw.agency/" target="_blank" rel="noopener">GCW Agency &#8599;</a>
+    <a href="mailto:erika@signllabs.ai">Contact us</a>
+  </div>
+</div></div>
+</nav>
 <!-- HERO -->
 <header class="hero"><div class="wrap"><div class="grid">
   <div>
@@ -243,7 +353,7 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
     <h1>Measure how AI recommends you. Then move it.</h1>
     <p>SignlLabs scores how recommendable your brand is across ChatGPT, Claude, Perplexity, Gemini, and Copilot, then engineers the lift. One number. Six dimensions. Ten buyer questions.</p>
     <div class="row">
-      <a class="btn btn-p" href="mailto:erika.austria@gcw.agency">Contact us</a>
+      <a class="btn btn-p" href="mailto:erika@signllabs.ai">Contact us</a>
       <a class="btn btn-d" href="#instrument">See the score</a>
     </div>
   </div>
@@ -251,12 +361,12 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
     <div class="head"><div class="t">Maturity Method Score</div><div class="live"><i></i>5 engines · live</div></div>
     <div class="score"><div class="big" id="scoreNum">47</div><div class="of">/ 100</div></div>
     <div class="bandpill">STANDING</div>
-    <div class="dimrow"><div class="lab">Foundation</div><div class="track"><div class="fill" data-w="72" style="background:var(--pink)"></div></div><div class="val">72</div></div>
-    <div class="dimrow"><div class="lab">Endorsement</div><div class="track"><div class="fill" data-w="41" style="background:var(--mint)"></div></div><div class="val">41</div></div>
-    <div class="dimrow"><div class="lab">Alignment</div><div class="track"><div class="fill" data-w="58" style="background:var(--purple)"></div></div><div class="val">58</div></div>
-    <div class="dimrow"><div class="lab">Presence</div><div class="track"><div class="fill" data-w="33" style="background:var(--gold)"></div></div><div class="val">33</div></div>
-    <div class="dimrow"><div class="lab">Warmth</div><div class="track"><div class="fill" data-w="61" style="background:var(--coral)"></div></div><div class="val">61</div></div>
-    <div class="dimrow"><div class="lab">Constancy</div><div class="track"><div class="fill" data-w="38" style="background:var(--sky)"></div></div><div class="val">38</div></div>
+    <div class="dimrow"><div class="lab">Foundation</div><div class="track"><div class="fill" data-w="72" style="background:var(--mint)"></div></div><div class="val">72</div></div>
+    <div class="dimrow"><div class="lab">Endorsement</div><div class="track"><div class="fill" data-w="41" style="background:var(--gold)"></div></div><div class="val">41</div></div>
+    <div class="dimrow"><div class="lab">Alignment</div><div class="track"><div class="fill" data-w="58" style="background:var(--sky)"></div></div><div class="val">58</div></div>
+    <div class="dimrow"><div class="lab">Presence</div><div class="track"><div class="fill" data-w="33" style="background:var(--pink)"></div></div><div class="val">33</div></div>
+    <div class="dimrow"><div class="lab">Warmth</div><div class="track"><div class="fill" data-w="61" style="background:var(--purple)"></div></div><div class="val">61</div></div>
+    <div class="dimrow"><div class="lab">Constancy</div><div class="track"><div class="fill" data-w="38" style="background:var(--coral)"></div></div><div class="val">38</div></div>
     <div class="foot">Weakest dimension: Presence. Next move: seed the sources AI retrieves from. Illustrative scorecard.</div>
   </div>
 </div></div></header>
@@ -306,22 +416,31 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
 <!-- INTENT MATRIX -->
 <section id="intent"><div class="wrap reveal">
   <div class="sec-k">The intent framework</div>
-  <h2 class="sec-h">The ten questions every buyer asks AI.</h2>
-  <p class="sec-sub">We do not test a bag of random prompts. We score your brand across a structured, journey-mapped taxonomy, so you know exactly which buyer questions name you and which still belong to the category.</p>
-  <div class="matrix">
-    <div class="mrow h"><div class="c">Stage</div><div class="c">Intent category</div><div class="c">The signal it tests</div></div>
-    <div class="mrow"><div class="c"><span class="stagetag" style="color:var(--pink)"><span class="d" style="background:var(--pink)"></span>Awareness</span></div><div class="c"><span class="catname">Discovery &amp; Category</span></div><div class="c sig">Are you named in the unbranded category answer at all?</div></div>
-    <div class="mrow"><div class="c"><span class="stagetag" style="color:var(--pink)"><span class="d" style="background:var(--pink)"></span>Awareness</span></div><div class="c"><span class="catname">Experience &amp; Lifestyle</span></div><div class="c sig">Do you own the experiential signals, not just the functional ones?</div></div>
-    <div class="mrow"><div class="c"><span class="stagetag" style="color:var(--gold)"><span class="d" style="background:var(--gold)"></span>Consideration</span></div><div class="c"><span class="catname">Cost &amp; Value</span></div><div class="c sig">Is there a defensible value narrative the engine can cite?</div></div>
-    <div class="mrow"><div class="c"><span class="stagetag" style="color:var(--gold)"><span class="d" style="background:var(--gold)"></span>Consideration</span></div><div class="c"><span class="catname">Fit &amp; Qualification</span></div><div class="c sig">Can AI match your specifics to a buyer's need?</div></div>
-    <div class="mrow"><div class="c"><span class="stagetag" style="color:var(--mint)"><span class="d" style="background:var(--mint)"></span>Evaluation</span></div><div class="c"><span class="catname">Decision Criteria</span></div><div class="c sig">Do you shape the criteria the buyer evaluates on?</div></div>
-    <div class="mrow"><div class="c"><span class="stagetag" style="color:var(--mint)"><span class="d" style="background:var(--mint)"></span>Evaluation</span></div><div class="c"><span class="catname">Program &amp; Differentiation</span></div><div class="c sig">Is your signature strength legible to machines?</div></div>
-    <div class="mrow"><div class="c"><span class="stagetag" style="color:var(--mint)"><span class="d" style="background:var(--mint)"></span>Evaluation</span></div><div class="c"><span class="catname">Trust, Safety &amp; Reputation</span></div><div class="c sig">Does third-party proof vouch for you?</div></div>
-    <div class="mrow"><div class="c"><span class="stagetag" style="color:var(--coral)"><span class="d" style="background:var(--coral)"></span>Decision</span></div><div class="c"><span class="catname">Competitive &amp; Comparison</span></div><div class="c sig">Do you appear in the consideration set, ranked high?</div></div>
-    <div class="mrow"><div class="c"><span class="stagetag" style="color:var(--coral)"><span class="d" style="background:var(--coral)"></span>Decision</span></div><div class="c"><span class="catname">Urgency &amp; Trigger</span></div><div class="c sig">Are you the answer in the time-pressured moment?</div></div>
-    <div class="mrow"><div class="c"><span class="stagetag" style="color:var(--purple)"><span class="d" style="background:var(--purple)"></span>Authority</span></div><div class="c"><span class="catname">Founder &amp; Authority</span></div><div class="c sig">Is your origin and credibility fully indexed?</div></div>
+  <h2 class="sec-h">We score the whole buyer journey, not one question.</h2>
+  <p class="sec-sub">AI answers ten different buyer questions, from the first unbranded search to the moment of decision. The Maturity Method scores your brand across all ten intent categories, by engine, so the gaps are exact.</p>
+  <div class="stages">
+    <div class="stcol"><div class="top" style="background:var(--pink)"></div><div class="name" style="color:var(--pink)">Awareness</div><ul>
+      <li><span class="d" style="background:var(--pink)"></span>Discovery &amp; Category</li>
+      <li><span class="d" style="background:var(--pink)"></span>Experience &amp; Lifestyle</li>
+    </ul></div>
+    <div class="stcol"><div class="top" style="background:var(--gold)"></div><div class="name" style="color:var(--gold)">Consideration</div><ul>
+      <li><span class="d" style="background:var(--gold)"></span>Cost &amp; Value</li>
+      <li><span class="d" style="background:var(--gold)"></span>Fit &amp; Qualification</li>
+    </ul></div>
+    <div class="stcol"><div class="top" style="background:var(--mint)"></div><div class="name" style="color:var(--mint)">Evaluation</div><ul>
+      <li><span class="d" style="background:var(--mint)"></span>Decision Criteria</li>
+      <li><span class="d" style="background:var(--mint)"></span>Program &amp; Differentiation</li>
+      <li><span class="d" style="background:var(--mint)"></span>Trust, Safety &amp; Reputation</li>
+    </ul></div>
+    <div class="stcol"><div class="top" style="background:var(--coral)"></div><div class="name" style="color:var(--coral)">Decision</div><ul>
+      <li><span class="d" style="background:var(--coral)"></span>Competitive &amp; Comparison</li>
+      <li><span class="d" style="background:var(--coral)"></span>Urgency &amp; Trigger</li>
+    </ul></div>
+    <div class="stcol"><div class="top" style="background:var(--purple)"></div><div class="name" style="color:var(--purple)">Authority</div><ul>
+      <li><span class="d" style="background:var(--purple)"></span>Founder &amp; Authority</li>
+    </ul></div>
   </div>
-  <p class="mnote">Geographic intent layers onto any category. Ten categories, five engines, one 100-point intent profile per brand.</p>
+  <p class="mnote">Geographic intent (&ldquo;near me,&rdquo; &ldquo;in your city&rdquo;) layers onto any category. Ten categories, five engines, one 100-point intent profile per brand.</p>
 </div></section>
 <!-- HOW WE WORK -->
 <section id="work"><div class="wrap reveal">
@@ -339,15 +458,16 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
   <div class="sec-k">Proof</div>
   <h2 class="sec-h">Two industries. Two problems. One instrument.</h2>
 
-  <article class="case">
+  <div class="cases">
+<article class="case">
     <p class="case-kicker">Case 01 · Women's health</p>
     <h3>The signal that compounds.</h3>
     <p class="case-desc">A national women's health brand was barely in the answer when buyers asked AI about its category. We engineered a five-part national data series through national wire, giving journalists a reason to cite and the engines a primary source to retrieve.</p>
     <div class="proofgrid">
-      <div class="pf"><div class="n mint">+600%</div><div class="t">cumulative AI citation signal in 32 days</div></div>
-      <div class="pf"><div class="n" style="color:var(--pink)">49 / 60</div><div class="t">citation score across five engines · 82% of maximum</div></div>
-      <div class="pf"><div class="n" style="color:var(--sky)">347</div><div class="t">placements from one release · 85.4M monthly reach, anchored by Yahoo Finance and AP News</div></div>
-      <div class="pf"><div class="n" style="color:var(--gold)">3 of 5</div><div class="t">engines at 10+ of 12 · one holding a perfect score</div></div>
+      <div class="pf"><div class="n mint">+700%</div><div class="t">cumulative AI citation signal in 63 days</div></div>
+      <div class="pf"><div class="n" style="color:var(--pink)">56 / 60</div><div class="t">citation score across five engines · 93% of maximum</div></div>
+      <div class="pf"><div class="n" style="color:var(--sky)">1,824</div><div class="t">placements across the five-part series · 480.7M cumulative monthly reach, anchored by Yahoo Finance and AP News</div></div>
+      <div class="pf"><div class="n" style="color:var(--gold)">3 of 5</div><div class="t">engines at a perfect 12 of 12 · the other two at 10</div></div>
     </div>
     <p class="fine">Between waves, two engines softened while two recovered. A blended average would have hidden it. We score per engine, every time, so the dips were caught, diagnosed to specific buyer questions, and targeted in the next wave. Measurement is not a report card. It is the steering wheel.</p>
   </article>
@@ -356,14 +476,14 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
     <h3>The machines were citing the science. And crediting the wrong brand.</h3>
     <p class="case-desc">A global consumer health device brand had peer-reviewed clinical proof, and the engines were quoting it. But one engine credited a rival device with the brand's own results, every single time. We repaired the citation chain: a scientific release through national wire put the study on record as a brand-attributed primary source, and MedicalStudy and FAQPage schema connected the science to its owner.</p>
     <div class="proofgrid">
-      <div class="pf"><div class="n mint">20 / 60</div><div class="t">baseline citation score, from zero, within 24 hours of first wire</div></div>
+      <div class="pf"><div class="n mint">24 / 60</div><div class="t">AI signal after the second audit, from a zero pre-launch baseline in ten days</div></div>
       <div class="pf"><div class="n" style="color:var(--pink)">1 → 7</div><div class="t">fastest engine lift (of 12) after structured data shipped</div></div>
-      <div class="pf"><div class="n" style="color:var(--sky)">90.5M</div><div class="t">unique monthly syndication reach for the science release · 323 postings</div></div>
+      <div class="pf"><div class="n" style="color:var(--sky)">176M+</div><div class="t">combined syndication reach across the launch and scientific releases</div></div>
       <div class="pf"><div class="n" style="color:var(--gold)">Per engine</div><div class="t">one engine still credits the rival · which is why we re-score, never audit once</div></div>
     </div>
     <p class="fine">Owned content alone could not fix this. The engines needed a trusted third-party record connecting the science to the brand. Wire-distributed primary source, schema markup, per-engine tracking to confirm the repair holds. That is the citation chain.</p>
   </article>
-
+  </div>
   <p class="proof-closer">One brand needed volume: presence in the sources engines trust. The other needed precision: the right name attached to signals already flowing. The Maturity Method™ diagnosed both, sequenced the work by weakest dimension, and reported per engine, never blended. That is the difference between monitoring your AI visibility and moving it.</p>
 </div></section>
 <!-- WHY + CTA -->
@@ -376,10 +496,23 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
     <div class="wc"><div class="num">03</div><h4>Industry-calibrated</h4><p>Scored against the right benchmark for your category, not an average.</p></div>
     <div class="wc"><div class="num">04</div><h4>Full-service</h4><p>We earn the media, build the schema, seed the sources. No SaaS tool can.</p></div>
   </div>
-  <div class="cta" id="cta">
+  <div class="gcwband">
+    <div>
+      <div class="sec-k">The agency behind it</div>
+      <h3>SignlLabs is the AI Signaling practice of GCW Agency.</h3>
+      <p>Every score is backed by a working earned-media agency &mdash; the same team that places
+      the stories, builds the schema and seeds the sources the engines retrieve from. The
+      measurement is one half of the job. Moving the number is the other.</p>
+    </div>
+    <div class="row">
+      <a class="btn btn-p" href="https://www.gcw.agency/" target="_blank" rel="noopener">Visit gcw.agency</a>
+      <a class="btn btn-d" href="https://www.gcw.agency/our-work" target="_blank" rel="noopener">See the earned work</a>
+    </div>
+  </div>
+      <div class="cta" id="cta">
     <h2>Let's make sure the machines name you first.</h2>
     <p>Get in touch and we'll walk you through a baseline audit across all five engines.</p>
-    <a class="btn btn-d" href="mailto:erika.austria@gcw.agency">Contact us</a>
+    <a class="btn btn-d" href="mailto:erika@signllabs.ai">Contact us</a>
   </div>
 </div></section>
 <!-- FIELD NOTES / AUTHORITY -->
@@ -389,7 +522,7 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
   <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;margin-top:36px">
     <div>
       <p style="font-size:17px;color:var(--dim);margin-bottom:18px">Our whitepaper, <b style="color:var(--ink)">How Answer Engines Respond: The 2026 Field Guide to AEO and GEO</b>, by Erika Hanafin Austria, breaks down how ChatGPT, Claude, Perplexity, Gemini, and Copilot decide which brands to name, and why earned media drives roughly 82 to 84 percent of AI citations while owned pages account for only 5 to 10 percent.</p>
-      <a class="btn btn-p" href="mailto:erika.austria@gcw.agency">Ask about the field guide</a>
+      <a class="btn btn-p" href="mailto:erika@signllabs.ai">Ask about the field guide</a>
     </div>
     <div style="border:1px solid var(--line);border-left:4px solid var(--mint);border-radius:14px;padding:26px;background:var(--soft)">
       <div style="font-family:var(--hf);font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mint)">Whitepaper</div>
@@ -404,12 +537,8 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
   <h2 class="sec-h">Everything a journalist or partner needs.</h2>
   <div class="kitgrid">
     <div>
-      <h3>About SignlLabs (short)</h3>
+      <h3>About SignlLabs</h3>
       <p>SignlLabs is the AI Signaling practice that makes sure the machines name your brand first. Using the Maturity Method, a scored framework by Erika Hanafin Austria, SignlLabs measures how recommendable a brand is across ChatGPT, Claude, Perplexity, Gemini, and Copilot, then engineers the lift.</p>
-      <h3>About SignlLabs (long)</h3>
-      <p>SignlLabs is an agency-led AI Signaling practice powered by the Maturity Method, a zero-to-one-hundred methodology that scores how recommendable a brand is to AI across six dimensions and ten intent categories. Unlike monitoring dashboards, SignlLabs pairs the measurement with full-service execution: earned media, schema, content, and source seeding, re-scored every quarter. SignlLabs was founded by Erika Hanafin Austria, creator of the AI Signaling framework and a keynote speaker on the shift from search to answers.</p>
-      <h3>Founder</h3>
-      <p>Erika Hanafin Austria is the creator of the Maturity Method and the AI Signaling framework, President and Founder of SignlLabs, and Co-Founder of NEON ID. She is a former CEO of HeyMama and a two-time Top 50 Women Leaders of Virginia honoree, with press in Fortune, Adweek, Inc., and Advertising Week. More at erikahanafin.com.</p>
     </div>
     <div>
       <div class="lockup">
@@ -431,7 +560,7 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
         <div class="fact"><div class="n">0–100</div><div class="t">Maturity Method Score</div></div>
       </div>
       <h3>Contact</h3>
-      <div class="contact">erika.austria@gcw.agency</div>
+      <div class="contact">erika@signllabs.ai</div>
     </div>
   </div>
 </div></section>
@@ -461,6 +590,68 @@ const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.t
 document.querySelectorAll('.reveal,.panel').forEach(el=>io.observe(el));
 // animate hero panel bars on load
 window.addEventListener('load',()=>{setTimeout(()=>{document.querySelectorAll('#heropanel .fill').forEach(f=>f.style.width=f.dataset.w+'%');},250);});
+</script>
+<script>
+/* nav: hover or click to open, Escape / outside click / item click to close */
+(function(){
+  var groups=[].slice.call(document.querySelectorAll('.navgroup'));
+  function shut(except){
+    groups.forEach(function(g){
+      if(g===except) return;
+      g.classList.remove('is-open');
+      var b=g.querySelector('.navtop');
+      if(b) b.setAttribute('aria-expanded','false');
+    });
+  }
+  /* a real mouse opens on hover; touch and keyboard toggle on click */
+  var canHover=window.matchMedia&&window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  function open(g,btn){shut(g);g.classList.add('is-open');btn.setAttribute('aria-expanded','true');}
+  groups.forEach(function(g){
+    var btn=g.querySelector('.navtop');
+    if(!btn) return;
+    if(canHover){
+      g.addEventListener('mouseenter',function(){open(g,btn);});
+      g.addEventListener('mouseleave',function(){g.classList.remove('is-open');btn.setAttribute('aria-expanded','false');});
+      btn.addEventListener('click',function(e){e.preventDefault();open(g,btn);});
+      btn.addEventListener('focus',function(){open(g,btn);});
+    }else{
+      btn.addEventListener('click',function(e){
+        e.preventDefault();
+        var wasOpen=g.classList.contains('is-open');
+        shut(null);
+        if(!wasOpen) open(g,btn);
+      });
+    }
+    [].slice.call(g.querySelectorAll('.navmenu a')).forEach(function(a){
+      a.addEventListener('click',function(){shut(null);});
+    });
+  });
+  var burger=document.querySelector('.navburger'), mnav=document.getElementById('mobilenav');
+  function shutMobile(){
+    if(!burger||!mnav) return;
+    mnav.classList.remove('is-open');
+    burger.classList.remove('is-open');
+    burger.setAttribute('aria-expanded','false');
+  }
+  if(burger&&mnav){
+    burger.addEventListener('click',function(){
+      var open=!mnav.classList.contains('is-open');
+      mnav.classList.toggle('is-open',open);
+      burger.classList.toggle('is-open',open);
+      burger.setAttribute('aria-expanded',String(open));
+    });
+    [].slice.call(mnav.querySelectorAll('a')).forEach(function(a){
+      a.addEventListener('click',shutMobile);
+    });
+  }
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.navgroup')) shut(null);
+    if(!e.target.closest('nav')) shutMobile();
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){shut(null);shutMobile();}
+  });
+})();
 </script>
 </body>
 </html>
