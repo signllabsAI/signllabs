@@ -79,6 +79,39 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .pillnav a{font-size:13px;font-weight:600;color:var(--dim);padding:8px 15px;border-radius:22px}
 .pillnav a:hover{background:#fff;color:var(--ink)}
 .navcta{background:var(--ink);color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:22px;font-family:var(--hf)}
+/* nav dropdowns */
+.navgroup{position:relative}
+.navtop{display:inline-flex;align-items:center;gap:7px;font-family:var(--bf);font-size:13px;font-weight:600;color:var(--dim);background:none;border:0;cursor:pointer;padding:8px 15px;border-radius:22px;line-height:1.4;white-space:nowrap}
+.navtop:hover,.navgroup.is-open>.navtop{background:#fff;color:var(--ink)}
+.navtop .caret{width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid currentColor;opacity:.75;transition:transform .18s ease}
+.navgroup.is-open .caret{transform:rotate(180deg)}
+.navgroup::after{content:"";position:absolute;left:0;right:0;top:100%;height:12px;display:none}
+.navgroup.is-open::after{display:block}
+.pillnav .navmenu{position:absolute;top:calc(100% + 10px);left:0;min-width:302px;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 44px rgba(14,22,34,.13);padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .16s ease,transform .16s ease,visibility .16s ease;z-index:60}
+.navgroup.is-open .navmenu{opacity:1;visibility:visible;transform:none}
+.pillnav .navmenu a{display:block;padding:10px 12px;border-radius:9px;font-size:13.5px;font-weight:600;color:var(--ink)}
+.pillnav .navmenu a span{display:block;font-weight:400;font-size:12px;color:var(--faint);margin-top:2px;line-height:1.45}
+.pillnav .navmenu a:hover{background:var(--soft);color:var(--ink)}
+.pillnav .navmenu a:hover span{color:var(--dim)}
+.navtop:focus-visible,.pillnav .navmenu a:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
+/* mobile menu */
+.navburger{display:none;flex-direction:column;gap:4px;background:none;border:0;padding:10px 8px;cursor:pointer;margin-left:auto;margin-right:6px}
+.navburger span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+.navburger.is-open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.navburger.is-open span:nth-child(2){opacity:0}
+.navburger.is-open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobilenav{display:none}
+@media(max-width:920px){
+  .navburger{display:flex}
+  .mobilenav{display:block;max-height:0;overflow:hidden;background:var(--paper);border-top:1px solid transparent;transition:max-height .28s ease}
+  .mobilenav.is-open{max-height:78vh;overflow-y:auto;border-top-color:var(--line)}
+  .mobilenav .wrap{display:block;height:auto;padding:6px 32px 22px}
+  .mnav-group{border-bottom:1px solid var(--line);padding:14px 0}
+  .mnav-group:last-child{border-bottom:0}
+  .mnav-label{font-family:var(--hf);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+  .mobilenav a{display:block;padding:9px 0;font-size:15px;font-weight:600;color:var(--ink)}
+  .mobilenav a:hover{color:var(--mint)}
+}
 @media(max-width:920px){.pillnav{display:none}}
 /* hero split */
 .hero{padding:70px 0 64px;border-bottom:1px solid var(--line)}
@@ -226,17 +259,57 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
 <nav><div class="wrap">
   <div class="logo">Signl<span class="spark">Labs.</span></div>
   <div class="pillnav">
-    <a href="#instrument">The instrument</a>
-    <a href="#ladder">Ladder</a>
-    <a href="#intent">Intent</a>
-    <a href="#work">Cadence</a>
-    <a href="#field-notes">Field notes</a>
-    <a href="#faq">FAQ</a>
-    <a href="#kit">Media kit</a>
-        <a href="https://www.gcw.agency/" target="_blank" rel="noopener">GCW Agency &#8599;</a>
+    <div class="navgroup">
+      <button class="navtop" type="button" aria-expanded="false" aria-haspopup="true">The instrument<i class="caret"></i></button>
+      <div class="navmenu">
+        <a href="#instrument">Six dimensions<span>One score, calibrated to your industry</span></a>
+        <a href="#ladder">The ladder<span>Where your brand sits, and how it climbs</span></a>
+        <a href="#intent">Intent framework<span>The ten questions every buyer asks AI</span></a>
+        <a href="#work">The cadence<span>Re-scored and re-worked every quarter</span></a>
+      </div>
+    </div>
+    <div class="navgroup">
+      <button class="navtop" type="button" aria-expanded="false" aria-haspopup="true">Proof<i class="caret"></i></button>
+      <div class="navmenu">
+        <a href="#proof">Case studies<span>Two industries, two problems, one instrument</span></a>
+        <a href="#why">Why SignlLabs<span>The instrument, plus the team that moves the number</span></a>
+      </div>
+    </div>
+    <div class="navgroup">
+      <button class="navtop" type="button" aria-expanded="false" aria-haspopup="true">Resources<i class="caret"></i></button>
+      <div class="navmenu">
+        <a href="#field-notes">Field notes<span>The field guide to being named by AI</span></a>
+        <a href="#kit">Media kit<span>Everything a journalist or partner needs</span></a>
+        <a href="#faq">FAQ<span>AI signaling, answered</span></a>
+      </div>
+    </div>
+    <a class="navtop navtop--out" href="https://www.gcw.agency/" target="_blank" rel="noopener">GCW Agency &#8599;</a>
   </div>
+  <button class="navburger" type="button" aria-expanded="false" aria-controls="mobilenav" aria-label="Menu"><span></span><span></span><span></span></button>
   <a class="navcta" href="mailto:erika.austria@gcw.agency">Contact us</a>
-</div></nav>
+</div>
+<div class="mobilenav" id="mobilenav"><div class="wrap">
+  <div class="mnav-group"><div class="mnav-label">The instrument</div>
+    <a href="#instrument">Six dimensions</a>
+    <a href="#ladder">The ladder</a>
+    <a href="#intent">Intent framework</a>
+    <a href="#work">The cadence</a>
+  </div>
+  <div class="mnav-group"><div class="mnav-label">Proof</div>
+    <a href="#proof">Case studies</a>
+    <a href="#why">Why SignlLabs</a>
+  </div>
+  <div class="mnav-group"><div class="mnav-label">Resources</div>
+    <a href="#field-notes">Field notes</a>
+    <a href="#kit">Media kit</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div class="mnav-group"><div class="mnav-label">More</div>
+    <a href="https://www.gcw.agency/" target="_blank" rel="noopener">GCW Agency &#8599;</a>
+    <a href="mailto:erika.austria@gcw.agency">Contact us</a>
+  </div>
+</div></div>
+</nav>
 <!-- HERO -->
 <header class="hero"><div class="wrap"><div class="grid">
   <div>
@@ -466,6 +539,68 @@ const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.t
 document.querySelectorAll('.reveal,.panel').forEach(el=>io.observe(el));
 // animate hero panel bars on load
 window.addEventListener('load',()=>{setTimeout(()=>{document.querySelectorAll('#heropanel .fill').forEach(f=>f.style.width=f.dataset.w+'%');},250);});
+</script>
+<script>
+/* nav: hover or click to open, Escape / outside click / item click to close */
+(function(){
+  var groups=[].slice.call(document.querySelectorAll('.navgroup'));
+  function shut(except){
+    groups.forEach(function(g){
+      if(g===except) return;
+      g.classList.remove('is-open');
+      var b=g.querySelector('.navtop');
+      if(b) b.setAttribute('aria-expanded','false');
+    });
+  }
+  /* a real mouse opens on hover; touch and keyboard toggle on click */
+  var canHover=window.matchMedia&&window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  function open(g,btn){shut(g);g.classList.add('is-open');btn.setAttribute('aria-expanded','true');}
+  groups.forEach(function(g){
+    var btn=g.querySelector('.navtop');
+    if(!btn) return;
+    if(canHover){
+      g.addEventListener('mouseenter',function(){open(g,btn);});
+      g.addEventListener('mouseleave',function(){g.classList.remove('is-open');btn.setAttribute('aria-expanded','false');});
+      btn.addEventListener('click',function(e){e.preventDefault();open(g,btn);});
+      btn.addEventListener('focus',function(){open(g,btn);});
+    }else{
+      btn.addEventListener('click',function(e){
+        e.preventDefault();
+        var wasOpen=g.classList.contains('is-open');
+        shut(null);
+        if(!wasOpen) open(g,btn);
+      });
+    }
+    [].slice.call(g.querySelectorAll('.navmenu a')).forEach(function(a){
+      a.addEventListener('click',function(){shut(null);});
+    });
+  });
+  var burger=document.querySelector('.navburger'), mnav=document.getElementById('mobilenav');
+  function shutMobile(){
+    if(!burger||!mnav) return;
+    mnav.classList.remove('is-open');
+    burger.classList.remove('is-open');
+    burger.setAttribute('aria-expanded','false');
+  }
+  if(burger&&mnav){
+    burger.addEventListener('click',function(){
+      var open=!mnav.classList.contains('is-open');
+      mnav.classList.toggle('is-open',open);
+      burger.classList.toggle('is-open',open);
+      burger.setAttribute('aria-expanded',String(open));
+    });
+    [].slice.call(mnav.querySelectorAll('a')).forEach(function(a){
+      a.addEventListener('click',shutMobile);
+    });
+  }
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.navgroup')) shut(null);
+    if(!e.target.closest('nav')) shutMobile();
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){shut(null);shutMobile();}
+  });
+})();
 </script>
 </body>
 </html>
