@@ -79,33 +79,17 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .pillnav a{font-size:13px;font-weight:600;color:var(--dim);padding:8px 15px;border-radius:22px}
 .pillnav a:hover{background:#fff;color:var(--ink)}
 .navcta{background:var(--ink);color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:22px;font-family:var(--hf)}
-/* intent framework: five stages, each opening to its categories */
-.sec-hint{font-family:var(--hf);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-top:26px}
-.sec-hint + .matrix{margin-top:14px}
-.mitem{border-bottom:1px solid var(--line)}
-.mitem:last-child{border-bottom:none}
-.mitem>.mrow{width:100%;border-bottom:none;border-radius:0;background:none;border:0;font:inherit;color:inherit;text-align:left;cursor:pointer;position:relative;transition:background .15s ease}
-.mitem>.mrow:hover,.mitem.is-open>.mrow{background:var(--soft)}
-.mitem>.mrow .c:last-of-type{padding-right:48px}
-.mitem>.mrow:focus-visible{outline:2px solid var(--mint);outline-offset:-2px}
-.mcats{display:flex;flex-wrap:wrap;gap:6px}
-.mcat{font-family:var(--hf);font-size:12.5px;font-weight:600;color:var(--ink);background:var(--soft);border:1px solid var(--line);border-radius:20px;padding:4px 11px;white-space:nowrap}
-.mitem>.mrow:hover .mcat,.mitem.is-open>.mrow .mcat{background:var(--paper)}
-.mcaret{position:absolute;right:20px;top:50%;width:8px;height:8px;margin-top:-7px;border-right:2px solid var(--faint);border-bottom:2px solid var(--faint);transform:rotate(45deg);transition:transform .2s ease,border-color .2s ease}
-.mitem.is-open .mcaret{transform:rotate(-135deg);margin-top:-2px;border-color:var(--ink)}
-.mpanel{display:none;background:var(--soft);border-top:1px solid var(--line)}
-.mitem.is-open .mpanel{display:block}
-.mp-list{margin:0;padding:20px;display:grid;gap:14px}
-.mp-list>div{display:grid;grid-template-columns:230px 1fr;gap:6px 24px;align-items:baseline}
-.mp-list dt{font-family:var(--hf);font-size:14px;font-weight:600;color:var(--ink)}
-.mp-list dd{margin:0;font-size:14px;line-height:1.6;color:var(--dim);max-width:70ch}
-@media(max-width:920px){
-  .mp-list{padding:16px 18px 20px;gap:16px}
-  .mp-list>div{grid-template-columns:1fr;gap:3px}
-  .mcaret{top:26px;margin-top:0}
-  .mitem.is-open .mcaret{margin-top:4px}
-  .mitem>.mrow .c:last-of-type{padding-right:18px}
-}
+/* intent framework: five stages, categories only */
+.stages{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:44px}
+.stcol{border:1px solid var(--line);border-radius:16px;padding:0 0 18px;overflow:hidden}
+.stcol .top{height:6px}
+.stcol .name{font-family:var(--bf);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:16px 16px 4px}
+.stcol ul{list-style:none;padding:6px 16px 0}
+.stcol li{font-family:var(--hf);font-weight:600;font-size:14px;padding:9px 0;border-top:1px solid var(--line);display:flex;gap:8px;align-items:flex-start}
+.stcol li:first-child{border-top:none}
+.stcol li .d{width:8px;height:8px;border-radius:50%;margin-top:6px;flex-shrink:0}
+@media(max-width:920px){.stages{grid-template-columns:1fr 1fr;gap:12px}}
+@media(max-width:560px){.stages{grid-template-columns:1fr}}
 /* nav dropdowns */
 .navgroup{position:relative}
 .navtop{display:inline-flex;align-items:center;gap:7px;font-family:var(--bf);font-size:13px;font-weight:600;color:var(--dim);background:none;border:0;cursor:pointer;padding:8px 15px;border-radius:22px;line-height:1.4;white-space:nowrap}
@@ -407,48 +391,31 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
 <!-- INTENT MATRIX -->
 <section id="intent"><div class="wrap reveal">
   <div class="sec-k">The intent framework</div>
-  <h2 class="sec-h">The ten questions every buyer asks AI.</h2>
-  <p class="sec-sub">We do not test a bag of random prompts. We score your brand across a structured, journey-mapped taxonomy, so you know exactly which buyer questions name you and which still belong to the category.</p>
-  <p class="sec-hint">Five stages, ten intent categories. Open a stage to see what sits inside it.</p>
-<div class="matrix">
-    <div class="mrow h"><div class="c">Stage</div><div class="c">Intent categories</div><div class="c">What the stage tests</div></div>
-    <div class="mitem">
-      <button class="mrow" type="button" aria-expanded="false"><div class="c"><span class="stagetag" style="color:var(--pink)"><span class="d" style="background:var(--pink)"></span>Awareness</span></div><div class="c"><span class="mcats"><span class="mcat">Discovery &amp; Category</span><span class="mcat">Experience &amp; Lifestyle</span></span></div><div class="c sig">Whether AI names you at all when the buyer has not named you first.</div><span class="mcaret" aria-hidden="true"></span></button>
-      <div class="mpanel"><dl class="mp-list">
-        <div><dt>Discovery &amp; Category</dt><dd>Are you named in the unbranded category answer at all?</dd></div>
-        <div><dt>Experience &amp; Lifestyle</dt><dd>Do you own the experiential signals, not just the functional ones?</dd></div>
-      </dl></div>
-    </div>
-    <div class="mitem">
-      <button class="mrow" type="button" aria-expanded="false"><div class="c"><span class="stagetag" style="color:var(--gold)"><span class="d" style="background:var(--gold)"></span>Consideration</span></div><div class="c"><span class="mcats"><span class="mcat">Cost &amp; Value</span><span class="mcat">Fit &amp; Qualification</span></span></div><div class="c sig">Whether your value and your fit survive the shortlisting.</div><span class="mcaret" aria-hidden="true"></span></button>
-      <div class="mpanel"><dl class="mp-list">
-        <div><dt>Cost &amp; Value</dt><dd>Is there a defensible value narrative the engine can cite?</dd></div>
-        <div><dt>Fit &amp; Qualification</dt><dd>Can AI match your specifics to a buyer's need?</dd></div>
-      </dl></div>
-    </div>
-    <div class="mitem">
-      <button class="mrow" type="button" aria-expanded="false"><div class="c"><span class="stagetag" style="color:var(--mint)"><span class="d" style="background:var(--mint)"></span>Evaluation</span></div><div class="c"><span class="mcats"><span class="mcat">Decision Criteria</span><span class="mcat">Program &amp; Differentiation</span><span class="mcat">Trust, Safety &amp; Reputation</span></span></div><div class="c sig">Whether the criteria, the differentiation and the proof hold up under scrutiny.</div><span class="mcaret" aria-hidden="true"></span></button>
-      <div class="mpanel"><dl class="mp-list">
-        <div><dt>Decision Criteria</dt><dd>Do you shape the criteria the buyer evaluates on?</dd></div>
-        <div><dt>Program &amp; Differentiation</dt><dd>Is your signature strength legible to machines?</dd></div>
-        <div><dt>Trust, Safety &amp; Reputation</dt><dd>Does third-party proof vouch for you?</dd></div>
-      </dl></div>
-    </div>
-    <div class="mitem">
-      <button class="mrow" type="button" aria-expanded="false"><div class="c"><span class="stagetag" style="color:var(--coral)"><span class="d" style="background:var(--coral)"></span>Decision</span></div><div class="c"><span class="mcats"><span class="mcat">Competitive &amp; Comparison</span><span class="mcat">Urgency &amp; Trigger</span></span></div><div class="c sig">Whether you are the answer at the moment of choice.</div><span class="mcaret" aria-hidden="true"></span></button>
-      <div class="mpanel"><dl class="mp-list">
-        <div><dt>Competitive &amp; Comparison</dt><dd>Do you appear in the consideration set, ranked high?</dd></div>
-        <div><dt>Urgency &amp; Trigger</dt><dd>Are you the answer in the time-pressured moment?</dd></div>
-      </dl></div>
-    </div>
-    <div class="mitem">
-      <button class="mrow" type="button" aria-expanded="false"><div class="c"><span class="stagetag" style="color:var(--purple)"><span class="d" style="background:var(--purple)"></span>Authority</span></div><div class="c"><span class="mcats"><span class="mcat">Founder &amp; Authority</span></span></div><div class="c sig">Whether your origin and expertise are indexed as credible.</div><span class="mcaret" aria-hidden="true"></span></button>
-      <div class="mpanel"><dl class="mp-list">
-        <div><dt>Founder &amp; Authority</dt><dd>Is your origin and credibility fully indexed?</dd></div>
-      </dl></div>
-    </div>
+  <h2 class="sec-h">We score the whole buyer journey, not one question.</h2>
+  <p class="sec-sub">AI answers ten different buyer questions, from the first unbranded search to the moment of decision. The Maturity Method scores your brand across all ten intent categories, by engine, so the gaps are exact.</p>
+  <div class="stages">
+    <div class="stcol"><div class="top" style="background:var(--pink)"></div><div class="name" style="color:var(--pink)">Awareness</div><ul>
+      <li><span class="d" style="background:var(--pink)"></span>Discovery &amp; Category</li>
+      <li><span class="d" style="background:var(--pink)"></span>Experience &amp; Lifestyle</li>
+    </ul></div>
+    <div class="stcol"><div class="top" style="background:var(--gold)"></div><div class="name" style="color:var(--gold)">Consideration</div><ul>
+      <li><span class="d" style="background:var(--gold)"></span>Cost &amp; Value</li>
+      <li><span class="d" style="background:var(--gold)"></span>Fit &amp; Qualification</li>
+    </ul></div>
+    <div class="stcol"><div class="top" style="background:var(--mint)"></div><div class="name" style="color:var(--mint)">Evaluation</div><ul>
+      <li><span class="d" style="background:var(--mint)"></span>Decision Criteria</li>
+      <li><span class="d" style="background:var(--mint)"></span>Program &amp; Differentiation</li>
+      <li><span class="d" style="background:var(--mint)"></span>Trust, Safety &amp; Reputation</li>
+    </ul></div>
+    <div class="stcol"><div class="top" style="background:var(--coral)"></div><div class="name" style="color:var(--coral)">Decision</div><ul>
+      <li><span class="d" style="background:var(--coral)"></span>Competitive &amp; Comparison</li>
+      <li><span class="d" style="background:var(--coral)"></span>Urgency &amp; Trigger</li>
+    </ul></div>
+    <div class="stcol"><div class="top" style="background:var(--purple)"></div><div class="name" style="color:var(--purple)">Authority</div><ul>
+      <li><span class="d" style="background:var(--purple)"></span>Founder &amp; Authority</li>
+    </ul></div>
   </div>
-  <p class="mnote">Geographic intent layers onto any category. Ten categories, five engines, one 100-point intent profile per brand.</p>
+  <p class="mnote">Geographic intent (&ldquo;near me,&rdquo; &ldquo;in your city&rdquo;) layers onto any category. Ten categories, five engines, one 100-point intent profile per brand.</p>
 </div></section>
 <!-- HOW WE WORK -->
 <section id="work"><div class="wrap reveal">
@@ -535,12 +502,8 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
   <h2 class="sec-h">Everything a journalist or partner needs.</h2>
   <div class="kitgrid">
     <div>
-      <h3>About SignlLabs (short)</h3>
+      <h3>About SignlLabs</h3>
       <p>SignlLabs is the AI Signaling practice that makes sure the machines name your brand first. Using the Maturity Method, a scored framework by Erika Hanafin Austria, SignlLabs measures how recommendable a brand is across ChatGPT, Claude, Perplexity, Gemini, and Copilot, then engineers the lift.</p>
-      <h3>About SignlLabs (long)</h3>
-      <p>SignlLabs is an agency-led AI Signaling practice powered by the Maturity Method, a zero-to-one-hundred methodology that scores how recommendable a brand is to AI across six dimensions and ten intent categories. Unlike monitoring dashboards, SignlLabs pairs the measurement with full-service execution: earned media, schema, content, and source seeding, re-scored every quarter. SignlLabs was founded by Erika Hanafin Austria, creator of the AI Signaling framework and a keynote speaker on the shift from search to answers.</p>
-      <h3>Founder</h3>
-      <p>Erika Hanafin Austria is the creator of the Maturity Method and the AI Signaling framework, President and Founder of SignlLabs, and Co-Founder of NEON ID. She is a former CEO of HeyMama and a two-time Top 50 Women Leaders of Virginia honoree, with press in Fortune, Adweek, Inc., and Advertising Week. More at erikahanafin.com.</p>
     </div>
     <div>
       <div class="lockup">
@@ -646,16 +609,6 @@ window.addEventListener('load',()=>{setTimeout(()=>{document.querySelectorAll('#
       a.addEventListener('click',shutMobile);
     });
   }
-  /* intent framework stages */
-  [].slice.call(document.querySelectorAll('.mitem>.mrow')).forEach(function(btn){
-    var item=btn.parentNode;
-    btn.addEventListener('click',function(){
-      var open=!item.classList.contains('is-open');
-      item.classList.toggle('is-open',open);
-      btn.setAttribute('aria-expanded',String(open));
-    });
-  });
-
   document.addEventListener('click',function(e){
     if(!e.target.closest('.navgroup')) shut(null);
     if(!e.target.closest('nav')) shutMobile();
