@@ -79,6 +79,31 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .pillnav a{font-size:13px;font-weight:600;color:var(--dim);padding:8px 15px;border-radius:22px}
 .pillnav a:hover{background:#fff;color:var(--ink)}
 .navcta{background:var(--ink);color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:22px;font-family:var(--hf)}
+/* intent framework: rows open to the buyer prompts behind each category */
+.sec-hint{font-family:var(--hf);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-top:26px}
+.sec-hint + .matrix{margin-top:14px}
+.mitem{border-bottom:1px solid var(--line)}
+.mitem:last-child{border-bottom:none}
+.mitem>.mrow{width:100%;border-bottom:none;border-radius:0;background:none;border:0;font:inherit;color:inherit;text-align:left;cursor:pointer;position:relative;transition:background .15s ease}
+.mitem>.mrow:hover,.mitem.is-open>.mrow{background:var(--soft)}
+.mitem>.mrow .c:last-child{padding-right:48px}
+.mitem>.mrow:focus-visible{outline:2px solid var(--mint);outline-offset:-2px}
+.mcaret{position:absolute;right:20px;top:50%;width:8px;height:8px;margin-top:-7px;border-right:2px solid var(--faint);border-bottom:2px solid var(--faint);transform:rotate(45deg);transition:transform .2s ease,border-color .2s ease}
+.mitem.is-open .mcaret{transform:rotate(-135deg);margin-top:-2px;border-color:var(--ink)}
+.mpanel{display:none;background:var(--soft);border-top:1px solid var(--line)}
+.mitem.is-open .mpanel{display:block}
+.mp-grid{display:grid;grid-template-columns:180px 1fr;gap:20px 24px;padding:22px 20px 26px}
+.mp-lab{font-family:var(--hf);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--faint);padding-top:4px}
+.mp-prompts{display:flex;flex-direction:column;gap:8px;margin:0;padding:0}
+.mp-prompts li{list-style:none;font-size:14px;line-height:1.5;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:9px 13px}
+.mp-score{font-size:14px;line-height:1.65;color:var(--dim);max-width:70ch}
+@media(max-width:920px){
+  .mp-grid{grid-template-columns:1fr;gap:8px 0;padding:18px 18px 22px}
+  .mp-lab{padding-top:10px}
+  .mcaret{top:26px;margin-top:0}
+  .mitem.is-open .mcaret{margin-top:4px}
+  .mitem>.mrow .c:last-child{padding-right:18px}
+}
 /* nav dropdowns */
 .navgroup{position:relative}
 .navtop{display:inline-flex;align-items:center;gap:7px;font-family:var(--bf);font-size:13px;font-weight:600;color:var(--dim);background:none;border:0;cursor:pointer;padding:8px 15px;border-radius:22px;line-height:1.4;white-space:nowrap}
@@ -382,18 +407,139 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
   <div class="sec-k">The intent framework</div>
   <h2 class="sec-h">The ten questions every buyer asks AI.</h2>
   <p class="sec-sub">We do not test a bag of random prompts. We score your brand across a structured, journey-mapped taxonomy, so you know exactly which buyer questions name you and which still belong to the category.</p>
-  <div class="matrix">
+  <p class="sec-hint">Open any row to see the buyer prompts behind it.</p>
+<div class="matrix">
     <div class="mrow h"><div class="c">Stage</div><div class="c">Intent category</div><div class="c">The signal it tests</div></div>
-    <div class="mrow"><div class="c"><span class="stagetag" style="color:var(--pink)"><span class="d" style="background:var(--pink)"></span>Awareness</span></div><div class="c"><span class="catname">Discovery &amp; Category</span></div><div class="c sig">Are you named in the unbranded category answer at all?</div></div>
-    <div class="mrow"><div class="c"><span class="stagetag" style="color:var(--pink)"><span class="d" style="background:var(--pink)"></span>Awareness</span></div><div class="c"><span class="catname">Experience &amp; Lifestyle</span></div><div class="c sig">Do you own the experiential signals, not just the functional ones?</div></div>
-    <div class="mrow"><div class="c"><span class="stagetag" style="color:var(--gold)"><span class="d" style="background:var(--gold)"></span>Consideration</span></div><div class="c"><span class="catname">Cost &amp; Value</span></div><div class="c sig">Is there a defensible value narrative the engine can cite?</div></div>
-    <div class="mrow"><div class="c"><span class="stagetag" style="color:var(--gold)"><span class="d" style="background:var(--gold)"></span>Consideration</span></div><div class="c"><span class="catname">Fit &amp; Qualification</span></div><div class="c sig">Can AI match your specifics to a buyer's need?</div></div>
-    <div class="mrow"><div class="c"><span class="stagetag" style="color:var(--mint)"><span class="d" style="background:var(--mint)"></span>Evaluation</span></div><div class="c"><span class="catname">Decision Criteria</span></div><div class="c sig">Do you shape the criteria the buyer evaluates on?</div></div>
-    <div class="mrow"><div class="c"><span class="stagetag" style="color:var(--mint)"><span class="d" style="background:var(--mint)"></span>Evaluation</span></div><div class="c"><span class="catname">Program &amp; Differentiation</span></div><div class="c sig">Is your signature strength legible to machines?</div></div>
-    <div class="mrow"><div class="c"><span class="stagetag" style="color:var(--mint)"><span class="d" style="background:var(--mint)"></span>Evaluation</span></div><div class="c"><span class="catname">Trust, Safety &amp; Reputation</span></div><div class="c sig">Does third-party proof vouch for you?</div></div>
-    <div class="mrow"><div class="c"><span class="stagetag" style="color:var(--coral)"><span class="d" style="background:var(--coral)"></span>Decision</span></div><div class="c"><span class="catname">Competitive &amp; Comparison</span></div><div class="c sig">Do you appear in the consideration set, ranked high?</div></div>
-    <div class="mrow"><div class="c"><span class="stagetag" style="color:var(--coral)"><span class="d" style="background:var(--coral)"></span>Decision</span></div><div class="c"><span class="catname">Urgency &amp; Trigger</span></div><div class="c sig">Are you the answer in the time-pressured moment?</div></div>
-    <div class="mrow"><div class="c"><span class="stagetag" style="color:var(--purple)"><span class="d" style="background:var(--purple)"></span>Authority</span></div><div class="c"><span class="catname">Founder &amp; Authority</span></div><div class="c sig">Is your origin and credibility fully indexed?</div></div>
+    <div class="mitem">
+      <button class="mrow" type="button" aria-expanded="false"><div class="c"><span class="stagetag" style="color:var(--pink)"><span class="d" style="background:var(--pink)"></span>Awareness</span></div><div class="c"><span class="catname">Discovery &amp; Category</span></div><div class="c sig">Are you named in the unbranded category answer at all?</div><span class="mcaret" aria-hidden="true"></span></button>
+      <div class="mpanel"><div class="mp-grid">
+        <div class="mp-lab">Example prompts</div>
+        <ul class="mp-prompts">
+          <li>&ldquo;What are the best [category] brands right now?&rdquo;</li>
+          <li>&ldquo;Who should I look at if I need [outcome]?&rdquo;</li>
+          <li>&ldquo;Top [category] companies in 2026&rdquo;</li>
+        </ul>
+        <div class="mp-lab">What we score</div>
+        <p class="mp-score">Whether the brand is named unprompted in the unbranded category answer, where it lands in the order, and which sources the engine leans on to build that list.</p>
+      </div></div>
+    </div>
+    <div class="mitem">
+      <button class="mrow" type="button" aria-expanded="false"><div class="c"><span class="stagetag" style="color:var(--pink)"><span class="d" style="background:var(--pink)"></span>Awareness</span></div><div class="c"><span class="catname">Experience &amp; Lifestyle</span></div><div class="c sig">Do you own the experiential signals, not just the functional ones?</div><span class="mcaret" aria-hidden="true"></span></button>
+      <div class="mpanel"><div class="mp-grid">
+        <div class="mp-lab">Example prompts</div>
+        <ul class="mp-prompts">
+          <li>&ldquo;What is it actually like to use [category] day to day?&rdquo;</li>
+          <li>&ldquo;Best [category] for someone who [lifestyle]?&rdquo;</li>
+          <li>&ldquo;Which [category] brand fits [occasion]?&rdquo;</li>
+        </ul>
+        <div class="mp-lab">What we score</div>
+        <p class="mp-score">Whether experiential language &mdash; feel, routine, occasion, who it is for &mdash; attaches to the brand at all, or whether only the spec sheet is legible.</p>
+      </div></div>
+    </div>
+    <div class="mitem">
+      <button class="mrow" type="button" aria-expanded="false"><div class="c"><span class="stagetag" style="color:var(--gold)"><span class="d" style="background:var(--gold)"></span>Consideration</span></div><div class="c"><span class="catname">Cost &amp; Value</span></div><div class="c sig">Is there a defensible value narrative the engine can cite?</div><span class="mcaret" aria-hidden="true"></span></button>
+      <div class="mpanel"><div class="mp-grid">
+        <div class="mp-lab">Example prompts</div>
+        <ul class="mp-prompts">
+          <li>&ldquo;Is [brand] worth the price?&rdquo;</li>
+          <li>&ldquo;Cheaper alternatives to [brand]?&rdquo;</li>
+          <li>&ldquo;What should I expect to pay for [category]?&rdquo;</li>
+        </ul>
+        <div class="mp-lab">What we score</div>
+        <p class="mp-score">Whether a defensible value narrative exists in citable form, or whether the engine has nothing to work with but the price and reaches for a competitor to justify it.</p>
+      </div></div>
+    </div>
+    <div class="mitem">
+      <button class="mrow" type="button" aria-expanded="false"><div class="c"><span class="stagetag" style="color:var(--gold)"><span class="d" style="background:var(--gold)"></span>Consideration</span></div><div class="c"><span class="catname">Fit &amp; Qualification</span></div><div class="c sig">Can AI match your specifics to a buyer's need?</div><span class="mcaret" aria-hidden="true"></span></button>
+      <div class="mpanel"><div class="mp-grid">
+        <div class="mp-lab">Example prompts</div>
+        <ul class="mp-prompts">
+          <li>&ldquo;Is [brand] right for [situation]?&rdquo;</li>
+          <li>&ldquo;Does [brand] work for [use case or constraint]?&rdquo;</li>
+          <li>&ldquo;Which [category] for [segment]?&rdquo;</li>
+        </ul>
+        <div class="mp-lab">What we score</div>
+        <p class="mp-score">Whether the specifics &mdash; sizes, indications, requirements, eligibility &mdash; are structured clearly enough for an engine to match them to a buyer&rsquo;s need.</p>
+      </div></div>
+    </div>
+    <div class="mitem">
+      <button class="mrow" type="button" aria-expanded="false"><div class="c"><span class="stagetag" style="color:var(--mint)"><span class="d" style="background:var(--mint)"></span>Evaluation</span></div><div class="c"><span class="catname">Decision Criteria</span></div><div class="c sig">Do you shape the criteria the buyer evaluates on?</div><span class="mcaret" aria-hidden="true"></span></button>
+      <div class="mpanel"><div class="mp-grid">
+        <div class="mp-lab">Example prompts</div>
+        <ul class="mp-prompts">
+          <li>&ldquo;What should I look for when choosing a [category]?&rdquo;</li>
+          <li>&ldquo;How do I compare [category] options?&rdquo;</li>
+          <li>&ldquo;What matters most in [category]?&rdquo;</li>
+        </ul>
+        <div class="mp-lab">What we score</div>
+        <p class="mp-score">Whether the brand&rsquo;s own framing shapes the criteria list the engine returns. Own the checklist and you are being evaluated on your terms.</p>
+      </div></div>
+    </div>
+    <div class="mitem">
+      <button class="mrow" type="button" aria-expanded="false"><div class="c"><span class="stagetag" style="color:var(--mint)"><span class="d" style="background:var(--mint)"></span>Evaluation</span></div><div class="c"><span class="catname">Program &amp; Differentiation</span></div><div class="c sig">Is your signature strength legible to machines?</div><span class="mcaret" aria-hidden="true"></span></button>
+      <div class="mpanel"><div class="mp-grid">
+        <div class="mp-lab">Example prompts</div>
+        <ul class="mp-prompts">
+          <li>&ldquo;What makes [brand] different?&rdquo;</li>
+          <li>&ldquo;Who leads on [attribute]?&rdquo;</li>
+          <li>&ldquo;Which [category] brand is best at [capability]?&rdquo;</li>
+        </ul>
+        <div class="mp-lab">What we score</div>
+        <p class="mp-score">Whether the signature strength is legible to machines: named plainly, evidenced, and repeated consistently across independent sources.</p>
+      </div></div>
+    </div>
+    <div class="mitem">
+      <button class="mrow" type="button" aria-expanded="false"><div class="c"><span class="stagetag" style="color:var(--mint)"><span class="d" style="background:var(--mint)"></span>Evaluation</span></div><div class="c"><span class="catname">Trust, Safety &amp; Reputation</span></div><div class="c sig">Does third-party proof vouch for you?</div><span class="mcaret" aria-hidden="true"></span></button>
+      <div class="mpanel"><div class="mp-grid">
+        <div class="mp-lab">Example prompts</div>
+        <ul class="mp-prompts">
+          <li>&ldquo;Is [brand] legitimate and reliable?&rdquo;</li>
+          <li>&ldquo;Are there complaints about [brand]?&rdquo;</li>
+          <li>&ldquo;Has [brand] had recalls, suits or safety issues?&rdquo;</li>
+        </ul>
+        <div class="mp-lab">What we score</div>
+        <p class="mp-score">Whether independent third-party proof &mdash; press, reviews, filings, standards bodies &mdash; vouches for the brand, and what surfaces when it does not.</p>
+      </div></div>
+    </div>
+    <div class="mitem">
+      <button class="mrow" type="button" aria-expanded="false"><div class="c"><span class="stagetag" style="color:var(--coral)"><span class="d" style="background:var(--coral)"></span>Decision</span></div><div class="c"><span class="catname">Competitive &amp; Comparison</span></div><div class="c sig">Do you appear in the consideration set, ranked high?</div><span class="mcaret" aria-hidden="true"></span></button>
+      <div class="mpanel"><div class="mp-grid">
+        <div class="mp-lab">Example prompts</div>
+        <ul class="mp-prompts">
+          <li>&ldquo;[brand] vs [competitor]&rdquo;</li>
+          <li>&ldquo;Best [category]: give me a shortlist&rdquo;</li>
+          <li>&ldquo;Which is better for [need]?&rdquo;</li>
+        </ul>
+        <div class="mp-lab">What we score</div>
+        <p class="mp-score">Whether the brand makes the consideration set, how high it ranks, and which rival the engine reaches for when it needs a contrast.</p>
+      </div></div>
+    </div>
+    <div class="mitem">
+      <button class="mrow" type="button" aria-expanded="false"><div class="c"><span class="stagetag" style="color:var(--coral)"><span class="d" style="background:var(--coral)"></span>Decision</span></div><div class="c"><span class="catname">Urgency &amp; Trigger</span></div><div class="c sig">Are you the answer in the time-pressured moment?</div><span class="mcaret" aria-hidden="true"></span></button>
+      <div class="mpanel"><div class="mp-grid">
+        <div class="mp-lab">Example prompts</div>
+        <ul class="mp-prompts">
+          <li>&ldquo;I need [category] today&rdquo;</li>
+          <li>&ldquo;Fastest way to [outcome]&rdquo;</li>
+          <li>&ldquo;What do I do right now if [problem]?&rdquo;</li>
+        </ul>
+        <div class="mp-lab">What we score</div>
+        <p class="mp-score">Whether the brand is the answer in the time-pressured moment &mdash; the highest intent query in the set, and the one most often lost to whoever documented it first.</p>
+      </div></div>
+    </div>
+    <div class="mitem">
+      <button class="mrow" type="button" aria-expanded="false"><div class="c"><span class="stagetag" style="color:var(--purple)"><span class="d" style="background:var(--purple)"></span>Authority</span></div><div class="c"><span class="catname">Founder &amp; Authority</span></div><div class="c sig">Is your origin and credibility fully indexed?</div><span class="mcaret" aria-hidden="true"></span></button>
+      <div class="mpanel"><div class="mp-grid">
+        <div class="mp-lab">Example prompts</div>
+        <ul class="mp-prompts">
+          <li>&ldquo;Who founded [brand]?&rdquo;</li>
+          <li>&ldquo;Who is the expert on [topic]?&rdquo;</li>
+          <li>&ldquo;Is [person] credible on [subject]?&rdquo;</li>
+        </ul>
+        <div class="mp-lab">What we score</div>
+        <p class="mp-score">Whether origin, leadership and subject-matter expertise are indexed and citable, so the engine can attribute authority to a name rather than to the category.</p>
+      </div></div>
+    </div>
   </div>
   <p class="mnote">Geographic intent layers onto any category. Ten categories, five engines, one 100-point intent profile per brand.</p>
 </div></section>
@@ -593,6 +739,16 @@ window.addEventListener('load',()=>{setTimeout(()=>{document.querySelectorAll('#
       a.addEventListener('click',shutMobile);
     });
   }
+  /* intent framework rows */
+  [].slice.call(document.querySelectorAll('.mitem>.mrow')).forEach(function(btn){
+    var item=btn.parentNode;
+    btn.addEventListener('click',function(){
+      var open=!item.classList.contains('is-open');
+      item.classList.toggle('is-open',open);
+      btn.setAttribute('aria-expanded',String(open));
+    });
+  });
+
   document.addEventListener('click',function(e){
     if(!e.target.closest('.navgroup')) shut(null);
     if(!e.target.closest('nav')) shutMobile();
