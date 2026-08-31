@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0E1622">
 <title>The Answer Economy &middot; SignlLabs white paper</title>
 <meta name="description" content="How AI decides which brands to recommend, and how to be the one it names. The 2026 SignlLabs white paper on AI Signaling, the five answer engines, and the Maturity Method.">
 <link rel="canonical" href="https://signllabs.ai/whitepaper.html">
@@ -317,6 +322,50 @@ details.faq-item[open] summary i::after{transform:scaleY(0)}
 details.faq-item[open] summary i::before{background:var(--mint)}
 details.faq-item .faq-a{padding:0 44px 22px 2px}
 details.faq-item .faq-a p{font-size:15.5px;color:var(--dim);line-height:1.65;margin:0}
+/* proof: two cases, two colour identities, considerably louder */
+.cases .case{position:relative;isolation:isolate}
+.cases .case::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:20px;opacity:.9}
+.cases .case:nth-child(1)::after{background:
+  radial-gradient(120% 90% at 8% 0%, rgba(15,217,160,.30) 0%, rgba(15,217,160,0) 58%),
+  radial-gradient(110% 85% at 100% 100%, rgba(61,123,255,.28) 0%, rgba(61,123,255,0) 60%),
+  linear-gradient(160deg,#10202C 0%,#0B1520 100%)}
+.cases .case:nth-child(2)::after{background:
+  radial-gradient(120% 90% at 8% 0%, rgba(255,61,110,.30) 0%, rgba(255,61,110,0) 58%),
+  radial-gradient(110% 85% at 100% 100%, rgba(124,92,255,.30) 0%, rgba(124,92,255,0) 60%),
+  linear-gradient(160deg,#1C1220 0%,#120C18 100%)}
+.cases .case{background:transparent;border-color:rgba(255,255,255,.14)}
+.cases .case::before{height:6px}
+.cases .case:nth-child(1)::before{background:linear-gradient(90deg,var(--mint),var(--sky))}
+.cases .case:nth-child(2)::before{background:linear-gradient(90deg,var(--pink),var(--purple))}
+/* kicker becomes a filled chip */
+.cases .case-kicker{display:flex;align-items:center;gap:10px;font-family:var(--bf);font-size:11.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:rgba(255,255,255,.72);margin-bottom:14px}
+.cases .case-kicker span{font-size:11.5px;letter-spacing:1.4px;padding:5px 11px;border-radius:20px;color:#0B1520}
+.cases .case:nth-child(1) .case-kicker span{background:var(--mint)}
+.cases .case:nth-child(2) .case-kicker span{background:var(--pink);color:#fff}
+.cases .case h3{font-size:25px;letter-spacing:-.4px}
+/* stat tiles: tinted, ruled, bigger figures */
+.cases .case .pf{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.10);border-left-width:3px;border-radius:12px;padding:20px 18px}
+.cases .case .pf .n{font-size:38px;line-height:1;font-weight:700;letter-spacing:-1px}
+.cases .case .pf .t{font-size:12.5px;color:rgba(255,255,255,.66);margin-top:9px}
+.cases .case:nth-child(1) .pf--a{border-left-color:var(--mint)}
+.cases .case:nth-child(1) .pf--a .n{color:var(--mint)}
+.cases .case:nth-child(1) .pf--b{border-left-color:var(--sky)}
+.cases .case:nth-child(1) .pf--b .n{color:var(--sky)}
+.cases .case:nth-child(1) .pf--c{border-left-color:var(--gold)}
+.cases .case:nth-child(1) .pf--c .n{color:var(--gold)}
+.cases .case:nth-child(1) .pf--d{border-left-color:rgba(255,255,255,.55)}
+.cases .case:nth-child(1) .pf--d .n{color:#F2F6FB}
+.cases .case:nth-child(2) .pf--a{border-left-color:var(--pink)}
+.cases .case:nth-child(2) .pf--a .n{color:var(--pink)}
+.cases .case:nth-child(2) .pf--b{border-left-color:var(--purple)}
+.cases .case:nth-child(2) .pf--b .n{color:#A78BFF}
+.cases .case:nth-child(2) .pf--c{border-left-color:var(--coral)}
+.cases .case:nth-child(2) .pf--c .n{color:var(--coral)}
+.cases .case:nth-child(2) .pf--d{border-left-color:var(--gold)}
+.cases .case:nth-child(2) .pf--d .n{color:var(--gold)}
+.cases .case .case-desc{color:rgba(255,255,255,.80)}
+.cases .case .fine{color:rgba(255,255,255,.58);border-top:1px solid rgba(255,255,255,.12)}
+@media(max-width:920px){.cases .case .pf .n{font-size:33px}}
 </style>
 
 <style>
@@ -433,31 +482,6 @@ details.faq-item .faq-a p{font-size:15.5px;color:var(--dim);line-height:1.65;mar
   </div>
 </div></div>
 </nav>
-<div class="mobilenav" id="mobilenav"><div class="wrap">
-  <div class="mnav-group"><div class="mnav-label">The instrument</div>
-    <a href="#what">What is AI signaling</a>
-    <a href="#instrument">Six dimensions</a>
-    <a href="#ladder">The ladder</a>
-    <a href="#intent">Intent framework</a>
-    <a href="#work">The cadence</a>
-  </div>
-  <div class="mnav-group"><div class="mnav-label">Proof</div>
-    <a href="#proof">Case studies</a>
-    <a href="#why">Why SignlLabs</a>
-    <a href="#difference">SEO vs AEO vs AI Signaling</a>
-  </div>
-  <div class="mnav-group"><div class="mnav-label">Resources</div>
-    <a href="/whitepaper.html">The Answer Economy</a>
-    <a href="/news.html">Newsroom</a>
-    <a href="#field-notes">Field notes</a>
-    <a href="#kit">Media kit</a>
-    <a href="#faq">FAQ</a>
-  </div>
-  <div class="mnav-group"><div class="mnav-label">More</div>
-    <a href="https://www.gcw.agency/" target="_blank" rel="noopener">GCW Agency &#8599;</a>
-    <a href="mailto:erika@signllabs.ai">Contact us</a>
-  </div>
-</div></div>
 <main>
 <section class="page-hd"><div class="wrap reveal">
   <div class="sec-k">White paper &middot; 2026</div>
