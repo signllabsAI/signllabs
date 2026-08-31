@@ -379,6 +379,31 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
   </div>
 </div></div>
 </nav>
+<div class="mobilenav" id="mobilenav"><div class="wrap">
+  <div class="mnav-group"><div class="mnav-label">The instrument</div>
+    <a href="#what">What is AI signaling</a>
+    <a href="#instrument">Six dimensions</a>
+    <a href="#ladder">The ladder</a>
+    <a href="#intent">Intent framework</a>
+    <a href="#work">The cadence</a>
+  </div>
+  <div class="mnav-group"><div class="mnav-label">Proof</div>
+    <a href="#proof">Case studies</a>
+    <a href="#why">Why SignlLabs</a>
+    <a href="#difference">SEO vs AEO vs AI Signaling</a>
+  </div>
+  <div class="mnav-group"><div class="mnav-label">Resources</div>
+    <a href="/whitepaper.html">The Answer Economy</a>
+    <a href="/news.html">Newsroom</a>
+    <a href="#field-notes">Field notes</a>
+    <a href="#kit">Media kit</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div class="mnav-group"><div class="mnav-label">More</div>
+    <a href="https://www.gcw.agency/" target="_blank" rel="noopener">GCW Agency &#8599;</a>
+    <a href="mailto:erika@signllabs.ai">Contact us</a>
+  </div>
+</div></div>
 <main>
 <section class="page-hd"><div class="wrap reveal">
   <div class="sec-k">Newsroom</div>
@@ -429,6 +454,13 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
   <div style="margin-top:8px">Powered by the Maturity Method™</div>
   <div style="margin-top:8px">© 2026 SignlLabs LLC. Maturity Method™ and the Intent Category Framework™ are trademarks of SignlLabs LLC.</div>
 </footer>
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');
+  e.target.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w+'%');}})},{threshold:.12});
+document.querySelectorAll('.reveal,.panel').forEach(el=>io.observe(el));
+// animate hero panel bars on load
+window.addEventListener('load',()=>{setTimeout(()=>{document.querySelectorAll('#heropanel .fill').forEach(f=>f.style.width=f.dataset.w+'%');},250);});
+</script>
 <script>
 /* nav: hover or click to open, Escape / outside click / item click to close */
 (function(){

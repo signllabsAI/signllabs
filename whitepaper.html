@@ -379,13 +379,38 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
   </div>
 </div></div>
 </nav>
+<div class="mobilenav" id="mobilenav"><div class="wrap">
+  <div class="mnav-group"><div class="mnav-label">The instrument</div>
+    <a href="#what">What is AI signaling</a>
+    <a href="#instrument">Six dimensions</a>
+    <a href="#ladder">The ladder</a>
+    <a href="#intent">Intent framework</a>
+    <a href="#work">The cadence</a>
+  </div>
+  <div class="mnav-group"><div class="mnav-label">Proof</div>
+    <a href="#proof">Case studies</a>
+    <a href="#why">Why SignlLabs</a>
+    <a href="#difference">SEO vs AEO vs AI Signaling</a>
+  </div>
+  <div class="mnav-group"><div class="mnav-label">Resources</div>
+    <a href="/whitepaper.html">The Answer Economy</a>
+    <a href="/news.html">Newsroom</a>
+    <a href="#field-notes">Field notes</a>
+    <a href="#kit">Media kit</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div class="mnav-group"><div class="mnav-label">More</div>
+    <a href="https://www.gcw.agency/" target="_blank" rel="noopener">GCW Agency &#8599;</a>
+    <a href="mailto:erika@signllabs.ai">Contact us</a>
+  </div>
+</div></div>
 <main>
 <section class="page-hd"><div class="wrap reveal">
   <div class="sec-k">White paper &middot; 2026</div>
   <h1>The Answer Economy</h1>
   <p class="lede">How AI decides which brands to recommend, and how to be the one it names. Ten sections on the shift from search to answers, what earns a citation on each of the five answer engines, and the Maturity Method that measures it.</p>
 </div></section>
-<section style="padding-top:0;padding-bottom:96px"><div class="wrap reveal"><div class="wpgrid">
+<section><div class="wrap reveal"><div class="wpgrid">
   <div>
     <div class="wpstats">
       <div class="wpstat"><div class="n mint">82&ndash;84%</div><div class="t">of AI citations trace to earned and third-party media</div></div>
@@ -437,6 +462,13 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
   <div style="margin-top:8px">Powered by the Maturity Method™</div>
   <div style="margin-top:8px">© 2026 SignlLabs LLC. Maturity Method™ and the Intent Category Framework™ are trademarks of SignlLabs LLC.</div>
 </footer>
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');
+  e.target.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w+'%');}})},{threshold:.12});
+document.querySelectorAll('.reveal,.panel').forEach(el=>io.observe(el));
+// animate hero panel bars on load
+window.addEventListener('load',()=>{setTimeout(()=>{document.querySelectorAll('#heropanel .fill').forEach(f=>f.style.width=f.dataset.w+'%');},250);});
+</script>
 <script>
 /* nav: hover or click to open, Escape / outside click / item click to close */
 (function(){
@@ -496,36 +528,6 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
   });
   document.addEventListener('keydown',function(e){
     if(e.key==='Escape'){shut(null);shutMobile();}
-  });
-})();
-</script>
-
-<script>
-/* whitepaper gate: capture the lead, then always deliver the paper */
-(function(){
-  var f=document.getElementById('wpform');
-  if(!f) return;
-  var fields=document.getElementById('wpfields'), ok=document.getElementById('wpok'),
-      err=document.getElementById('wperr'), btn=document.getElementById('wpsubmit');
-  function deliver(){ fields.classList.add('is-hidden'); ok.classList.remove('is-hidden'); }
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    var email=(document.getElementById('wp-email').value||'').trim();
-    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
-      err.textContent='Please enter a valid email address.';
-      err.classList.remove('is-hidden'); return;
-    }
-    err.classList.add('is-hidden');
-    btn.disabled=true; btn.textContent='Sending\u2026';
-    var payload={ name:(document.getElementById('wp-name').value||'').trim(),
-                  email:email,
-                  company:(document.getElementById('wp-company').value||'').trim(),
-                  paper:'The Answer Economy 2026' };
-    var done=false, finish=function(){ if(!done){ done=true; deliver(); } };
-    setTimeout(finish, 6000);   /* never hold the paper hostage to the endpoint */
-    fetch('/api/whitepaper', {method:'POST', headers:{'Content-Type':'application/json'},
-                              body:JSON.stringify(payload)})
-      .then(finish).catch(finish);
   });
 })();
 </script>
