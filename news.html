@@ -267,8 +267,62 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
   .two{grid-template-columns:1fr;gap:32px}
   .sa3{grid-template-columns:1fr}
 }
+/* white paper modal */
+.wpm{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px}
+.wpm.is-open{display:flex}
+.wpm__veil{position:absolute;inset:0;background:rgba(14,22,34,.62);backdrop-filter:blur(3px)}
+.wpm__card{position:relative;width:100%;max-width:920px;max-height:90vh;overflow:auto;background:var(--paper);border-radius:22px;box-shadow:0 40px 90px rgba(14,22,34,.34);display:grid;grid-template-columns:1fr .92fr}
+.wpm__blurb{padding:40px 34px}
+.wpm__blurb .sec-k{margin-bottom:10px}
+.wpm__blurb h3{font-family:var(--hf);font-size:29px;font-weight:700;line-height:1.15;margin-bottom:12px}
+.wpm__blurb p{font-size:15px;color:var(--dim);margin-bottom:16px}
+.wpm__toc{list-style:none;font-size:13.5px;color:var(--dim)}
+.wpm__toc li{padding:6px 0;border-top:1px solid var(--line)}
+.wpm__form{background:var(--nav);color:var(--navtext);padding:40px 34px;border-radius:0 22px 22px 0}
+.wpm__form h4{font-family:var(--hf);font-size:20px;font-weight:700;margin-bottom:8px}
+.wpm__form .sm{font-size:13.5px;color:var(--navdim);margin-bottom:20px}
+.wpm__form label{display:block;font-family:var(--bf);font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--navdim);margin:14px 0 6px}
+.wpm__form input{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--navline);color:var(--navtext);border-radius:11px;padding:12px 14px;font-family:var(--bf);font-size:15px}
+.wpm__form input:focus{outline:none;border-color:var(--mint)}
+.wpm__form button{width:100%;margin-top:22px;background:var(--mint);color:var(--nav);border:0;border-radius:24px;padding:14px 20px;font-family:var(--hf);font-weight:700;font-size:15px;cursor:pointer}
+.wpm__form button[disabled]{opacity:.6;cursor:default}
+.wpm__fine{font-size:12px;color:var(--navdim);margin-top:14px;line-height:1.5}
+.wpm__err{color:var(--pink);font-size:13px;margin-top:10px}
+.wpm__ok{text-align:center;padding:14px 0}
+.wpm__ok h4{margin-bottom:8px}
+.wpm__ok p{font-size:14px;color:var(--navdim);margin-bottom:20px}
+.wpm__ok a{display:inline-block;background:var(--mint);color:var(--nav);border-radius:24px;padding:13px 24px;font-family:var(--hf);font-weight:700;font-size:15px}
+.wpm__x{position:absolute;top:14px;right:16px;width:34px;height:34px;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:19px;line-height:1;cursor:pointer;z-index:2}
+.is-hidden{display:none!important}
+body.wpm-lock{overflow:hidden}
+@media(max-width:860px){
+  .wpm__card{grid-template-columns:1fr;max-height:94vh}
+  .wpm__form{border-radius:0 0 22px 22px}
+  .wpm__blurb{padding:34px 24px 8px}
+  .wpm__form{padding:28px 24px 34px}
+  .wpm__x{background:rgba(14,22,34,.5)}
+}
+/* faq accordion */
+.faq-list{margin-top:34px;border-top:1px solid var(--line)}
+details.faq-item{border-bottom:1px solid var(--line);padding:0}
+details.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 2px;font-family:var(--hf);font-weight:600;font-size:17.5px;color:var(--ink)}
+details.faq-item summary::-webkit-details-marker{display:none}
+details.faq-item summary:hover{color:var(--dim)}
+details.faq-item summary i{position:relative;flex:0 0 20px;width:20px;height:20px}
+details.faq-item summary i::before,details.faq-item summary i::after{content:"";position:absolute;background:var(--faint);transition:transform .22s ease,background .22s ease}
+details.faq-item summary i::before{left:0;top:9px;width:20px;height:2px}
+details.faq-item summary i::after{left:9px;top:0;width:2px;height:20px}
+details.faq-item[open] summary{color:var(--ink)}
+details.faq-item[open] summary i::after{transform:scaleY(0)}
+details.faq-item[open] summary i::before{background:var(--mint)}
+details.faq-item .faq-a{padding:0 44px 22px 2px}
+details.faq-item .faq-a p{font-size:15.5px;color:var(--dim);line-height:1.65;margin:0}
 </style>
 
+<style>
+.release .rboiler{font-family:var(--bf);font-size:11.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--faint);margin:26px 0 8px}
+.release .rb{font-size:14px;color:var(--dim);line-height:1.65;margin:0}
+</style>
 <style>
 /* whitepaper + newsroom */
 .page-hd{padding:64px 0 8px}
@@ -316,7 +370,7 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
 
 </head>
 <body>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://signllabs.ai/news.html","name":"SignlLabs newsroom","isPartOf":{"@id":"https://signllabs.ai/#website"},"about":{"@id":"https://signllabs.ai/#ai-signaling"},"hasPart":[{"@id":"https://signllabs.ai/#news-launch"},{"@id":"https://signllabs.ai/#news-licensing"},{"@id":"https://signllabs.ai/#news-advisory"}]},{"@type":"NewsArticle","@id":"https://signllabs.ai/#news-launch","headline":"GCW Launches SignlLabs™, a Proprietary AI Signaling Practice Built to Earn Brand Visibility Across Artificial Intelligence Platforms","description":"New practice gives clients a measurable path to being recommended by ChatGPT, Gemini, Claude, Copilot and Perplexity, built for AI rather than retrofitted from SEO.","url":"https://signllabs.ai/news.html#launch","datePublished":"2026-08-31","dateline":"NEW YORK, N.Y.","inLanguage":"en-US","author":{"@id":"https://signllabs.ai/#gcw"},"publisher":{"@id":"https://signllabs.ai/#gcw"},"about":[{"@id":"https://signllabs.ai/#ai-signaling"},{"@id":"https://signllabs.ai/#org"}],"articleSection":"Practice launch"},{"@type":"NewsArticle","@id":"https://signllabs.ai/#news-licensing","headline":"Global Communication Works Opens SignlLabs™, Its Proprietary AI Signaling Practice, for License to PR Firms, Ad Agencies, and Web Developers","description":"Licensees gain a ready-built methodology for earning client visibility across ChatGPT, Gemini, Claude, Copilot and Perplexity, without building an AI Signaling practice from scratch.","url":"https://signllabs.ai/news.html#licensing","datePublished":"2026-08-31","dateline":"NEW YORK, N.Y.","inLanguage":"en-US","author":{"@id":"https://signllabs.ai/#gcw"},"publisher":{"@id":"https://signllabs.ai/#gcw"},"about":[{"@id":"https://signllabs.ai/#ai-signaling"},{"@id":"https://signllabs.ai/#org"}],"articleSection":"Licensing"},{"@type":"NewsArticle","@id":"https://signllabs.ai/#news-advisory","headline":"Global Communication Works Expands SignlLabs™ into a Strategic Growth Advisory Practice","description":"Hands-on counsel on where to invest, how to compete, and where growth comes next, for companies from the Fortune 100 to early-stage startups.","url":"https://signllabs.ai/news.html#advisory","datePublished":"2026-08-31","dateline":"NEW YORK, N.Y.","inLanguage":"en-US","author":{"@id":"https://signllabs.ai/#gcw"},"publisher":{"@id":"https://signllabs.ai/#gcw"},"about":[{"@id":"https://signllabs.ai/#ai-signaling"},{"@id":"https://signllabs.ai/#org"}],"articleSection":"Growth advisory"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://signllabs.ai/news.html","name":"SignlLabs newsroom","isPartOf":{"@id":"https://signllabs.ai/#website"},"about":{"@id":"https://signllabs.ai/#ai-signaling"},"hasPart":[{"@id":"https://signllabs.ai/#news-launch"}]},{"@type":"NewsArticle","@id":"https://signllabs.ai/#news-launch","headline":"GCW Launches SignlLabs™, a Proprietary AI Signaling Practice Built to Earn Brand Visibility Across Artificial Intelligence Platforms","description":"New practice gives clients a measurable path to being recommended by ChatGPT, Gemini, Claude, Copilot and Perplexity, built for AI rather than retrofitted from SEO.","url":"https://signllabs.ai/news.html#launch","datePublished":"2026-08-31","dateline":"NEW YORK, N.Y.","inLanguage":"en-US","author":{"@id":"https://signllabs.ai/#gcw"},"publisher":{"@id":"https://signllabs.ai/#gcw"},"about":[{"@id":"https://signllabs.ai/#ai-signaling"},{"@id":"https://signllabs.ai/#org"}],"articleSection":"Practice launch"}]}</script>
 <nav><div class="wrap">
   <div class="logo">Signl<span class="spark">Labs.</span></div>
   <div class="pillnav">
@@ -422,28 +476,10 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
     <p>GCW now measures success across both traditional and AI channels, tracking impressions, reach and engagement alongside AI recommendation lift, giving clients a full view of how a campaign performs wherever audiences get their news and their answers.</p>
     <p>SignlLabs is already embedded in many GCW campaigns across the agency&rsquo;s women&rsquo;s health, consumer health and lifestyle client roster, and the practice will be central to new business pursuits going forward.</p>
     <blockquote>&ldquo;SEO is about being the answer. AI Signaling is about being the recommendation. When someone asks an answer engine which brand is best, the platform runs its own research behind the scenes and names the brands it trusts. That trust lives in earned media, not on a brand&rsquo;s homepage.&rdquo;<cite>Erika Austria, lead of SignlLabs</cite></blockquote>
-    <p class="contact">Media contact: Brad Ginsburg, Global Communication Works, <a href="mailto:brad@gcw.agency" style="color:var(--mint)">brad@gcw.agency</a>. More at <a href="https://signllabs.ai/" style="color:var(--mint)">signllabs.ai</a> and <a href="https://www.gcw.agency/" style="color:var(--mint)">gcw.agency</a>.</p>
-  </article>
-  <article class="release reveal" id="licensing">
-    <div class="rmeta">Licensing &middot; August 31, 2026</div>
-    <h2>Global Communication Works Opens SignlLabs&trade;, Its Proprietary AI Signaling Practice, for License to PR Firms, Ad Agencies, and Web Developers</h2>
-    <p class="dek">Licensees gain a ready-built methodology for earning client visibility across ChatGPT, Gemini, Claude, Copilot and Perplexity, without building an AI Signaling practice from scratch.</p>
-    <p>NEW YORK, N.Y. &mdash; Global Communication Works (GCW), the strategic public relations and communications agency, today announced that SignlLabs, its proprietary AI Signaling practice, is now available for license to public relations firms, advertising agencies, and web development companies. The license enables agencies and developers to offer their clients a measurable AI Signaling program without having to build the methodology in-house.</p>
-    <blockquote>&ldquo;SignlLabs was built inside GCW, but it does not need to stay inside GCW. Any agency or developer, whether it specializes in public relations, advertising or web development, can now license SignlLabs and give its own clients a real path to AI visibility instead of trying to reverse-engineer one. This is not about protecting a competitive advantage. It is about setting the standard the whole industry can build on.&rdquo;<cite>Brad Ginsburg, Partner and President, GCW</cite></blockquote>
-    <p>SignlLabs measures a brand&rsquo;s presence and recommendation strength across the five platforms most consumers now turn to for answers: ChatGPT, Gemini, Claude, Copilot and Perplexity. Built from the ground up rather than adapted from existing search practices, the methodology has been embedded across GCW&rsquo;s client campaigns before being opened to outside licensees.</p>
-    <p>Licensees gain access to the SignlLabs framework, measurement approach and training needed to run AI Signaling programs for their own client rosters, spanning industries from consumer health to retail. GCW will continue to support licensees as the AI platforms themselves evolve, keeping the methodology current as recommendation algorithms change.</p>
-    <p>The license is available to public relations firms, advertising agencies and web development companies of any size, and interested parties can reach GCW directly to discuss terms.</p>
-    <p class="contact">Media contact: Brad Ginsburg, Global Communication Works, <a href="mailto:brad@gcw.agency" style="color:var(--mint)">brad@gcw.agency</a>. More at <a href="https://signllabs.ai/" style="color:var(--mint)">signllabs.ai</a> and <a href="https://www.gcw.agency/" style="color:var(--mint)">gcw.agency</a>.</p>
-  </article>
-  <article class="release reveal" id="advisory">
-    <div class="rmeta">Growth advisory &middot; August 31, 2026</div>
-    <h2>Global Communication Works Expands SignlLabs&trade; into a Strategic Growth Advisory Practice</h2>
-    <p class="dek">Hands-on counsel on where to invest, how to compete, and where growth comes next, for companies from the Fortune 100 to early-stage startups.</p>
-    <p>NEW YORK, N.Y. &mdash; Global Communication Works (GCW) today announced that SignlLabs&trade;, its proprietary AI Signaling practice, is expanding beyond visibility and measurement into strategic growth advisory. The new capability brings hands-on counsel on where to invest, how to compete, and where growth will come next for companies of every scale, from the Fortune 100 to early-stage startups.</p>
-    <blockquote>&ldquo;Companies do not just need to know how AI sees them. They need a roadmap for what to do about it. That is the gap we are closing. SignlLabs is bringing consulting-caliber strategic thinking and a clear, phased path to execution to a discipline that, until now, has mostly lived with top consulting companies.&rdquo;<cite>Erika Austria, lead of SignlLabs</cite></blockquote>
-    <p>SignlLabs begins with deep research and development: sizing the market opportunity through a total addressable market and serviceable addressable market view, distilling both into a directional summary of the size of the prize, mapping where the unmet opportunities lie, and benchmarking precedent comparables for what the market already pays. From there, SignlLabs advises on how to build on that opportunity, identifying where the growth lies and developing the roadmap to capture it.</p>
-    <p>The approach is already at work. For an emerging brand, SignlLabs mapped an entire category from a blank slate. Nothing like it existed yet, not as a brand, not as a digital destination, not as a trusted source consumers could turn to. The market sizing alone pointed to a roughly $36 billion total addressable market with $16 billion serviceable in the U.S., directional, and SignlLabs used that opportunity to hand the brand a complete go-to-market plan: a redesigned website built to be the trusted, cited answer across every major AI platform and large language model, and a consumer app designed to build community, deliver education and establish the brand as the name consumers and retailers trust most.</p>
-    <p>The expanded offering positions SignlLabs as a growth partner as well as a measurement platform, helping clients act on AI Signaling insights with the same discipline GCW brings to earned media, brand positioning and reputation management. The scope of the engagement, whether audit only, full build, or ongoing monitoring, is shaped to the size and stage of the client.</p>
+    <h3 class="rboiler">About SignlLabs</h3>
+    <p class="rb">SignlLabs&trade; is the AI Signaling practice of Global Communication Works (GCW). SignlLabs created the AI Signaling discipline and the Maturity Method&trade;, the zero to one hundred standard that scores how recommendable a brand is across ChatGPT, Google Gemini, Claude, Microsoft Copilot and Perplexity, then engineers the lift through earned media. The methodology is also available for license to public relations firms, advertising agencies and web development companies. Learn more at signllabs.ai.</p>
+    <h3 class="rboiler">About GCW</h3>
+    <p class="rb">Global Communication Works (GCW) is a full-service public relations and reputation management agency with nearly 40 years of work across women&rsquo;s health, consumer packaged goods, wellness and lifestyle, energy, technology and law. Services span earned media and news bureau, reputation and crisis management, public affairs, influencer strategy, photo and video production, media and presentation training, and AI Signaling through SignlLabs. Learn more at gcw.agency.</p>
     <p class="contact">Media contact: Brad Ginsburg, Global Communication Works, <a href="mailto:brad@gcw.agency" style="color:var(--mint)">brad@gcw.agency</a>. More at <a href="https://signllabs.ai/" style="color:var(--mint)">signllabs.ai</a> and <a href="https://www.gcw.agency/" style="color:var(--mint)">gcw.agency</a>.</p>
   </article>
 </div></section>
@@ -520,6 +556,55 @@ window.addEventListener('load',()=>{setTimeout(()=>{document.querySelectorAll('#
   });
   document.addEventListener('keydown',function(e){
     if(e.key==='Escape'){shut(null);shutMobile();}
+  });
+})();
+</script>
+<script>
+/* white paper gate: capture the lead, then always deliver the paper */
+(function(){
+  var m=document.getElementById('wpm'); if(!m) return;
+  var f=document.getElementById('wpmform'),
+      fields=document.getElementById('wpmfields'), ok=document.getElementById('wpmok'),
+      err=document.getElementById('wpmerr'), btn=document.getElementById('wpmsubmit'),
+      last=null;
+  function open(t){
+    last=t||null; m.hidden=false; m.classList.add('is-open');
+    document.body.classList.add('wpm-lock');
+    var e=document.getElementById('wpm-email'); if(e) setTimeout(function(){e.focus();},60);
+  }
+  function close(){
+    m.classList.remove('is-open'); m.hidden=true;
+    document.body.classList.remove('wpm-lock');
+    if(last&&last.focus) last.focus();
+  }
+  document.addEventListener('click',function(e){
+    var o=e.target.closest('[data-wp-open]');
+    if(o){e.preventDefault(); open(o); return;}
+    if(e.target.closest('[data-wp-close]')){e.preventDefault(); close();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&m.classList.contains('is-open')) close();
+  });
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=(document.getElementById('wpm-email').value||'').trim();
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+      err.textContent='Please enter a valid email address.';
+      err.classList.remove('is-hidden'); return;
+    }
+    err.classList.add('is-hidden');
+    btn.disabled=true; btn.textContent='Sending\u2026';
+    var payload={ name:(document.getElementById('wpm-name').value||'').trim(),
+                  email:email,
+                  company:(document.getElementById('wpm-company').value||'').trim(),
+                  paper:'The Answer Economy 2026', source:'signllabs.ai home modal' };
+    var done=false, finish=function(){
+      if(done) return; done=true;
+      fields.classList.add('is-hidden'); ok.classList.remove('is-hidden');
+    };
+    setTimeout(finish, 6000);   /* never hold the paper hostage to the endpoint */
+    fetch('/api/whitepaper',{method:'POST',headers:{'Content-Type':'application/json'},
+                             body:JSON.stringify(payload)}).then(finish).catch(finish);
   });
 })();
 </script>

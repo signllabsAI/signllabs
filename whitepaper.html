@@ -267,8 +267,62 @@ footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
   .two{grid-template-columns:1fr;gap:32px}
   .sa3{grid-template-columns:1fr}
 }
+/* white paper modal */
+.wpm{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px}
+.wpm.is-open{display:flex}
+.wpm__veil{position:absolute;inset:0;background:rgba(14,22,34,.62);backdrop-filter:blur(3px)}
+.wpm__card{position:relative;width:100%;max-width:920px;max-height:90vh;overflow:auto;background:var(--paper);border-radius:22px;box-shadow:0 40px 90px rgba(14,22,34,.34);display:grid;grid-template-columns:1fr .92fr}
+.wpm__blurb{padding:40px 34px}
+.wpm__blurb .sec-k{margin-bottom:10px}
+.wpm__blurb h3{font-family:var(--hf);font-size:29px;font-weight:700;line-height:1.15;margin-bottom:12px}
+.wpm__blurb p{font-size:15px;color:var(--dim);margin-bottom:16px}
+.wpm__toc{list-style:none;font-size:13.5px;color:var(--dim)}
+.wpm__toc li{padding:6px 0;border-top:1px solid var(--line)}
+.wpm__form{background:var(--nav);color:var(--navtext);padding:40px 34px;border-radius:0 22px 22px 0}
+.wpm__form h4{font-family:var(--hf);font-size:20px;font-weight:700;margin-bottom:8px}
+.wpm__form .sm{font-size:13.5px;color:var(--navdim);margin-bottom:20px}
+.wpm__form label{display:block;font-family:var(--bf);font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--navdim);margin:14px 0 6px}
+.wpm__form input{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--navline);color:var(--navtext);border-radius:11px;padding:12px 14px;font-family:var(--bf);font-size:15px}
+.wpm__form input:focus{outline:none;border-color:var(--mint)}
+.wpm__form button{width:100%;margin-top:22px;background:var(--mint);color:var(--nav);border:0;border-radius:24px;padding:14px 20px;font-family:var(--hf);font-weight:700;font-size:15px;cursor:pointer}
+.wpm__form button[disabled]{opacity:.6;cursor:default}
+.wpm__fine{font-size:12px;color:var(--navdim);margin-top:14px;line-height:1.5}
+.wpm__err{color:var(--pink);font-size:13px;margin-top:10px}
+.wpm__ok{text-align:center;padding:14px 0}
+.wpm__ok h4{margin-bottom:8px}
+.wpm__ok p{font-size:14px;color:var(--navdim);margin-bottom:20px}
+.wpm__ok a{display:inline-block;background:var(--mint);color:var(--nav);border-radius:24px;padding:13px 24px;font-family:var(--hf);font-weight:700;font-size:15px}
+.wpm__x{position:absolute;top:14px;right:16px;width:34px;height:34px;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:19px;line-height:1;cursor:pointer;z-index:2}
+.is-hidden{display:none!important}
+body.wpm-lock{overflow:hidden}
+@media(max-width:860px){
+  .wpm__card{grid-template-columns:1fr;max-height:94vh}
+  .wpm__form{border-radius:0 0 22px 22px}
+  .wpm__blurb{padding:34px 24px 8px}
+  .wpm__form{padding:28px 24px 34px}
+  .wpm__x{background:rgba(14,22,34,.5)}
+}
+/* faq accordion */
+.faq-list{margin-top:34px;border-top:1px solid var(--line)}
+details.faq-item{border-bottom:1px solid var(--line);padding:0}
+details.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 2px;font-family:var(--hf);font-weight:600;font-size:17.5px;color:var(--ink)}
+details.faq-item summary::-webkit-details-marker{display:none}
+details.faq-item summary:hover{color:var(--dim)}
+details.faq-item summary i{position:relative;flex:0 0 20px;width:20px;height:20px}
+details.faq-item summary i::before,details.faq-item summary i::after{content:"";position:absolute;background:var(--faint);transition:transform .22s ease,background .22s ease}
+details.faq-item summary i::before{left:0;top:9px;width:20px;height:2px}
+details.faq-item summary i::after{left:9px;top:0;width:2px;height:20px}
+details.faq-item[open] summary{color:var(--ink)}
+details.faq-item[open] summary i::after{transform:scaleY(0)}
+details.faq-item[open] summary i::before{background:var(--mint)}
+details.faq-item .faq-a{padding:0 44px 22px 2px}
+details.faq-item .faq-a p{font-size:15.5px;color:var(--dim);line-height:1.65;margin:0}
 </style>
 
+<style>
+.release .rboiler{font-family:var(--bf);font-size:11.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--faint);margin:26px 0 8px}
+.release .rb{font-size:14px;color:var(--dim);line-height:1.65;margin:0}
+</style>
 <style>
 /* whitepaper + newsroom */
 .page-hd{padding:64px 0 8px}
@@ -528,6 +582,55 @@ window.addEventListener('load',()=>{setTimeout(()=>{document.querySelectorAll('#
   });
   document.addEventListener('keydown',function(e){
     if(e.key==='Escape'){shut(null);shutMobile();}
+  });
+})();
+</script>
+<script>
+/* white paper gate: capture the lead, then always deliver the paper */
+(function(){
+  var m=document.getElementById('wpm'); if(!m) return;
+  var f=document.getElementById('wpmform'),
+      fields=document.getElementById('wpmfields'), ok=document.getElementById('wpmok'),
+      err=document.getElementById('wpmerr'), btn=document.getElementById('wpmsubmit'),
+      last=null;
+  function open(t){
+    last=t||null; m.hidden=false; m.classList.add('is-open');
+    document.body.classList.add('wpm-lock');
+    var e=document.getElementById('wpm-email'); if(e) setTimeout(function(){e.focus();},60);
+  }
+  function close(){
+    m.classList.remove('is-open'); m.hidden=true;
+    document.body.classList.remove('wpm-lock');
+    if(last&&last.focus) last.focus();
+  }
+  document.addEventListener('click',function(e){
+    var o=e.target.closest('[data-wp-open]');
+    if(o){e.preventDefault(); open(o); return;}
+    if(e.target.closest('[data-wp-close]')){e.preventDefault(); close();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&m.classList.contains('is-open')) close();
+  });
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=(document.getElementById('wpm-email').value||'').trim();
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+      err.textContent='Please enter a valid email address.';
+      err.classList.remove('is-hidden'); return;
+    }
+    err.classList.add('is-hidden');
+    btn.disabled=true; btn.textContent='Sending\u2026';
+    var payload={ name:(document.getElementById('wpm-name').value||'').trim(),
+                  email:email,
+                  company:(document.getElementById('wpm-company').value||'').trim(),
+                  paper:'The Answer Economy 2026', source:'signllabs.ai home modal' };
+    var done=false, finish=function(){
+      if(done) return; done=true;
+      fields.classList.add('is-hidden'); ok.classList.remove('is-hidden');
+    };
+    setTimeout(finish, 6000);   /* never hold the paper hostage to the endpoint */
+    fetch('/api/whitepaper',{method:'POST',headers:{'Content-Type':'application/json'},
+                             body:JSON.stringify(payload)}).then(finish).catch(finish);
   });
 })();
 </script>
