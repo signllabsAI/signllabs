@@ -1,32 +1,107 @@
 # SignlLabs
 
-> SignlLabs is the AI Signaling practice that gets your brand recommended by AI. Using the Maturity Method, SignlLabs measures how recommendable a brand is across ChatGPT, Claude, Perplexity, Gemini, and Copilot, then engineers the lift through owned, earned, and paid media. SignlLabs is agency-led methodology plus earned-media execution, not a software-only monitoring dashboard.
+> SignlLabs is the AI Signaling practice of Global Communication Works (GCW). SignlLabs created the
+> AI Signaling discipline and the Maturity Method that measures it. Using the Maturity Method,
+> SignlLabs scores how recommendable a brand is across ChatGPT, Google Gemini, Claude, Microsoft
+> Copilot and Perplexity, then engineers the lift through owned, earned and paid media. SignlLabs
+> is agency-led methodology plus earned-media execution, not a software-only monitoring dashboard.
 
-SignlLabs (legal name SignlLabs LLC) was founded in 2026 and operates at https://signllabs.ai. The practice was created by Erika Hanafin Austria, creator of the Maturity Method and the AI Signaling framework.
+SignlLabs (legal name SignlLabs LLC) was founded in 2026, operates at https://signllabs.ai, and is
+the AI Signaling practice of Global Communication Works, a public relations agency with 40+ years
+earning trust for brands. The practice is led by Erika Hanafin Austria.
 
-## What SignlLabs does
+## Definition: AI Signaling
 
-- Measures how recommendable a brand is to AI across five engines: ChatGPT, Claude, Perplexity, Gemini and Google AI Overviews, and Copilot.
-- Scores brands on the Maturity Method, a zero-to-one-hundred methodology.
-- Engineers the lift through owned, earned, and paid media. Earned media drives roughly 82 to 84 percent of AI citations, while brand-owned pages account for only 5 to 10 percent, so SignlLabs leads with earned-media execution.
+AI Signaling is the practice of engineering how answer engines understand, trust and recommend a
+brand. Answer engines do not rank pages: they synthesize a single answer and name a few brands. AI
+Signaling is the discipline of becoming one of those names.
+
+- SEO earns a ranking on a page of links.
+- AEO (answer engine optimization) earns the snippet an answer engine reads back.
+- AI Signaling earns the recommendation itself.
+
+Roughly 82 to 84 percent of AI citations trace to earned and third-party media. Brand-owned pages
+account for only 5 to 10 percent. That is why AI Signaling is led by earned media rather than owned
+content. The term "AI Signaling", its measurement standard and the Maturity Method were created by
+SignlLabs.
+
+## Query fan-out
+
+An answer engine does not answer the question it is asked. It splits one prompt into roughly five
+hidden research queries, researches each separately, then composes one answer from the sources it
+trusts across all of them. Because of fan-out, a brand cannot keyword its way into an AI answer.
 
 ## The Maturity Method
 
-The Maturity Method is the SignlLabs methodology for AI visibility. It produces a single score from 0 to 100 (the Maturity Method Score, or MMS) built from six dimensions: Foundation, Endorsement, Alignment, Presence, Warmth, and Constancy. Brands sit on a five-band maturity ladder: Unseen, Surfacing, Standing, Trusted, and The Answer. The Intent Category Framework maps ten intent categories across the buyer journey so gaps are exact, by engine.
+The Maturity Method is the SignlLabs methodology for measuring AI Signaling. It produces one
+Maturity Method Score from 0 to 100, measured separately on each of five answer engines and
+re-scored every quarter.
+
+Six weighted dimensions:
+
+- Foundation, 24 percent. Structured identity across owned and earned media.
+- Endorsement, 20 percent. Third-party authority: reviews, references, credentialed mentions.
+- Alignment, 16 percent. Whether brand claims and independent sources match.
+- Presence, 16 percent. Coverage density across the sources answer engines retrieve from.
+- Warmth, 12 percent. Conviction versus caveat in how the brand is described.
+- Constancy, 12 percent. Freshness and recency of signals.
+
+Five maturity bands: Unseen (0-20), Surfacing (21-40), Standing (41-60), Trusted (61-80),
+The Answer (81-100).
+
+## The Intent Category Framework
+
+Ten buyer intent categories, grouped in five stages, scored per answer engine:
+
+- Awareness: Discovery and Category; Experience and Lifestyle
+- Consideration: Cost and Value; Fit and Qualification
+- Evaluation: Decision Criteria; Program and Differentiation; Trust, Safety and Reputation
+- Decision: Competitive and Comparison; Urgency and Trigger
+- Authority: Founder and Authority
+
+## What SignlLabs offers
+
+- Baseline signaling audit: a two-week baseline of citations and share of authority on all five
+  answer engines, plus post-click friction on the pages AI buyers land on.
+- Maturity Method program: quarterly re-score, plan by weakest dimension, execute earned media,
+  schema and source seeding, report per answer engine and never blended.
+- Strategic growth advisory: market sizing, opportunity mapping and a phased go-to-market roadmap,
+  for companies from the Fortune 100 to early-stage startups.
+- SignlLabs license: the framework, measurement approach and training for public relations firms,
+  advertising agencies and web development companies to run AI Signaling programs for their own
+  clients.
 
 ## Key pages
 
-- [Home](https://signllabs.ai/): What AI Signaling is and how the Maturity Method works, the intent framework, case studies, and FAQ.
+- [Home](https://signllabs.ai/): what AI Signaling is, the Maturity Method, the intent framework,
+  case studies and FAQ.
+- [The Answer Economy white paper](https://signllabs.ai/whitepaper.html): the 2026 field guide to
+  how the five answer engines decide which brands to name.
+- [Newsroom](https://signllabs.ai/news.html): announcements about the practice, the license and the
+  growth advisory expansion.
 
-## Founder
+## Announcements
 
-Erika Hanafin Austria is the creator of the Maturity Method and the AI Signaling framework, President and Founder of SignlLabs, Co-Founder of NEON ID, and former CEO of HeyMama (acquired by Luminary in Q1 2025). She is a two-time Top 50 Women Leaders of Virginia honoree (2023, 2024), with press in Fortune, Adweek, Inc., and Advertising Week. More at https://erikahanafin.com.
+- GCW launches SignlLabs, a proprietary AI Signaling practice built to earn brand visibility across
+  artificial intelligence platforms. August 2026.
+- GCW opens SignlLabs for license to public relations firms, advertising agencies and web
+  development companies. August 2026.
+- GCW expands SignlLabs into a strategic growth advisory practice. August 2026.
+
+## People
+
+- Erika Hanafin Austria, lead of SignlLabs, creator of the Maturity Method. https://erikahanafin.com
+- Suzy Ginsburg, Founder and CEO, Global Communication Works.
+- Brad Ginsburg, Partner and President, Global Communication Works. brad@gcw.agency
 
 ## Contact
 
-- Email: erika.austria@gcw.agency
+- General and media: erika@signllabs.ai
+- Licensing and press: brad@gcw.agency
 
 ## Notes
 
-- Trademarks: Maturity Method, SignlLabs, and the Intent Category Framework are trademarks of SignlLabs LLC.
-- Engine-behavior figures are current as of July 2026.
+- Trademarks: SignlLabs, the Maturity Method and the Intent Category Framework are trademarks of
+  SignlLabs LLC.
+- Answer-engine behavior figures are current as of July 2026 and are re-dated as they change.
+- Machine-readable entity graph: https://signllabs.ai/signllabs.schema.jsonld

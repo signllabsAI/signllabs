@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newsroom &middot; SignlLabs</title>
+<meta name="description" content="Announcements from Global Communication Works about SignlLabs, its proprietary AI Signaling practice: the practice launch, the license for agencies and developers, and the strategic growth advisory expansion.">
+<link rel="canonical" href="https://signllabs.ai/news.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Newsroom &middot; SignlLabs">
+<meta property="og:description" content="Announcements from Global Communication Works about SignlLabs, its proprietary AI Signaling practice: the practice launch, the license for agencies and developers, and the strategic growth advisory expansion.">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{
+  --ink:#17161A; --dim:#57606E; --faint:#9AA2B0; --line:#E4E8EF; --soft:#F5F7FA; --paper:#FFFFFF;
+  --nav:#0E1622; --nav2:#131B29; --navline:#2C3B55; --navtext:#EDF1F7; --navdim:#A7B3C6;
+  --mint:#0FD9A0; --pink:#FF3D6E; --purple:#7C5CFF; --gold:#F5B72E; --coral:#FF7A45; --sky:#3D7BFF;
+  --hf:'Space Grotesk',sans-serif; --bf:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--bf);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+h1,h2,h3,.logo,.mono{font-family:var(--hf)}
+a{color:inherit;text-decoration:none}
+.mint{color:var(--mint)}
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-size:20px;font-weight:700;letter-spacing:.5px}
+.logo .spark{color:var(--mint)}
+.pillnav{display:flex;gap:4px;background:var(--soft);padding:5px;border-radius:30px}
+.pillnav a{font-size:13px;font-weight:600;color:var(--dim);padding:8px 15px;border-radius:22px}
+.pillnav a:hover{background:#fff;color:var(--ink)}
+.navcta{background:var(--ink);color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:22px;font-family:var(--hf)}
+/* intent framework: five stages, categories only */
+.stages{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:44px}
+.stcol{border:1px solid var(--line);border-radius:16px;padding:0 0 18px;overflow:hidden}
+.stcol .top{height:6px}
+.stcol .name{font-family:var(--bf);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:16px 16px 4px}
+.stcol ul{list-style:none;padding:6px 16px 0}
+.stcol li{font-family:var(--hf);font-weight:600;font-size:14px;padding:9px 0;border-top:1px solid var(--line);display:flex;gap:8px;align-items:flex-start}
+.stcol li:first-child{border-top:none}
+.stcol li .d{width:8px;height:8px;border-radius:50%;margin-top:6px;flex-shrink:0}
+@media(max-width:920px){.stages{grid-template-columns:1fr 1fr;gap:12px}}
+@media(max-width:560px){.stages{grid-template-columns:1fr}}
+/* nav dropdowns */
+.navgroup{position:relative}
+.navtop{display:inline-flex;align-items:center;gap:7px;font-family:var(--bf);font-size:13px;font-weight:600;color:var(--dim);background:none;border:0;cursor:pointer;padding:8px 15px;border-radius:22px;line-height:1.4;white-space:nowrap}
+.navtop:hover,.navgroup.is-open>.navtop{background:#fff;color:var(--ink)}
+.navtop .caret{width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid currentColor;opacity:.75;transition:transform .18s ease}
+.navgroup.is-open .caret{transform:rotate(180deg)}
+.navgroup::after{content:"";position:absolute;left:0;right:0;top:100%;height:12px;display:none}
+.navgroup.is-open::after{display:block}
+.pillnav .navmenu{position:absolute;top:calc(100% + 10px);left:0;min-width:302px;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 44px rgba(14,22,34,.13);padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .16s ease,transform .16s ease,visibility .16s ease;z-index:60}
+.navgroup.is-open .navmenu{opacity:1;visibility:visible;transform:none}
+.pillnav .navmenu a{display:block;padding:10px 12px;border-radius:9px;font-size:13.5px;font-weight:600;color:var(--ink)}
+.pillnav .navmenu a span{display:block;font-weight:400;font-size:12px;color:var(--faint);margin-top:2px;line-height:1.45}
+.pillnav .navmenu a:hover{background:var(--soft);color:var(--ink)}
+.pillnav .navmenu a:hover span{color:var(--dim)}
+.navtop:focus-visible,.pillnav .navmenu a:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
+/* mobile menu */
+.navburger{display:none;flex-direction:column;gap:4px;background:none;border:0;padding:10px 8px;cursor:pointer;margin-left:auto;margin-right:6px}
+.navburger span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+.navburger.is-open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.navburger.is-open span:nth-child(2){opacity:0}
+.navburger.is-open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobilenav{display:none}
+@media(max-width:920px){
+  .navburger{display:flex}
+  .mobilenav{display:block;max-height:0;overflow:hidden;background:var(--paper);border-top:1px solid transparent;transition:max-height .28s ease}
+  .mobilenav.is-open{max-height:78vh;overflow-y:auto;border-top-color:var(--line)}
+  .mobilenav .wrap{display:block;height:auto;padding:6px 32px 22px}
+  .mnav-group{border-bottom:1px solid var(--line);padding:14px 0}
+  .mnav-group:last-child{border-bottom:0}
+  .mnav-label{font-family:var(--hf);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+  .mobilenav a{display:block;padding:9px 0;font-size:15px;font-weight:600;color:var(--ink)}
+  .mobilenav a:hover{color:var(--mint)}
+}
+@media(max-width:920px){.pillnav{display:none}}
+/* hero split */
+.hero{padding:70px 0 64px;border-bottom:1px solid var(--line)}
+.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mint);border:1px solid var(--line);border-radius:20px;padding:6px 14px}
+.hero h1{font-size:56px;line-height:1.03;font-weight:700;letter-spacing:-1.4px;margin:22px 0 20px}
+.hero p{font-size:19px;color:var(--dim);max-width:52ch}
+.hero .row{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.btn{display:inline-block;font-family:var(--hf);font-weight:700;font-size:15px;padding:14px 28px;border-radius:30px;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-p{background:var(--mint);color:#0B1220}
+.btn-d{background:var(--ink);color:#fff}
+@media(max-width:920px){.hero .grid{grid-template-columns:1fr;gap:36px}.hero h1{font-size:40px}}
+/* product panel (the instrument, dark card) */
+.panel{background:var(--nav);border-radius:22px;padding:26px;color:var(--navtext);box-shadow:0 24px 60px rgba(13,15,26,.28)}
+.panel .head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.panel .head .t{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navdim);font-weight:600}
+.panel .head .live{font-size:11px;color:var(--mint);font-weight:700;display:flex;align-items:center;gap:6px}
+.panel .head .live i{width:7px;height:7px;border-radius:50%;background:var(--mint);display:inline-block}
+.panel .score{display:flex;align-items:flex-end;gap:14px;margin-bottom:6px}
+.panel .score .big{font-size:74px;font-weight:700;line-height:.9;color:var(--sky)}
+.panel .score .of{font-size:16px;color:var(--navdim);margin-bottom:12px}
+.panel .bandpill{display:inline-block;background:var(--sky);color:#06121f;font-family:var(--hf);font-weight:700;font-size:12px;letter-spacing:1px;padding:5px 12px;border-radius:14px;margin-bottom:20px}
+.panel .dimrow{display:flex;align-items:center;gap:12px;margin:11px 0}
+.panel .dimrow .lab{width:96px;font-size:12.5px;color:var(--navtext);font-weight:600;flex-shrink:0}
+.panel .track{flex:1;height:9px;background:var(--nav2);border-radius:6px;overflow:hidden}
+.panel .fill{height:9px;border-radius:6px;width:0;transition:width 1.1s cubic-bezier(.2,.7,.3,1)}
+.panel .val{width:26px;text-align:right;font-family:var(--hf);font-size:12.5px;font-weight:700;color:var(--navdim)}
+.panel .foot{margin-top:18px;padding-top:14px;border-top:1px solid var(--navline);font-size:11.5px;color:var(--navdim)}
+/* section scaffolding */
+section{padding:82px 0;border-bottom:1px solid var(--line)}
+.sec-k{font-size:12.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--mint);margin-bottom:14px}
+.sec-h{font-size:38px;line-height:1.08;font-weight:700;letter-spacing:-.6px;max-width:22ch}
+.sec-sub{font-size:18px;color:var(--dim);max-width:66ch;margin-top:16px}
+@media(max-width:920px){.sec-h{font-size:28px}section{padding:54px 0}}
+/* shift band */
+.shift{background:var(--soft);border:none}
+.sband{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:38px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}
+.sb{padding:26px 24px;border-right:1px solid var(--line)}
+.sb:last-child{border-right:none}
+.sb .n{font-family:var(--hf);font-size:34px;font-weight:700}
+.sb .t{font-size:13px;color:var(--dim);margin-top:8px}
+.sb .s{font-size:10.5px;color:var(--faint);font-style:italic;margin-top:8px}
+@media(max-width:920px){.sband{grid-template-columns:1fr 1fr}.sb:nth-child(2){border-right:none}}
+/* dimensions as spec grid */
+.specgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:40px;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.spec{display:flex;gap:16px;padding:22px 24px;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.spec:nth-child(even){border-right:none}
+.spec:nth-last-child(-n+1){border-bottom:none}
+.spec .chip{width:52px;height:52px;border-radius:13px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--hf);font-weight:700;font-size:15px;color:#fff}
+.spec h4{font-family:var(--hf);font-size:18px;display:flex;justify-content:space-between}
+.spec h4 .w{font-size:13px}
+.spec p{font-size:13.5px;color:var(--dim);margin-top:5px}
+@media(max-width:920px){.specgrid{grid-template-columns:1fr}.spec{border-right:none}}
+/* ladder track */
+.ltrack{margin-top:40px}
+.lbar{display:flex;height:16px;border-radius:9px;overflow:hidden}
+.lbar span{flex:1}
+.lmarks{display:flex;margin-top:14px}
+.lmark{flex:1;padding-right:14px}
+.lmark .r{font-family:var(--hf);font-size:11px;font-weight:700;color:var(--faint)}
+.lmark h4{font-family:var(--hf);font-size:17px;margin:2px 0 5px}
+.lmark p{font-size:12px;color:var(--dim)}
+@media(max-width:920px){.lmarks{flex-wrap:wrap;gap:14px}.lmark{flex:1 1 45%}}
+/* intent matrix */
+.matrix{margin-top:40px;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.mrow{display:grid;grid-template-columns:180px 1.1fr 1.4fr;border-bottom:1px solid var(--line)}
+.mrow:last-child{border-bottom:none}
+.mrow.h{background:var(--ink);color:#fff}
+.mrow.h .c{font-family:var(--hf);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.mrow .c{padding:15px 18px;border-right:1px solid var(--line);display:flex;align-items:center;gap:10px}
+.mrow .c:last-child{border-right:none}
+.mrow.h .c{border-right-color:var(--navline)}
+.stagetag{font-family:var(--hf);font-weight:700;font-size:13px;display:flex;align-items:center;gap:9px}
+.stagetag .d{width:10px;height:10px;border-radius:50%}
+.catname{font-family:var(--hf);font-weight:600;font-size:14.5px}
+.mrow .sig{font-size:13px;color:var(--dim)}
+.mnote{font-size:14px;color:var(--dim);font-style:italic;margin-top:24px}
+@media(max-width:920px){.mrow{grid-template-columns:1fr}.mrow .c{border-right:none;border-bottom:1px solid var(--line)}.mrow.h{display:none}}
+/* how we work timeline */
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:40px;counter-reset:s}
+.tstep{padding:0 22px 0 0;position:relative}
+.tstep .dotline{display:flex;align-items:center;margin-bottom:16px}
+.tstep .dot{width:16px;height:16px;border-radius:50%;background:var(--mint);flex-shrink:0}
+.tstep .line{height:2px;background:var(--line);flex:1}
+.tstep:last-child .line{background:transparent}
+.tstep .w{font-size:11.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--mint)}
+.tstep h4{font-family:var(--hf);font-size:21px;margin:6px 0 8px}
+.tstep p{font-size:13px;color:var(--dim)}
+@media(max-width:920px){.tl{grid-template-columns:1fr 1fr;gap:28px 16px}}
+/* proof color block */
+.proof{background:#131B29;border:none;color:#EDF1F7}
+.proof .sec-h,.proof h3{color:#fff}
+.proofgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:38px}
+.pf{border:1px solid var(--navline);border-radius:16px;padding:24px 20px}
+.pf .n{font-family:var(--hf);font-size:44px;font-weight:700;line-height:1}
+.pf .t{font-size:13px;color:var(--navdim);margin-top:10px}
+.proof .fine{font-size:13px;color:#8B98AE;font-style:italic;margin-top:28px;max-width:82ch}
+@media(max-width:920px){.proofgrid{grid-template-columns:1fr 1fr}}
+/* case studies */
+.case{margin-top:52px}
+.case:first-of-type{margin-top:40px}
+.case-kicker{font-family:var(--hf);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mint)}
+.case h3{font-size:26px;font-weight:700;margin:8px 0 14px;max-width:32ch;color:#fff}
+.case-desc{font-size:16px;color:#A7B3C6;max-width:78ch;margin-bottom:0}
+.case .proofgrid{margin-top:28px}
+.proof-closer{font-size:15px;color:#EDF1F7;line-height:1.65;margin-top:48px;max-width:84ch}
+/* why */
+.whygrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.wc{border:1px solid var(--line);border-radius:16px;padding:24px 20px}
+.wc .num{font-family:var(--hf);font-size:22px;font-weight:700;color:var(--mint)}
+.wc h4{font-family:var(--hf);font-size:16px;margin:10px 0 6px}
+.wc p{font-size:13px;color:var(--dim)}
+@media(max-width:920px){.whygrid{grid-template-columns:1fr 1fr}}
+/* cta */
+.cta{text-align:center;background:linear-gradient(120deg,#0FD9A0,#3D7BFF);border-radius:24px;padding:60px 32px;margin-top:56px;color:#06121f}
+.cta h2{font-size:36px;font-weight:700;letter-spacing:-.5px}
+.cta p{font-size:17px;margin:14px auto 26px;max-width:52ch;color:#083a33}
+.cta .btn-d{background:#0E1622;color:#fff}
+/* media kit */
+.kitgrid{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;margin-top:40px}
+.kitgrid h3{font-family:var(--hf);font-size:15px;margin:20px 0 7px}
+.kitgrid p{font-size:14.5px;color:var(--dim);margin-bottom:6px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+.fact{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--soft)}
+.fact .n{font-family:var(--hf);font-size:24px;font-weight:700}
+.fact .t{font-size:12px;color:var(--dim);margin-top:2px}
+.lockup{border:1px solid var(--line);border-radius:14px;padding:26px;text-align:center;margin-bottom:14px;background:var(--nav)}
+.lockup .logo{font-size:28px;color:#fff}
+.contact{font-family:var(--hf);font-size:18px;color:var(--mint)}
+.tm{font-size:12px;color:var(--faint);line-height:1.7;margin-top:14px}
+@media(max-width:920px){.kitgrid{grid-template-columns:1fr}}
+footer{padding:44px 0;text-align:center;color:var(--faint);font-size:13px}
+footer .logo{font-size:18px;color:var(--ink);margin-bottom:10px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+/* FAQ */
+.faq-list{margin-top:34px;border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line);padding:22px 0}
+.faq-item h3{font-family:var(--hf);font-size:19px;margin-bottom:8px}
+.faq-item p{font-size:15px;color:var(--dim);max-width:82ch}
+/* proof: the two cases sit side by side, each its own card */
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px}
+.case{margin-top:0;background:#0E1622;border:1px solid var(--navline);border-radius:20px;padding:32px 28px 28px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.case:first-of-type{margin-top:0}
+.case::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--mint)}
+.cases .case:nth-child(2)::before{background:var(--pink)}
+.cases .case:nth-child(2) .case-kicker{color:var(--pink)}
+.case h3{font-size:23px;line-height:1.2;max-width:26ch}
+.case-desc{font-size:15px;max-width:none}
+.case .proofgrid{grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.case .pf{padding:20px 18px;border-radius:14px;background:rgba(255,255,255,.02)}
+.case .pf .n{font-size:32px}
+.case .pf .t{font-size:12px;margin-top:8px}
+.proof .case .fine{margin-top:auto;padding-top:24px;max-width:none}
+/* GCW: the agency behind the practice */
+.gcwband{margin-top:38px;border:1px solid var(--line);border-radius:20px;background:var(--soft);padding:32px 30px;display:grid;grid-template-columns:1.35fr 1fr;gap:30px;align-items:center}
+.gcwband .sec-k{margin-bottom:8px}
+.gcwband h3{font-family:var(--hf);font-size:22px;font-weight:700;line-height:1.25;margin-bottom:10px}
+.gcwband p{font-size:15px;color:var(--dim);max-width:62ch}
+@media(max-width:920px){
+  .cases{grid-template-columns:1fr;gap:18px}
+  .case{padding:28px 22px 24px}
+  .gcwband{grid-template-columns:1fr;gap:20px;padding:26px 22px}
+}
+@media(max-width:560px){.case .proofgrid{grid-template-columns:1fr}}
+/* what is AI signaling */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:40px}
+.two p{font-size:17px;color:var(--dim);margin-bottom:18px}
+.two p b{color:var(--ink);font-weight:600}
+.notcards{display:flex;flex-direction:column;gap:14px}
+.notcard{border:1px solid var(--line);border-left:4px solid var(--pink);border-radius:12px;padding:18px 20px}
+.notcard:nth-child(2){border-left-color:var(--mint)}
+.notcard:nth-child(3){border-left-color:var(--purple)}
+.notcard h4{font-family:var(--hf);font-size:16px;margin-bottom:5px}
+.notcard p{font-size:14px;color:var(--dim);margin:0}
+/* SEO vs AEO vs AI Signaling */
+.sa3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.sa3 .c{border:1px solid var(--line);border-radius:16px;padding:28px 22px 24px;position:relative;overflow:hidden}
+.sa3 .c .top{position:absolute;top:0;left:0;height:5px;width:100%}
+.sa3 .c .k{font-family:var(--bf);font-size:11.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint)}
+.sa3 .c h4{font-family:var(--hf);font-size:22px;font-weight:700;margin:8px 0;color:var(--ink);line-height:1.2}
+.sa3 .c .win{font-family:var(--hf);font-size:15px;font-weight:600;margin-bottom:8px}
+.sa3 .c p{font-size:14px;color:var(--dim)}
+.sa3 .c.win-card{border-color:var(--mint);box-shadow:0 10px 30px rgba(15,217,160,.12)}
+.fanout{margin-top:26px;border-left:4px solid var(--mint);background:var(--soft);border-radius:10px;padding:18px 22px;font-size:15px;color:var(--ink);line-height:1.6}
+@media(max-width:920px){
+  .two{grid-template-columns:1fr;gap:32px}
+  .sa3{grid-template-columns:1fr}
+}
+</style>
+
+<style>
+/* whitepaper + newsroom */
+.page-hd{padding:64px 0 8px}
+.page-hd .sec-k{color:var(--mint)}
+.page-hd h1{font-family:var(--hf);font-size:clamp(34px,5vw,54px);font-weight:700;line-height:1.05;letter-spacing:-1.5px;max-width:22ch;margin:10px 0 16px}
+.page-hd p.lede{font-size:18px;color:var(--dim);max-width:70ch;line-height:1.6}
+.wpgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:start;margin:40px 0 20px}
+.wpstats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:26px 0 0}
+.wpstat{border:1px solid var(--line);border-radius:14px;padding:20px}
+.wpstat .n{font-family:var(--hf);font-size:30px;font-weight:700;line-height:1}
+.wpstat .t{font-size:12.5px;color:var(--dim);margin-top:8px;line-height:1.45}
+.wpcontents{border:1px solid var(--line);border-radius:16px;padding:24px 26px}
+.wpcontents h3{font-family:var(--hf);font-size:15px;margin-bottom:14px}
+.wpcontents ol{margin:0;padding-left:20px}
+.wpcontents li{font-size:14.5px;color:var(--dim);padding:5px 0}
+.gate{background:var(--nav);color:var(--navtext);border-radius:20px;padding:34px 32px;position:sticky;top:88px}
+.gate h2{font-family:var(--hf);font-size:22px;font-weight:700;line-height:1.25;margin-bottom:8px;color:#fff}
+.gate p{font-size:14.5px;color:var(--navdim);line-height:1.6;margin-bottom:20px}
+.gate label{display:block;font-family:var(--hf);font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--navdim);margin:14px 0 6px}
+.gate input{width:100%;background:#0B121C;border:1px solid var(--navline);border-radius:11px;padding:13px 14px;color:#fff;font:inherit;font-size:15px}
+.gate input:focus{outline:2px solid var(--mint);outline-offset:1px;border-color:transparent}
+.gate button{width:100%;margin-top:20px;background:var(--mint);color:#08131A;border:0;border-radius:24px;padding:14px 18px;font-family:var(--hf);font-weight:700;font-size:15px;cursor:pointer}
+.gate button:hover{filter:brightness(1.06)}
+.gate .fine{font-size:12px;color:#7E8CA0;margin-top:14px;line-height:1.5}
+.gate .err{font-size:13px;color:var(--pink);margin-top:12px}
+.gate .ok{background:var(--mint);color:#08131A;border-radius:14px;padding:20px;margin-top:4px}
+.gate .ok h3{font-family:var(--hf);font-size:17px;margin-bottom:6px}
+.gate .ok p{color:#0B3A2E;font-size:14px;margin-bottom:14px}
+.gate .ok a{display:inline-block;background:#08131A;color:#fff;border-radius:22px;padding:12px 18px;font-family:var(--hf);font-weight:700;font-size:14px}
+.is-hidden{display:none!important}
+.release{border-top:1px solid var(--line);padding:36px 0}
+.release:first-of-type{border-top:0}
+.release .rmeta{font-family:var(--hf);font-size:11.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--faint)}
+.release h2{font-family:var(--hf);font-size:clamp(22px,2.6vw,30px);font-weight:700;line-height:1.2;letter-spacing:-.5px;margin:10px 0 10px;max-width:44ch}
+.release .dek{font-size:16px;color:var(--dim);max-width:76ch;line-height:1.6;margin-bottom:18px}
+.release p{font-size:15.5px;color:var(--dim);line-height:1.7;margin-bottom:14px;max-width:80ch}
+.release blockquote{margin:18px 0;padding-left:18px;border-left:3px solid var(--mint);font-size:16.5px;color:var(--ink);line-height:1.6;max-width:78ch}
+.release blockquote cite{display:block;font-style:normal;font-size:13.5px;color:var(--faint);margin-top:8px}
+.release .contact{font-size:14px;color:var(--dim);margin-top:16px}
+@media(max-width:920px){
+  .wpgrid{grid-template-columns:1fr;gap:28px}
+  .gate{position:static}
+}
+</style>
+
+</head>
+<body>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://signllabs.ai/news.html","name":"SignlLabs newsroom","isPartOf":{"@id":"https://signllabs.ai/#website"},"about":{"@id":"https://signllabs.ai/#ai-signaling"},"hasPart":[{"@id":"https://signllabs.ai/#news-launch"},{"@id":"https://signllabs.ai/#news-licensing"},{"@id":"https://signllabs.ai/#news-advisory"}]},{"@type":"NewsArticle","@id":"https://signllabs.ai/#news-launch","headline":"GCW Launches SignlLabs™, a Proprietary AI Signaling Practice Built to Earn Brand Visibility Across Artificial Intelligence Platforms","description":"New practice gives clients a measurable path to being recommended by ChatGPT, Gemini, Claude, Copilot and Perplexity, built for AI rather than retrofitted from SEO.","url":"https://signllabs.ai/news.html#launch","datePublished":"2026-08-31","dateline":"NEW YORK, N.Y.","inLanguage":"en-US","author":{"@id":"https://signllabs.ai/#gcw"},"publisher":{"@id":"https://signllabs.ai/#gcw"},"about":[{"@id":"https://signllabs.ai/#ai-signaling"},{"@id":"https://signllabs.ai/#org"}],"articleSection":"Practice launch"},{"@type":"NewsArticle","@id":"https://signllabs.ai/#news-licensing","headline":"Global Communication Works Opens SignlLabs™, Its Proprietary AI Signaling Practice, for License to PR Firms, Ad Agencies, and Web Developers","description":"Licensees gain a ready-built methodology for earning client visibility across ChatGPT, Gemini, Claude, Copilot and Perplexity, without building an AI Signaling practice from scratch.","url":"https://signllabs.ai/news.html#licensing","datePublished":"2026-08-31","dateline":"NEW YORK, N.Y.","inLanguage":"en-US","author":{"@id":"https://signllabs.ai/#gcw"},"publisher":{"@id":"https://signllabs.ai/#gcw"},"about":[{"@id":"https://signllabs.ai/#ai-signaling"},{"@id":"https://signllabs.ai/#org"}],"articleSection":"Licensing"},{"@type":"NewsArticle","@id":"https://signllabs.ai/#news-advisory","headline":"Global Communication Works Expands SignlLabs™ into a Strategic Growth Advisory Practice","description":"Hands-on counsel on where to invest, how to compete, and where growth comes next, for companies from the Fortune 100 to early-stage startups.","url":"https://signllabs.ai/news.html#advisory","datePublished":"2026-08-31","dateline":"NEW YORK, N.Y.","inLanguage":"en-US","author":{"@id":"https://signllabs.ai/#gcw"},"publisher":{"@id":"https://signllabs.ai/#gcw"},"about":[{"@id":"https://signllabs.ai/#ai-signaling"},{"@id":"https://signllabs.ai/#org"}],"articleSection":"Growth advisory"}]}</script>
+<nav><div class="wrap">
+  <div class="logo">Signl<span class="spark">Labs.</span></div>
+  <div class="pillnav">
+    <div class="navgroup">
+      <button class="navtop" type="button" aria-expanded="false" aria-haspopup="true">The instrument<i class="caret"></i></button>
+      <div class="navmenu">
+        <a href="#what">What is AI signaling<span>Not SEO, not PR &mdash; a new discipline</span></a>
+        <a href="#instrument">Six dimensions<span>One score, calibrated to your industry</span></a>
+        <a href="#ladder">The ladder<span>Where your brand sits, and how it climbs</span></a>
+        <a href="#intent">Intent framework<span>The ten questions every buyer asks AI</span></a>
+        <a href="#work">The cadence<span>Re-scored and re-worked every quarter</span></a>
+      </div>
+    </div>
+    <div class="navgroup">
+      <button class="navtop" type="button" aria-expanded="false" aria-haspopup="true">Proof<i class="caret"></i></button>
+      <div class="navmenu">
+        <a href="#proof">Case studies<span>Two industries, two problems, one instrument</span></a>
+        <a href="#why">Why SignlLabs<span>The instrument, plus the team that moves the number</span></a>
+        <a href="#difference">SEO vs AEO vs AI Signaling<span>Three disciplines, one recommendation</span></a>
+      </div>
+    </div>
+    <div class="navgroup">
+      <button class="navtop" type="button" aria-expanded="false" aria-haspopup="true">Resources<i class="caret"></i></button>
+      <div class="navmenu">
+        <a href="/whitepaper.html">The Answer Economy<span>Our 2026 white paper on AI Signaling</span></a>
+        <a href="/news.html">Newsroom<span>Announcements and press releases</span></a>
+        <a href="#field-notes">Field notes<span>The field guide to being named by AI</span></a>
+        <a href="#kit">Media kit<span>Everything a journalist or partner needs</span></a>
+        <a href="#faq">FAQ<span>AI signaling, answered</span></a>
+      </div>
+    </div>
+    <a class="navtop navtop--out" href="https://www.gcw.agency/" target="_blank" rel="noopener">GCW Agency &#8599;</a>
+  </div>
+  <button class="navburger" type="button" aria-expanded="false" aria-controls="mobilenav" aria-label="Menu"><span></span><span></span><span></span></button>
+  <a class="navcta" href="mailto:erika@signllabs.ai">Contact us</a>
+</div>
+<div class="mobilenav" id="mobilenav"><div class="wrap">
+  <div class="mnav-group"><div class="mnav-label">The instrument</div>
+    <a href="#what">What is AI signaling</a>
+    <a href="#instrument">Six dimensions</a>
+    <a href="#ladder">The ladder</a>
+    <a href="#intent">Intent framework</a>
+    <a href="#work">The cadence</a>
+  </div>
+  <div class="mnav-group"><div class="mnav-label">Proof</div>
+    <a href="#proof">Case studies</a>
+    <a href="#why">Why SignlLabs</a>
+    <a href="#difference">SEO vs AEO vs AI Signaling</a>
+  </div>
+  <div class="mnav-group"><div class="mnav-label">Resources</div>
+    <a href="/whitepaper.html">The Answer Economy</a>
+    <a href="/news.html">Newsroom</a>
+    <a href="#field-notes">Field notes</a>
+    <a href="#kit">Media kit</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div class="mnav-group"><div class="mnav-label">More</div>
+    <a href="https://www.gcw.agency/" target="_blank" rel="noopener">GCW Agency &#8599;</a>
+    <a href="mailto:erika@signllabs.ai">Contact us</a>
+  </div>
+</div></div>
+</nav>
+<main>
+<section class="page-hd"><div class="wrap reveal">
+  <div class="sec-k">Newsroom</div>
+  <h1>SignlLabs in the news.</h1>
+  <p class="lede">Announcements from Global Communication Works about SignlLabs, its AI Signaling practice. Media and licensing inquiries: Brad Ginsburg, <a href="mailto:brad@gcw.agency" style="color:var(--mint)">brad@gcw.agency</a>.</p>
+</div></section>
+<section style="padding-bottom:96px"><div class="wrap">
+  <article class="release reveal" id="launch">
+    <div class="rmeta">Practice launch &middot; August 31, 2026</div>
+    <h2>GCW Launches SignlLabs&trade;, a Proprietary AI Signaling Practice Built to Earn Brand Visibility Across Artificial Intelligence Platforms</h2>
+    <p class="dek">New practice gives clients a measurable path to being recommended by ChatGPT, Gemini, Claude, Copilot and Perplexity, built for AI rather than retrofitted from SEO.</p>
+    <p>NEW YORK, N.Y. &mdash; Global Communication Works (GCW), the strategic public relations and communications agency, today announced the formation of SignlLabs&trade;, its proprietary AI Signaling practice. SignlLabs gives GCW clients a dedicated methodology for earning visibility and recommendations across the artificial intelligence platforms consumers now turn to for answers.</p>
+    <blockquote>&ldquo;For nearly 40 years, GCW has built our clients&rsquo; reputations one relationship, one story and one placement at a time. SignlLabs is the natural next chapter. Consumers no longer stop at a search engine. They are asking AI platforms for recommendations, and brands need a real strategy to show up there, not a retrofit of old SEO tactics. That is exactly what we built.&rdquo;<cite>Suzy Ginsburg, Founder and CEO, GCW</cite></blockquote>
+    <p>Search engine optimization earns a ranking on a page of links. Answer engine optimization earns the snippet an AI reads back. AI Signaling earns the recommendation itself. The distinction matters because an answer engine does not simply answer the question it is asked. It quietly splits a single prompt into several hidden research queries, then composes an answer from the sources it trusts most, sources that are overwhelmingly earned through third-party endorsement rather than a brand&rsquo;s own website.</p>
+    <p>SignlLabs pairs GCW&rsquo;s earned media strategy with a dedicated AI recommendation framework, measuring performance across the five platforms most consumers now rely on for answers: ChatGPT, Google Gemini, Claude, Microsoft Copilot and Perplexity.</p>
+    <p>GCW now measures success across both traditional and AI channels, tracking impressions, reach and engagement alongside AI recommendation lift, giving clients a full view of how a campaign performs wherever audiences get their news and their answers.</p>
+    <p>SignlLabs is already embedded in many GCW campaigns across the agency&rsquo;s women&rsquo;s health, consumer health and lifestyle client roster, and the practice will be central to new business pursuits going forward.</p>
+    <blockquote>&ldquo;SEO is about being the answer. AI Signaling is about being the recommendation. When someone asks an answer engine which brand is best, the platform runs its own research behind the scenes and names the brands it trusts. That trust lives in earned media, not on a brand&rsquo;s homepage.&rdquo;<cite>Erika Austria, lead of SignlLabs</cite></blockquote>
+    <p class="contact">Media contact: Brad Ginsburg, Global Communication Works, <a href="mailto:brad@gcw.agency" style="color:var(--mint)">brad@gcw.agency</a>. More at <a href="https://signllabs.ai/" style="color:var(--mint)">signllabs.ai</a> and <a href="https://www.gcw.agency/" style="color:var(--mint)">gcw.agency</a>.</p>
+  </article>
+  <article class="release reveal" id="licensing">
+    <div class="rmeta">Licensing &middot; August 31, 2026</div>
+    <h2>Global Communication Works Opens SignlLabs&trade;, Its Proprietary AI Signaling Practice, for License to PR Firms, Ad Agencies, and Web Developers</h2>
+    <p class="dek">Licensees gain a ready-built methodology for earning client visibility across ChatGPT, Gemini, Claude, Copilot and Perplexity, without building an AI Signaling practice from scratch.</p>
+    <p>NEW YORK, N.Y. &mdash; Global Communication Works (GCW), the strategic public relations and communications agency, today announced that SignlLabs, its proprietary AI Signaling practice, is now available for license to public relations firms, advertising agencies, and web development companies. The license enables agencies and developers to offer their clients a measurable AI Signaling program without having to build the methodology in-house.</p>
+    <blockquote>&ldquo;SignlLabs was built inside GCW, but it does not need to stay inside GCW. Any agency or developer, whether it specializes in public relations, advertising or web development, can now license SignlLabs and give its own clients a real path to AI visibility instead of trying to reverse-engineer one. This is not about protecting a competitive advantage. It is about setting the standard the whole industry can build on.&rdquo;<cite>Brad Ginsburg, Partner and President, GCW</cite></blockquote>
+    <p>SignlLabs measures a brand&rsquo;s presence and recommendation strength across the five platforms most consumers now turn to for answers: ChatGPT, Gemini, Claude, Copilot and Perplexity. Built from the ground up rather than adapted from existing search practices, the methodology has been embedded across GCW&rsquo;s client campaigns before being opened to outside licensees.</p>
+    <p>Licensees gain access to the SignlLabs framework, measurement approach and training needed to run AI Signaling programs for their own client rosters, spanning industries from consumer health to retail. GCW will continue to support licensees as the AI platforms themselves evolve, keeping the methodology current as recommendation algorithms change.</p>
+    <p>The license is available to public relations firms, advertising agencies and web development companies of any size, and interested parties can reach GCW directly to discuss terms.</p>
+    <p class="contact">Media contact: Brad Ginsburg, Global Communication Works, <a href="mailto:brad@gcw.agency" style="color:var(--mint)">brad@gcw.agency</a>. More at <a href="https://signllabs.ai/" style="color:var(--mint)">signllabs.ai</a> and <a href="https://www.gcw.agency/" style="color:var(--mint)">gcw.agency</a>.</p>
+  </article>
+  <article class="release reveal" id="advisory">
+    <div class="rmeta">Growth advisory &middot; August 31, 2026</div>
+    <h2>Global Communication Works Expands SignlLabs&trade; into a Strategic Growth Advisory Practice</h2>
+    <p class="dek">Hands-on counsel on where to invest, how to compete, and where growth comes next, for companies from the Fortune 100 to early-stage startups.</p>
+    <p>NEW YORK, N.Y. &mdash; Global Communication Works (GCW) today announced that SignlLabs&trade;, its proprietary AI Signaling practice, is expanding beyond visibility and measurement into strategic growth advisory. The new capability brings hands-on counsel on where to invest, how to compete, and where growth will come next for companies of every scale, from the Fortune 100 to early-stage startups.</p>
+    <blockquote>&ldquo;Companies do not just need to know how AI sees them. They need a roadmap for what to do about it. That is the gap we are closing. SignlLabs is bringing consulting-caliber strategic thinking and a clear, phased path to execution to a discipline that, until now, has mostly lived with top consulting companies.&rdquo;<cite>Erika Austria, lead of SignlLabs</cite></blockquote>
+    <p>SignlLabs begins with deep research and development: sizing the market opportunity through a total addressable market and serviceable addressable market view, distilling both into a directional summary of the size of the prize, mapping where the unmet opportunities lie, and benchmarking precedent comparables for what the market already pays. From there, SignlLabs advises on how to build on that opportunity, identifying where the growth lies and developing the roadmap to capture it.</p>
+    <p>The approach is already at work. For an emerging brand, SignlLabs mapped an entire category from a blank slate. Nothing like it existed yet, not as a brand, not as a digital destination, not as a trusted source consumers could turn to. The market sizing alone pointed to a roughly $36 billion total addressable market with $16 billion serviceable in the U.S., directional, and SignlLabs used that opportunity to hand the brand a complete go-to-market plan: a redesigned website built to be the trusted, cited answer across every major AI platform and large language model, and a consumer app designed to build community, deliver education and establish the brand as the name consumers and retailers trust most.</p>
+    <p>The expanded offering positions SignlLabs as a growth partner as well as a measurement platform, helping clients act on AI Signaling insights with the same discipline GCW brings to earned media, brand positioning and reputation management. The scope of the engagement, whether audit only, full build, or ongoing monitoring, is shaped to the size and stage of the client.</p>
+    <p class="contact">Media contact: Brad Ginsburg, Global Communication Works, <a href="mailto:brad@gcw.agency" style="color:var(--mint)">brad@gcw.agency</a>. More at <a href="https://signllabs.ai/" style="color:var(--mint)">signllabs.ai</a> and <a href="https://www.gcw.agency/" style="color:var(--mint)">gcw.agency</a>.</p>
+  </article>
+</div></section>
+</main>
+<footer>
+  <div class="logo">Signl<span class="spark">Labs.</span></div>
+  <div>SignlLabs LLC · Founded 2026 · signllabs.ai</div>
+  <div style="margin-top:8px">Powered by the Maturity Method™</div>
+  <div style="margin-top:8px">© 2026 SignlLabs LLC. Maturity Method™ and the Intent Category Framework™ are trademarks of SignlLabs LLC.</div>
+</footer>
+<script>
+/* nav: hover or click to open, Escape / outside click / item click to close */
+(function(){
+  var groups=[].slice.call(document.querySelectorAll('.navgroup'));
+  function shut(except){
+    groups.forEach(function(g){
+      if(g===except) return;
+      g.classList.remove('is-open');
+      var b=g.querySelector('.navtop');
+      if(b) b.setAttribute('aria-expanded','false');
+    });
+  }
+  /* a real mouse opens on hover; touch and keyboard toggle on click */
+  var canHover=window.matchMedia&&window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  function open(g,btn){shut(g);g.classList.add('is-open');btn.setAttribute('aria-expanded','true');}
+  groups.forEach(function(g){
+    var btn=g.querySelector('.navtop');
+    if(!btn) return;
+    if(canHover){
+      g.addEventListener('mouseenter',function(){open(g,btn);});
+      g.addEventListener('mouseleave',function(){g.classList.remove('is-open');btn.setAttribute('aria-expanded','false');});
+      btn.addEventListener('click',function(e){e.preventDefault();open(g,btn);});
+      btn.addEventListener('focus',function(){open(g,btn);});
+    }else{
+      btn.addEventListener('click',function(e){
+        e.preventDefault();
+        var wasOpen=g.classList.contains('is-open');
+        shut(null);
+        if(!wasOpen) open(g,btn);
+      });
+    }
+    [].slice.call(g.querySelectorAll('.navmenu a')).forEach(function(a){
+      a.addEventListener('click',function(){shut(null);});
+    });
+  });
+  var burger=document.querySelector('.navburger'), mnav=document.getElementById('mobilenav');
+  function shutMobile(){
+    if(!burger||!mnav) return;
+    mnav.classList.remove('is-open');
+    burger.classList.remove('is-open');
+    burger.setAttribute('aria-expanded','false');
+  }
+  if(burger&&mnav){
+    burger.addEventListener('click',function(){
+      var open=!mnav.classList.contains('is-open');
+      mnav.classList.toggle('is-open',open);
+      burger.classList.toggle('is-open',open);
+      burger.setAttribute('aria-expanded',String(open));
+    });
+    [].slice.call(mnav.querySelectorAll('a')).forEach(function(a){
+      a.addEventListener('click',shutMobile);
+    });
+  }
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.navgroup')) shut(null);
+    if(!e.target.closest('nav')) shutMobile();
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){shut(null);shutMobile();}
+  });
+})();
+</script>
+</body>
+</html>
