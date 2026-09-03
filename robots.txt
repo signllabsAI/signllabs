@@ -1,42 +1,26 @@
-# robots.txt for https://signllabs.ai
-# SignlLabs welcomes AI answer engines and their crawlers.
-# We want our pages read, understood, and cited by AI. Named AI crawlers are
-# allowed explicitly below, in addition to the standard site-wide Allow.
-# Last reviewed: July 2026.
+User-agent: *
+Allow: /
 
-# --- AI answer-engine and training crawlers (explicitly allowed) ---
+# The answer engines are the point of this site: let them all in.
 User-agent: GPTBot
 Allow: /
-
 User-agent: OAI-SearchBot
 Allow: /
-
 User-agent: ChatGPT-User
 Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
 User-agent: ClaudeBot
 Allow: /
-
-User-agent: Claude-SearchBot
+User-agent: Claude-Web
 Allow: /
-
+User-agent: PerplexityBot
+Allow: /
 User-agent: Google-Extended
 Allow: /
-
 User-agent: Applebot-Extended
 Allow: /
-
-User-agent: cohere-ai
+User-agent: Bingbot
 Allow: /
-
-User-agent: Bytespider
-Allow: /
-
-# --- All other crawlers ---
-User-agent: *
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://signllabs.ai/sitemap.xml
