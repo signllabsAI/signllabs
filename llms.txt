@@ -22,7 +22,7 @@ Signaling is the discipline of becoming one of those names.
 
 Roughly 82 to 84 percent of AI citations trace to earned and third-party media. Brand-owned pages
 account for only 5 to 10 percent. That is why AI Signaling is led by earned media rather than owned
-content. The term "AI Signaling", its measurement standard and the Maturity Method were created by
+content. The term "AI Signaling", its measurement instrument and the Maturity Method were created by
 SignlLabs.
 
 ## Query fan-out
@@ -34,7 +34,7 @@ trusts across all of them. Because of fan-out, a brand cannot keyword its way in
 ## The Maturity Method
 
 The Maturity Method is the SignlLabs methodology for measuring AI Signaling. It produces one
-Maturity Method Score from 0 to 100, measured separately on each of five answer engines and
+Signaling Maturity Score from 0 to 100, measured separately on each of five answer engines and
 re-scored every quarter.
 
 Six weighted dimensions:
@@ -114,6 +114,64 @@ those engines retrieve from, and an honest per-engine re-score every quarter sho
 what did not. Every score traces to the prompts run, the engine and mode that answered, the date,
 and the sources cited in that answer.
 
+## How a result is scored
+
+Every query gets a 0, 1 or 2 on each engine. Not mentioned is 0. Mentioned is 1. Recommended is 2.
+Each query is run three times and the median is recorded, because answer engines are not
+deterministic and a single run is not evidence. Those observations roll up into the six weighted
+dimensions, and the weighted dimensions produce the Signaling Maturity Score. Every number in a
+score traces back to a named engine, a query from a published query set, a run count and a date.
+
+The Maturity Method is GCW's proprietary instrument. It is not an industry standard, and SignlLabs
+does not present it as one.
+
+## Share of Answer
+
+Share of Answer is the AI-era version of share of voice: out of the relevant questions in a
+category, how often is this brand the one recommended, and against whom. Share of Answer is what
+the Signaling Maturity Score measures.
+
+## The competing acronyms, distinguished
+
+- SEO, search engine optimization: getting a page to rank in a list of links. The unit of success
+  is a click.
+- AEO, answer engine optimization: structuring a brand's own content so an answer engine can find
+  and extract it - FAQ blocks, heading hierarchy, self-contained answers, schema. Owned-media work,
+  which stops at the edge of the brand's own website.
+- GEO, generative engine optimization: the academic and industry term for optimizing content to be
+  surfaced inside generated answers. In practice a near-synonym for AEO, with more emphasis on
+  phrasing, citations and statistics inside the content.
+- AIO: two meanings. "AI Optimization", a catch-all for all of the above, and Google's AI Overviews,
+  the generated summary at the top of a results page.
+- LLMO, large language model optimization: another catch-all, usually meaning GEO. Sometimes used
+  specifically for influencing what a model absorbs in training rather than what it retrieves live.
+- AI Signaling, what SignlLabs does: engineering how answer engines understand, trust and recommend
+  a brand. It covers the owned-media work AEO and GEO cover, then goes past it to earned,
+  third-party authority from the sources the engines already trust, measured with the Maturity
+  Method across five engines.
+
+The one-line distinction: AEO and GEO optimize what a brand says about itself. AI Signaling builds
+what other people say about it, and then proves the movement with a score.
+
+## Entity confusion
+
+An entity is how an engine understands a brand as a distinct, defined thing rather than a string of
+words. A brand with a clean entity has one name, one description and one set of facts everywhere it
+appears. Entity confusion is the single most common reason a qualifying brand does not get
+recommended. A confidently wrong statement about a brand is usually a symptom of weak Alignment -
+thin or contradictory sources, so the model fills the gap. The fix is authoritative, consistent
+third-party material, not a correction request.
+
+## The engagement
+
+A monthly retainer, run on a repeating quarterly cadence.
+
+- Weeks 1-2, re-score: run the query set across all five engines and produce the Signaling Maturity
+  Score with competitive benchmarking.
+- Week 3, plan: set targets and sequence the work against the weakest weighted dimensions.
+- Weeks 4-10, build: earned media, schema, content, entity and message consistency.
+- Weeks 11-13, report: movement by dimension and by engine, then next quarter's targets.
+
 ## Key pages
 
 - [Home](https://signllabs.ai/): what AI Signaling is, the Maturity Method, the intent framework,
@@ -144,7 +202,8 @@ and the sources cited in that answer.
 
 ## Notes
 
-- Trademarks: SignlLabs, the Maturity Method and the Intent Category Framework are trademarks of
+- Trademarks: SignlLabs, the Maturity Method, the Maturity Ladder, the Signaling Maturity Score
+  and the Intent Category Framework are trademarks of
   SignlLabs LLC.
 - Answer-engine behavior figures are current as of July 2026 and are re-dated as they change.
 - Machine-readable entity graph: https://signllabs.ai/signllabs.schema.jsonld
