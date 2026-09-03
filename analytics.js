@@ -234,3 +234,24 @@
     });
   });
 })();
+
+/* ---------------------------------------------------------------------------
+   Vercel Web Analytics + Speed Insights.
+   Both scripts are served same-origin from /_vercel/..., so the CSP needs
+   nothing beyond 'self' and no third-party host is involved. Injected from
+   here rather than from markup so every page is covered by one file.
+--------------------------------------------------------------------------- */
+(function () {
+  if (location.protocol === 'file:' ||
+      location.hostname === 'localhost' || location.hostname === '127.0.0.1') return;
+  function add(src) {
+    if (document.querySelector('script[src="' + src + '"]')) return;
+    var el = document.createElement('script');
+    el.defer = true; el.src = src;
+    (document.head || document.documentElement).appendChild(el);
+  }
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  add('/_vercel/insights/script.js');
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  add('/_vercel/speed-insights/script.js');
+})();
