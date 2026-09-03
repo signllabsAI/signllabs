@@ -71,6 +71,49 @@ Ten buyer intent categories, grouped in five stages, scored per answer engine:
   advertising agencies and web development companies to run AI Signaling programs for their own
   clients.
 
+## The five components of an engagement
+
+An AI Signaling engagement has five components. The methodology is the product; a microsite, a wire
+release or a distribution push are how a plan gets executed, chosen because the score indicated
+them rather than because they are what an agency sells.
+
+1. The Maturity Score. A 0-100 baseline across five answer engines, ten buyer intent categories and
+   six weighted dimensions, reported per engine and never blended.
+2. The maturity plan. The brand's current rung, the rung above it, and the sequence between them,
+   ordered by weakest dimension. Targets signed off before anything is built.
+3. Answer surfaces. Schema and structured data, entity records in Wikipedia and Wikidata, clean
+   liftable answers, and a signal microsite where the category question has no good answer yet.
+4. Earned citation. Scientific and news releases through national wire, trade and consumer press,
+   review platforms and communities, plus citation repair when an engine credits a competitor with
+   the brand's own evidence.
+5. The quarterly re-score. The same instrument re-run per engine, with a quarter-over-quarter delta
+   showing what moved, what did not, and what the next wave targets.
+
+## How the signal compounds
+
+An answer engine does not read a brand's website and decide. It reads what third-party sources say
+and then decides. SignlLabs records what each engine cited when it answered, which reveals the
+specific sources that engine trusts for the category. Work is placed into exactly those sources,
+and the next quarterly re-score shows which placements the engines picked up and which they
+ignored. Each cycle narrows the guesswork, so later waves are aimed better than earlier ones, and
+because the sources stay on the record the earliest work keeps contributing.
+
+This is why AI Signaling is a quarterly discipline rather than a launch: the engines re-crawl and
+re-retrieve on their own schedule.
+
+## What SignlLabs does not promise
+
+SignlLabs does not guarantee that a brand will be named first, or named at all, by any answer
+engine. Nobody controls what ChatGPT, Google Gemini, Claude, Microsoft Copilot or Perplexity say,
+and the engines change their retrieval and their models without notice. Any firm guaranteeing a
+rank or a mention in an AI answer is promising something it cannot deliver.
+
+What SignlLabs commits to is the instrument and the work: an auditable baseline score, a plan tied
+to the weakest dimensions, execution that puts the brand on the record in the third-party sources
+those engines retrieve from, and an honest per-engine re-score every quarter showing what moved and
+what did not. Every score traces to the prompts run, the engine and mode that answered, the date,
+and the sources cited in that answer.
+
 ## Key pages
 
 - [Home](https://signllabs.ai/): what AI Signaling is, the Maturity Method, the intent framework,
@@ -90,7 +133,7 @@ Ten buyer intent categories, grouped in five stages, scored per answer engine:
 
 ## People
 
-- Erika Hanafin Austria, lead of SignlLabs, creator of the Maturity Method. https://erikahanafin.com
+- Erika Hanafin Austria, Chief Operating Officer of SignlLabs, creator of the Maturity Method. https://erikahanafin.com
 - Suzy Ginsburg, Founder and CEO, Global Communication Works.
 - Brad Ginsburg, Partner and President, Global Communication Works. brad@gcw.agency
 
