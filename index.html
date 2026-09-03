@@ -44,7 +44,7 @@
   --ink:#17161A; --dim:#57606E; --faint:#9AA2B0; --line:#E4E8EF; --soft:#F5F7FA; --paper:#FFFFFF;
   --nav:#0E1622; --nav2:#131B29; --navline:#2C3B55; --navtext:#EDF1F7; --navdim:#A7B3C6;
   --mint:#0FD9A0; --pink:#FF3D6E; --purple:#7C5CFF; --gold:#F5B72E; --coral:#FF7A45; --sky:#3D7BFF;
-  --hf:'Space Grotesk',sans-serif; --bf:'Inter',sans-serif;
+  --hf:'Archivo','Space Grotesk',sans-serif; --bf:'Inter',sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -742,6 +742,11 @@ details.faq-item .faq-a p{font-size:15.5px;color:var(--dim);line-height:1.65;mar
   .rscore__rungs{grid-template-columns:1fr 1fr 1fr}
 }
 
+
+/* the client lockup on a case card: small, monochrome, never louder than the number */
+.case-logo{margin:16px 0 6px;height:46px;display:flex;align-items:center}
+.case-logo img{max-height:100%;width:auto;max-width:200px;object-fit:contain;
+  object-position:left center;opacity:.95}
 </style>
 </head>
 <body>
@@ -1045,46 +1050,54 @@ details.faq-item .faq-a p{font-size:15.5px;color:var(--dim);line-height:1.65;mar
     </div>
   </div>
 </div></section>
-<section id="proof" class="rproof"><div class="rw reveal">
-  <span class="kick">Proof</span>
-  <h2 class="rh">Two industries. Two problems. One instrument.</h2>
-  <article class="rcase">
-    <span class="rcase__k">Case 01 &middot; Women&rsquo;s health</span>
+<section class="proof" id="proof"><div class="wrap reveal">
+  <div class="sec-k">Proof</div>
+  <h2 class="sec-h">Two industries. Two problems. One instrument.</h2>
+
+  <div class="cases">
+  <article class="case">
+    <p class="case-kicker"><span>Case 01</span> Women&rsquo;s health</p>
+    <div class="case-logo"><img src="/img/logo-planb.png" alt="Plan B One-Step" loading="lazy"></div>
     <h3>The signal that compounds.</h3>
-    <p>A national women&rsquo;s health brand was barely in the answer when buyers asked AI about
-    its category. We engineered a five-part national data series through national wire &mdash;
-    giving journalists a reason to cite, and the engines a primary source to retrieve.</p>
-    <div class="rcase__nums">
-      <div><b>+700%</b><p>cumulative AI citation signal in 63 days</p></div>
-      <div><b>56/60</b><p>citation score across five engines &mdash; 93% of maximum</p></div>
-      <div><b>480.7M</b><p>cumulative reach over 1,824 placements, anchored by Yahoo Finance and
-        AP News</p></div>
-      <div><b>3 of 5</b><p>engines at a perfect 12 of 12 &middot; the other two at 10</p></div>
+    <p class="case-desc">A national women&rsquo;s health brand was barely in the answer when buyers
+    asked AI about its category. We engineered a five-part national data series through national
+    wire &mdash; giving journalists a reason to cite, and the engines a primary source to
+    retrieve.</p>
+    <div class="proofgrid">
+      <div class="pf pf--a"><div class="n">+700%</div><div class="t">cumulative AI citation signal in 63 days</div></div>
+      <div class="pf pf--b"><div class="n">56 / 60</div><div class="t">citation score across five engines &middot; 93% of maximum</div></div>
+      <div class="pf pf--c"><div class="n">480.7M</div><div class="t">cumulative reach over 1,824 placements, anchored by Yahoo Finance and AP News</div></div>
+      <div class="pf pf--d"><div class="n">3 of 5</div><div class="t">engines at a perfect 12 of 12 &middot; the other two at 10</div></div>
     </div>
-    <p class="rcase__note">Between waves, two engines softened while two recovered. A blended
-    average would have hidden it. Measurement is not a report card &mdash; it is the steering
-    wheel.</p>
+    <p class="fine">Between waves, two engines softened while two recovered. A blended average
+    would have hidden it. We score per engine, every time, so the dips were caught, diagnosed to
+    specific buyer questions, and targeted in the next wave. Measurement is not a report card. It
+    is the steering wheel.</p>
   </article>
-  <article class="rcase">
-    <span class="rcase__k">Case 02 &middot; Consumer health devices</span>
+  <article class="case">
+    <p class="case-kicker"><span>Case 02</span> Consumer health devices</p>
+    <div class="case-logo"><img src="/img/logo-beurer.png" alt="Beurer" loading="lazy"></div>
     <h3>The engines cited the science &mdash; and credited the wrong brand.</h3>
-    <p>A global device brand had peer-reviewed clinical proof and the engines were quoting it. One
-    engine credited a rival with the brand&rsquo;s own results, every single time. We repaired the
-    citation chain: a scientific release on national wire put the study on record as
-    brand-attributed, and schema connected the science to its owner.</p>
-    <div class="rcase__nums">
-      <div><b>24/60</b><p>AI signal after the second audit, from a zero baseline in ten days</p></div>
-      <div><b>1 &rarr; 7</b><p>fastest engine lift, of 12, after structured data shipped</p></div>
-      <div><b>176M+</b><p>combined syndication reach across launch and scientific releases</p></div>
-      <div><b>1 engine</b><p>still credits the rival &mdash; which is why we re-score, never audit
-        once</p></div>
+    <p class="case-desc">A global consumer health device brand had peer-reviewed clinical proof and
+    the engines were quoting it. But one engine credited a rival device with the brand&rsquo;s own
+    results, every single time. We repaired the citation chain: a scientific release through
+    national wire put the study on record as a brand-attributed primary source, and MedicalStudy
+    and FAQPage schema connected the science to its owner.</p>
+    <div class="proofgrid">
+      <div class="pf pf--a"><div class="n">24 / 60</div><div class="t">AI signal after the second audit, from a zero pre-launch baseline in ten days</div></div>
+      <div class="pf pf--b"><div class="n">1 &rarr; 7</div><div class="t">fastest engine lift, of 12, after structured data shipped</div></div>
+      <div class="pf pf--c"><div class="n">176M+</div><div class="t">combined syndication reach across the launch and scientific releases</div></div>
+      <div class="pf pf--d"><div class="n">Per engine</div><div class="t">one engine still credits the rival &middot; which is why we re-score, never audit once</div></div>
     </div>
-    <p class="rcase__note">Owned content alone could not fix this. The engines needed a trusted
-    third-party record connecting the science to the brand. That is the citation chain.</p>
+    <p class="fine">Owned content alone could not fix this. The engines needed a trusted
+    third-party record connecting the science to the brand. Wire-distributed primary source, schema
+    markup, per-engine tracking to confirm the repair holds. That is the citation chain.</p>
   </article>
-  <p class="rproof__close">One brand needed volume &mdash; presence in the sources engines trust.
-  The other needed precision &mdash; the right name attached to signals already flowing. The same
-  instrument diagnosed both.</p>
+  </div>
+  <p class="proof-closer">One brand needed volume: presence in the sources engines trust. The other
+  needed precision: the right name attached to signals already flowing. The Maturity Method&trade;
+  diagnosed both, sequenced the work by weakest dimension, and reported per engine, never blended.
+  That is the difference between monitoring your AI visibility and moving it.</p>
 </div></section>
 <section id="you" class="ryou"><div class="rw reveal">
   <span class="kick">Where you sit</span>
