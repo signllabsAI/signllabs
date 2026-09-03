@@ -1075,7 +1075,7 @@ details.faq-item .faq-a p{font-size:15.5px;color:var(--dim);line-height:1.65;mar
   <div class="cases">
   <article class="case">
     <p class="case-kicker"><span>Case 01</span> Women&rsquo;s health</p>
-    <div class="case-logo"><img src="/img/logo-planb.png" alt="Plan B One-Step" loading="lazy"></div>
+    <div class="case-logo"><img src="/img/logo-planb.png" alt="Plan B One-Step"></div>
     <h3>The signal that compounds.</h3>
     <p class="case-desc"><strong>Plan B One-Step</strong> was barely in the answer when buyers asked
     AI about its category. We engineered a five-part national data series through national
@@ -1094,7 +1094,7 @@ details.faq-item .faq-a p{font-size:15.5px;color:var(--dim);line-height:1.65;mar
   </article>
   <article class="case">
     <p class="case-kicker"><span>Case 02</span> Consumer health devices</p>
-    <div class="case-logo"><img src="/img/logo-beurer.png" alt="Beurer" loading="lazy"></div>
+    <div class="case-logo"><img src="/img/logo-beurer.png" alt="Beurer"></div>
     <h3>The engines cited the science, and credited the wrong brand.</h3>
     <p class="case-desc"><strong>Beurer</strong> had peer-reviewed clinical proof for its BiteX
     BR60 insect bite healer, and the engines were quoting it. But one engine credited a rival device with the brand&rsquo;s own
@@ -1123,10 +1123,10 @@ details.faq-item .faq-a p{font-size:15.5px;color:var(--dim);line-height:1.65;mar
     Method&trade; and the Intent Category Framework&trade;. These are outlets where the practice
     and the campaigns it runs have been covered.</p>
     <div class="seenin__row">
-      <img src="/img/press-yahoofinance.png" alt="Yahoo Finance" style="height:30px" loading="lazy">
-      <img src="/img/press-cw39.png" alt="CW39 KIAH-TV Houston" style="height:36px" loading="lazy">
-      <img src="/img/press-aij.png" alt="The AI Journal" style="height:40px" loading="lazy">
-      <img src="/img/press-investorshangout.png" alt="Investors Hangout" style="height:40px" loading="lazy">
+      <img src="/img/press-yahoofinance.png" alt="Yahoo Finance" style="height:30px">
+      <img src="/img/press-cw39.png" alt="CW39 KIAH-TV Houston" style="height:36px">
+      <img src="/img/press-aij.png" alt="The AI Journal" style="height:40px">
+      <img src="/img/press-investorshangout.png" alt="Investors Hangout" style="height:40px">
     </div>
     <p class="seenin__note"><a href="#difference">What AI Signaling is &rarr;</a><a href="/news.html">Newsroom &rarr;</a><a href="/whitepaper.html">The Answer Economy &rarr;</a></p>
   </div>
@@ -1351,9 +1351,21 @@ details.faq-item .faq-a p{font-size:15.5px;color:var(--dim);line-height:1.65;mar
   <div style="margin-top:8px">© 2026 SignlLabs LLC. Maturity Method™ and the Intent Category Framework™ are trademarks of SignlLabs LLC.</div>
 </footer>
 <script>
-const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');
+const io=new IntersectionObserver((es)=>{window.__ioAlive=true;es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');
   e.target.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w+'%');}})},{threshold:.12});
 document.querySelectorAll('.reveal,.panel').forEach(el=>io.observe(el));
+/* safety net: if IntersectionObserver never delivers, the whole page would sit
+   at opacity 0. A live observer always delivers an initial record for every
+   target, so no callback at all within 1.4s means it is not working. */
+if(!('IntersectionObserver' in window)){
+  document.querySelectorAll('.reveal,.panel').forEach(el=>el.classList.add('in'));
+}else{
+  setTimeout(function(){
+    if(!window.__ioAlive){
+      document.querySelectorAll('.reveal,.panel').forEach(el=>el.classList.add('in'));
+    }
+  },1400);
+}
 // animate hero panel bars on load
 window.addEventListener('load',()=>{setTimeout(()=>{document.querySelectorAll('#heropanel .fill').forEach(f=>f.style.width=f.dataset.w+'%');},250);});
 </script>

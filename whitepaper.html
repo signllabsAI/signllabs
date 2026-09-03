@@ -585,9 +585,21 @@ details.faq-item .faq-a p{font-size:15.5px;color:var(--dim);line-height:1.65;mar
   <div style="margin-top:8px">© 2026 SignlLabs LLC. Maturity Method™ and the Intent Category Framework™ are trademarks of SignlLabs LLC.</div>
 </footer>
 <script>
-const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');
+const io=new IntersectionObserver((es)=>{window.__ioAlive=true;es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');
   e.target.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w+'%');}})},{threshold:.12});
 document.querySelectorAll('.reveal,.panel').forEach(el=>io.observe(el));
+/* safety net: if IntersectionObserver never delivers, the whole page would sit
+   at opacity 0. A live observer always delivers an initial record for every
+   target, so no callback at all within 1.4s means it is not working. */
+if(!('IntersectionObserver' in window)){
+  document.querySelectorAll('.reveal,.panel').forEach(el=>el.classList.add('in'));
+}else{
+  setTimeout(function(){
+    if(!window.__ioAlive){
+      document.querySelectorAll('.reveal,.panel').forEach(el=>el.classList.add('in'));
+    }
+  },1400);
+}
 // animate hero panel bars on load
 window.addEventListener('load',()=>{setTimeout(()=>{document.querySelectorAll('#heropanel .fill').forEach(f=>f.style.width=f.dataset.w+'%');},250);});
 </script>

@@ -550,10 +550,10 @@ details.faq-item .faq-a p{font-size:15.5px;color:var(--dim);line-height:1.65;mar
   Maturity Method&trade; and the Intent Category Framework&trade;. These are outlets where the
   practice and the campaigns it runs have been covered.</p>
   <div class="nseen__row">
-    <img src="/img/press-yahoofinance.png" alt="Yahoo Finance" style="height:30px" loading="lazy">
-    <img src="/img/press-cw39.png" alt="CW39 KIAH-TV Houston" style="height:36px" loading="lazy">
-    <img src="/img/press-aij.png" alt="The AI Journal" style="height:40px" loading="lazy">
-    <img src="/img/press-investorshangout.png" alt="Investors Hangout" style="height:40px" loading="lazy">
+    <img src="/img/press-yahoofinance.png" alt="Yahoo Finance" style="height:30px">
+    <img src="/img/press-cw39.png" alt="CW39 KIAH-TV Houston" style="height:36px">
+    <img src="/img/press-aij.png" alt="The AI Journal" style="height:40px">
+    <img src="/img/press-investorshangout.png" alt="Investors Hangout" style="height:40px">
   </div>
 </div></section>
 <section style="padding-bottom:96px"><div class="wrap">
@@ -561,7 +561,7 @@ details.faq-item .faq-a p{font-size:15.5px;color:var(--dim);line-height:1.65;mar
     <div class="rmeta">Practice launch &middot; August 31, 2026</div>
     <h2>GCW Launches SignlLabs&trade;, a Proprietary AI Signaling Practice Built to Earn Brand Visibility Across Artificial Intelligence Platforms</h2>
     <p class="dek">New practice gives clients a measurable path to being recommended by ChatGPT, Gemini, Claude, Copilot and Perplexity, built for AI rather than retrofitted from SEO.</p>
-    <p>NEW YORK, N.Y. &mdash; Global Communication Works (GCW), the strategic public relations and communications agency, today announced the formation of SignlLabs&trade;, its proprietary AI Signaling practice. SignlLabs gives GCW clients a dedicated methodology for earning visibility and recommendations across the artificial intelligence platforms consumers now turn to for answers.</p>
+    <p>NEW YORK, N.Y. - Global Communication Works (GCW), the strategic public relations and communications agency, today announced the formation of SignlLabs&trade;, its proprietary AI Signaling practice. SignlLabs gives GCW clients a dedicated methodology for earning visibility and recommendations across the artificial intelligence platforms consumers now turn to for answers.</p>
     <blockquote>&ldquo;For nearly 40 years, GCW has built our clients&rsquo; reputations one relationship, one story and one placement at a time. SignlLabs is the natural next chapter. Consumers no longer stop at a search engine. They are asking AI platforms for recommendations, and brands need a real strategy to show up there, not a retrofit of old SEO tactics. That is exactly what we built.&rdquo;<cite>Suzy Ginsburg, Founder and CEO, GCW</cite></blockquote>
     <p>Search engine optimization earns a ranking on a page of links. Answer engine optimization earns the snippet an AI reads back. AI Signaling earns the recommendation itself. The distinction matters because an answer engine does not simply answer the question it is asked. It quietly splits a single prompt into several hidden research queries, then composes an answer from the sources it trusts most, sources that are overwhelmingly earned through third-party endorsement rather than a brand&rsquo;s own website.</p>
     <p>SignlLabs pairs GCW&rsquo;s earned media strategy with a dedicated AI recommendation framework, measuring performance across the five platforms most consumers now rely on for answers: ChatGPT, Google Gemini, Claude, Microsoft Copilot and Perplexity.</p>
@@ -583,9 +583,21 @@ details.faq-item .faq-a p{font-size:15.5px;color:var(--dim);line-height:1.65;mar
   <div style="margin-top:8px">© 2026 SignlLabs LLC. Maturity Method™ and the Intent Category Framework™ are trademarks of SignlLabs LLC.</div>
 </footer>
 <script>
-const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');
+const io=new IntersectionObserver((es)=>{window.__ioAlive=true;es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');
   e.target.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w+'%');}})},{threshold:.12});
 document.querySelectorAll('.reveal,.panel').forEach(el=>io.observe(el));
+/* safety net: if IntersectionObserver never delivers, the whole page would sit
+   at opacity 0. A live observer always delivers an initial record for every
+   target, so no callback at all within 1.4s means it is not working. */
+if(!('IntersectionObserver' in window)){
+  document.querySelectorAll('.reveal,.panel').forEach(el=>el.classList.add('in'));
+}else{
+  setTimeout(function(){
+    if(!window.__ioAlive){
+      document.querySelectorAll('.reveal,.panel').forEach(el=>el.classList.add('in'));
+    }
+  },1400);
+}
 // animate hero panel bars on load
 window.addEventListener('load',()=>{setTimeout(()=>{document.querySelectorAll('#heropanel .fill').forEach(f=>f.style.width=f.dataset.w+'%');},250);});
 </script>
