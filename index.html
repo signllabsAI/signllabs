@@ -612,11 +612,11 @@ details.faq-item .faq-a p{font-size:15.5px;color:var(--dim);line-height:1.65;mar
 .rscore__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);
   gap:48px;margin-top:52px;align-items:start}
 .rscore__num{display:flex;align-items:flex-end;gap:16px}
-.rscore__num b{font:700 96px/.85 var(--df);letter-spacing:-.05em;color:#fff;font-variant-numeric:tabular-nums}
+.rscore__num b{font:700 96px/.85 var(--df);letter-spacing:-.05em;color:var(--sky);font-variant-numeric:tabular-nums}
 .rscore__num div{padding-bottom:12px}
 .rscore__num small{display:block;font:500 10.5px/1 var(--mf);letter-spacing:.12em;
   text-transform:uppercase;color:var(--navdim)}
-.rscore__num strong{display:block;font:700 20px/1 var(--df);margin-top:8px;color:var(--mint)}
+.rscore__num strong{display:inline-block;font:700 13px/1 var(--df);margin-top:10px;letter-spacing:.06em;text-transform:uppercase;color:#08131f;background:var(--sky);padding:7px 14px;border-radius:999px}
 .rscore input[type=range]{width:100%;margin-top:26px;accent-color:#0FD9A0}
 .rscore__rungs{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:6px}
 .rscore__rungs button{background:none;border:0;border-top:2px solid rgba(237,241,247,.22);
@@ -638,6 +638,13 @@ details.faq-item .faq-a p{font-size:15.5px;color:var(--dim);line-height:1.65;mar
 .rdim span:first-child{font:500 12.5px/1 var(--df);color:#fff}
 .rdim i{background:rgba(237,241,247,.14);border-radius:999px;height:7px;display:block}
 .rdim i b{display:block;height:7px;border-radius:999px;background:var(--mint)}
+/* one colour per dimension, matching the Signaling Maturity scorecard */
+.rdim:nth-of-type(1) i b{background:var(--mint)}
+.rdim:nth-of-type(2) i b{background:var(--gold)}
+.rdim:nth-of-type(3) i b{background:var(--sky)}
+.rdim:nth-of-type(4) i b{background:var(--pink)}
+.rdim:nth-of-type(5) i b{background:var(--purple)}
+.rdim:nth-of-type(6) i b{background:var(--coral)}
 .rdim em{font:500 11px/1 var(--mf);color:var(--navdim);font-style:normal;text-align:right}
 .rscore__fine{margin:14px 0 0;font:400 12.5px/1.5 var(--bf);color:var(--navdim)}
 .rscore__more{display:inline-block;margin-top:16px;font:600 14px/1 var(--df);color:var(--mint)}
@@ -753,7 +760,7 @@ details.faq-item .faq-a p{font-size:15.5px;color:var(--dim);line-height:1.65;mar
 .seenin__note a{font:600 13.5px/1 var(--df);color:var(--mint);text-decoration:none;
   border-bottom:1px solid rgba(15,217,160,.35);padding-bottom:2px}
 .seenin__note a:hover{color:#fff;border-bottom-color:#fff}
-.rdiff__cite{grid-column:1/-1;margin:10px 0 0;font:500 12.5px/1.4 var(--mf);letter-spacing:.06em;text-transform:uppercase;color:var(--mint)}
+.rdiff__panel .rdiff__cite{grid-column:1/-1;margin:10px 0 0;font:500 12.5px/1.4 var(--mf);letter-spacing:.06em;text-transform:uppercase;color:var(--mint)}
 </style>
 </head>
 <body>
@@ -1611,8 +1618,9 @@ window.addEventListener('load',()=>{setTimeout(()=>{document.querySelectorAll('#
       var b = document.createElement('button');
       b.type = 'button'; b.className = 'rdisc';
       b.setAttribute('aria-pressed', i === 2 ? 'true' : 'false');
+      var title = d.title === d.abbr ? '' : '<h3>' + d.title + '</h3>';
       b.innerHTML = '<span class="rdisc__abbr"><span>' + d.abbr + '</span><span>' + d.mark
-        + '</span></span><h3>' + d.title + '</h3><p>' + d.line + '</p>';
+        + '</span></span>' + title + '<p>' + d.line + '</p>';
       b.addEventListener('click', function () { setDisc(i); });
       dc.appendChild(b);
     });
